@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../enums.dart';
+import '../App-Utilities/enums.dart';
 
 class SpecialCard {
   final String id;
