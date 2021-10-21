@@ -12,16 +12,13 @@ class MainMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Positioned.fill(
-            child: Image(
-              image: AssetImage('GameAssets/Back/Back.png'),
-              fit: BoxFit.fill,
-            ), 
-          ),
-          Column(
+    return  Scaffold(
+      body:  Container(
+        child:  Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+             Image.asset("GameAssets/Back/Back.png") ,
+          Row(
             children: [
               MenuButtons(buttonTitle: 'PLAY GAME', routeToNavigateAt: Game.routeName,),
               MenuButtons(buttonTitle: 'HOW TO PLAY', routeToNavigateAt: Rules.routeName,),
@@ -29,6 +26,7 @@ class MainMenu extends StatelessWidget {
             ],
           )
         ],
+      ),
       ),
     );
   }
