@@ -8,9 +8,12 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          image: AssetImage(),
-          fit: BoxFit.cover,
+          image: DecorationImage(
+            image: AssetImage('GameAssets/Back/Back.png'),
+            fit: BoxFit.cover
+          ),
         ),
+        child: null,
       ),
     );
   }
