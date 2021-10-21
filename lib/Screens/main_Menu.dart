@@ -26,7 +26,6 @@ class MainMenu extends StatelessWidget {
               MenuButtons(buttonTitle: 'PLAY GAME', routeToNavigateAt: Game.routeName,),
               MenuButtons(buttonTitle: 'HOW TO PLAY', routeToNavigateAt: Rules.routeName,),
               MenuButtons(buttonTitle: 'SETUP DECKS', routeToNavigateAt: SetupDecks.routeName,),
-
             ],
           )
         ],

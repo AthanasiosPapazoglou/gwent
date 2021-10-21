@@ -23,7 +23,7 @@ class Gwent extends StatelessWidget {
     
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: MainMenu.routeName,
+      home: MainMenu(),
       routes: {
          MainMenu.routeName: (ctx) => MainMenu(),
          Rules.routeName: (ctx) => Rules(),
