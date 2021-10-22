@@ -7,29 +7,39 @@ import 'package:gwent/Screens/rules_screen.dart';
 import 'package:gwent/Screens/setup-deck_screen.dart';
 
 class MainMenu extends StatelessWidget {
-
   static const routeName = '/main-menu';
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body:  Container(
-        child:  Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+    return Scaffold(
+      body: Container(
+        color: Colors.black54,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Image.asset("GameAssets/Back/Back.png") ,
-          Row(
-            children: [
-              MenuButtons(buttonTitle: 'PLAY GAME', routeToNavigateAt: Game.routeName,),
-              MenuButtons(buttonTitle: 'HOW TO PLAY', routeToNavigateAt: Rules.routeName,),
-              MenuButtons(buttonTitle: 'SETUP DECKS', routeToNavigateAt: SetupDecks.routeName,),
-            ],
-          )
-        ],
-      ),
+            Expanded(
+                child: Image(
+                  image: AssetImage('GameAssets/Back/Neutral back.png'),
+                ),
+              ),
+            MenuButtons(
+              buttonTitle: 'PLAY GAME',
+              routeToNavigateAt: Game.routeName,
+            ),
+            MenuButtons(
+              buttonTitle: 'HOW TO PLAY',
+              routeToNavigateAt: Rules.routeName,
+            ),
+            MenuButtons(
+              buttonTitle: 'SETUP DECKS',
+              routeToNavigateAt: SetupDecks.routeName,
+            ),
+          ],
+        ),
       ),
     );
   }
-} 
+}
 
-
+//Alt + Shift + F
