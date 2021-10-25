@@ -11,6 +11,7 @@ void main(){
    WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+      print('print works');
 
   ///////////// 
   runApp(Gwent());
