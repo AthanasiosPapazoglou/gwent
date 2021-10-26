@@ -12,7 +12,7 @@ class SetupDecks extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Colors.black38,
+          color: Colors.black54,
           child: Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

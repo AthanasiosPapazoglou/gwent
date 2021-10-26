@@ -17,8 +17,9 @@ class DeckButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 14),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),
       child: Card(
+        elevation: 4,
         color: deckColors,
         child: ListTile(
           trailing: Image(

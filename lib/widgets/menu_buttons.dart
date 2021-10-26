@@ -13,6 +13,7 @@ class MenuButtons extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
       child: Card(
+        elevation: 5,
         child: GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, routeToNavigateAt);
