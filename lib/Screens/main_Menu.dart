@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gwent/widgets/menu_buttons.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/rules_screen.dart';
-import 'package:gwent/Screens/setup-deck_screen.dart';
+import 'package:gwent/Screens/setup_deck_menu.dart';
 
 class MainMenu extends StatelessWidget {
   static const routeName = '/main-menu';
@@ -33,7 +33,7 @@ class MainMenu extends StatelessWidget {
             ),
             MenuButtons(
               buttonTitle: 'SETUP DECKS',
-              routeToNavigateAt: SetupDecks.routeName,
+              routeToNavigateAt: SetupDecksMenu.routeName,
             ),
           ],
         ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gwent/widgets/deck_select_button.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 
-class SetupDecks extends StatelessWidget {
+class SetupDecksMenu extends StatelessWidget {
   static const routeName = '/Setup-Decks-screen';
 
   @override
