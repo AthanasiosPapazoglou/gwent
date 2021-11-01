@@ -4,8 +4,8 @@ import '../App-Utilities/enums.dart';
 class SpecialCard {
   final String id;
   final String cardName;
-  final BattleRows battlerow;
-  final BattleEffects effect;
+  final bRows battlerow;
+  final bEffects effect;
   final CardState cardState;
 
   SpecialCard(
