@@ -6,13 +6,34 @@ import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/Card-Models/special_model.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
 
+List <UnitCard> neutralUnits = [
+  UnitCard(id: 0, cardName: 'Cirilla Fiona Elen Rianno 2.png', strength: 15, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: true,),
+  UnitCard(id: 1, cardName: 'Dandelion 2.png', strength: 2, battlerow: bRows.melee, hasEffect: true, effect: bEffects.horn, isHero: false,),
+  UnitCard(id: 2, cardName: 'Emiel Regis Rohellec Terzieff 2.png', strength: 5, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false,),
+  UnitCard(id: 3, cardName: 'Geralt of Rivia 2.png', strength: 15, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: true,),
+  UnitCard(id: 4, cardName: 'Mysterious Elf 2.png', strength: 0, battlerow: bRows.melee, hasEffect: true, effect: bEffects.spy, isHero: true,),
+  UnitCard(id: 5, cardName: 'Triss Merigold 2.png', strength: 7, battlerow: bRows.ranged, hasEffect: false, effect: bEffects.none, isHero: true,),
+  UnitCard(id: 6, cardName: 'Vesemir 2.png', strength: 6, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false,),
+  UnitCard(id: 7, cardName: 'Villentretenmerth 2.png', strength: 7, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false,),
+  UnitCard(id: 8, cardName: 'Yennefer of Vengerberg 2.png', strength: 7, battlerow: bRows.ranged, hasEffect: true, effect: bEffects.medic, isHero: true,),
+  UnitCard(id: 9, cardName: 'Zoltan Chivay 2.png', strength: 5, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false),
+];
+
+List <SpecialCard> specialCards = [
+  SpecialCard(id: 0, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 1, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 2, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.none,),
+  SpecialCard(id: 3, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.none,),
+
+];
+
 List <UnitCard> monstersUnits = [
   UnitCard(id: 0, cardName: 'Arachas 1.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false,),
   UnitCard(id: 1, cardName: 'Arachas 2.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false,),
   UnitCard(id: 2, cardName: 'Arachas 3.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false,),
   UnitCard(id: 3, cardName: 'Arachas Behemoth.png', strength: 6, battlerow: bRows.siege, hasEffect: true, effect: bEffects.muster, isHero: false,),
   UnitCard(id: 4, cardName: 'Botchling.png', strength: 4, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false,),
-  UnitCard(id: 5, cardName: 'Calaeno Harpy.png', strength: 2, battlerow: bRows.agile, hasEffect: true, effect: bEffects.agile, isHero: false,),
+  UnitCard(id: 5, cardName: 'Calaeno Harpy.png', strength: 2, battlerow: bRows.agile, hasEffect: false, effect: bEffects.none, isHero: false,),
   UnitCard(id: 6, cardName: 'Cockatrice.png', strength: 2, battlerow: bRows.ranged, hasEffect: false, effect: bEffects.none, isHero: false,),
   UnitCard(id: 7, cardName: 'Crone Brewess.png', strength: 6, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false,),
   UnitCard(id: 8, cardName: 'Crone Weavess.png', strength: 6, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false,),
@@ -29,5 +50,23 @@ List <UnitCard> monstersUnits = [
   UnitCard(id: 19, cardName: 'Ghoul 1.png', strength: 1, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
   UnitCard(id: 20, cardName: 'Ghoul 2.png', strength: 1, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
   UnitCard(id: 21, cardName: 'Ghoul 3.png', strength: 1, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 22, cardName: 'Grave Hag.png', strength: 5, battlerow: bRows.ranged, hasEffect: false, effect: bEffects.none, isHero: false),
+  UnitCard(id: 23, cardName: 'Griffin.png', strength: 5, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false),
+  UnitCard(id: 24, cardName: 'Harpy.png', strength: 2, battlerow: bRows.agile, hasEffect: false, effect: bEffects.none, isHero: false),
+  UnitCard(id: 25, cardName: 'Ice Giant.png', strength: 6, battlerow: bRows.siege, hasEffect: false, effect: bEffects.none, isHero: false),
+  UnitCard(id: 26, cardName: 'Imlerith.png', strength: 10, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: true),
+  UnitCard(id: 27, cardName: 'Kayran.png', strength: 8, battlerow: bRows.agile, hasEffect: true, effect: bEffects.morale, isHero: true), //! 2 EFFECTS!!!!
+  UnitCard(id: 28, cardName: 'Leshen.png', strength: 10, battlerow: bRows.ranged, hasEffect: false, effect: bEffects.none, isHero: true),
+  UnitCard(id: 29, cardName: 'Nekker 1.png', strength: 2, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 30, cardName: 'Nekker 2.png', strength: 2, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 31, cardName: 'Nekker 3.png', strength: 2, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 32, cardName: 'Plague Maiden.png', strength: 5, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false),
+  UnitCard(id: 33, cardName: 'Vampire Bruxa.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 34, cardName: 'Vampire Ekimmara.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 35, cardName: 'Vampire Fleder.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 36, cardName: 'Vampire Garkain.png', strength: 4, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 37, cardName: 'Vampire Katakan.png', strength: 5, battlerow: bRows.melee, hasEffect: true, effect: bEffects.muster, isHero: false),
+  UnitCard(id: 38, cardName: 'Werewolf.png', strength: 5, battlerow: bRows.melee, hasEffect: false, effect: bEffects.none, isHero: false),
+  UnitCard(id: 39, cardName: 'Wyvern.png', strength: 2, battlerow: bRows.ranged, hasEffect: false, effect: bEffects.none, isHero: false),
 ];
 

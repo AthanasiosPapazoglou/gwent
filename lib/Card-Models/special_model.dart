@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import '../App-Utilities/enums.dart';
 
 class SpecialCard {
-  final String id;
+  final int id;
   final String cardName;
+  final wEffects weatherEffect;
   final bRows battlerow;
-  final bEffects effect;
-  final CardState cardState;
+  final bEffects battleEffect;
 
   SpecialCard(
       {required this.id,
       required this.cardName,
+      required this.weatherEffect,
       required this.battlerow,
-      required this.effect,
-      required this.cardState
+      required this.battleEffect,
       });
 }
