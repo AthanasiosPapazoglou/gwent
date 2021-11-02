@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import '../App-Utilities/enums.dart';
 
 class LeaderCard {
-  final String id;
+  final int id;
   final String cardName;
   final LeaderEffect leaderEffect;
-  final CardState cardState;
 
   LeaderCard({
       required this.id,
       required this.cardName,
       required this.leaderEffect,
-      required this.cardState
       });
 }

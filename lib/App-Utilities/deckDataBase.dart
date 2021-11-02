@@ -21,10 +21,35 @@ List <UnitCard> neutralUnits = [
 
 List <SpecialCard> specialCards = [
   SpecialCard(id: 0, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: bRows.arena, battleEffect: bEffects.none,),
-  SpecialCard(id: 1, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: bRows.arena, battleEffect: bEffects.none,),
-  SpecialCard(id: 2, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.none,),
-  SpecialCard(id: 3, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.none,),
+  SpecialCard(id: 1, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 2, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 3, cardName: 'Impenetrable Fog 1.png', weatherEffect: wEffects.fog, battlerow: bRows.arena, battleEffect: bEffects.none),
+  SpecialCard(id: 4, cardName: 'Impenetrable Fog 1.png', weatherEffect: wEffects.fog, battlerow: bRows.arena, battleEffect: bEffects.none),
+  SpecialCard(id: 5, cardName: 'Impenetrable Fog 1.png', weatherEffect: wEffects.fog, battlerow: bRows.arena, battleEffect: bEffects.none),
+  SpecialCard(id: 6, cardName: 'Torrential Rain 1.png', weatherEffect: wEffects.rain, battlerow: bRows.arena, battleEffect: bEffects.none),
+  SpecialCard(id: 7, cardName: 'Torrential Rain 1.png', weatherEffect: wEffects.rain, battlerow: bRows.arena, battleEffect: bEffects.none),
+  SpecialCard(id: 8, cardName: 'Torrential Rain 1.png', weatherEffect: wEffects.rain, battlerow: bRows.arena, battleEffect: bEffects.none),
+  SpecialCard(id: 9, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 10, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 11, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: bRows.arena, battleEffect: bEffects.none,),
+  SpecialCard(id: 12, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.horn,),
+  SpecialCard(id: 13, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.horn,),
+  SpecialCard(id: 14, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.horn,),
+  SpecialCard(id: 15, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.decoy,),
+  SpecialCard(id: 16, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.decoy,),
+  SpecialCard(id: 17, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: bRows.limitless, battleEffect: bEffects.decoy,),
+  SpecialCard(id: 18, cardName: 'Scorch 1.png', weatherEffect: wEffects.none, battlerow: bRows.arena, battleEffect: bEffects.scortch),
+  SpecialCard(id: 19, cardName: 'Scorch 1.png', weatherEffect: wEffects.none, battlerow: bRows.arena, battleEffect: bEffects.scortch),
+  SpecialCard(id: 20, cardName: 'Scorch 1.png', weatherEffect: wEffects.none, battlerow: bRows.arena, battleEffect: bEffects.scortch),
+  
 
+];
+
+List<LeaderCard> monstersLeaders = [
+  LeaderCard(id: 0, cardName: 'Ereding Bringer of Death.png', leaderEffect: LeaderEffect.mon1,),
+  LeaderCard(id: 1, cardName: 'Eredin Commander of the Red Riders.png', leaderEffect: LeaderEffect.mon2),
+  LeaderCard(id: 2, cardName: 'Eredin Destroyer of Worlds.png', leaderEffect: LeaderEffect.mon3),
+  LeaderCard(id: 3, cardName: '', leaderEffect: LeaderEffect.mon4),
 ];
 
 List <UnitCard> monstersUnits = [
