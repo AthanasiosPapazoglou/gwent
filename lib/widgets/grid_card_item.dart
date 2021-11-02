@@ -14,9 +14,7 @@ class GridCardItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () {},
         child: Image(
-          image: AssetImage(cardName),
-          height: 32,
-          width: 18,
+          image: AssetImage('GameAssets/Decks/Monsters/$cardName'),
         ),
       ),
     );

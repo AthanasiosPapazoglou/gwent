@@ -60,7 +60,7 @@ flutter:
   
   assets:
     - GameAssets/Back/
-    - GameAssets/Decks/
+    - GameAssets/Decks/Monsters/
     - GameAssets/Leaders/
     - GameAssets/NeutralUnits/
     - GameAssets/Rules/

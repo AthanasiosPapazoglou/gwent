@@ -10,15 +10,17 @@ class DeckGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      padding: const EdgeInsets.all(8),
+      //padding: const EdgeInsets.all(8),
+      itemCount: monstersUnits.length,
       itemBuilder: (ctx, i){
-        return GridCardItem(cardName: monstersUnits[i].cardName,);
+        print(monstersUnits[i].cardName);
+        return GridCardItem(cardName: monstersUnits[i].cardName);
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 3 / 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        crossAxisCount: 3,
+        childAspectRatio: 2/3,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
       ),
     );
   }
