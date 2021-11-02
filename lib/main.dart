@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'Screens/game_screen.dart';
 import 'Screens/rules_screen.dart';
 import 'Screens/setup_deck_menu.dart';
+import 'package:gwent/widgets/deck_grid_view.dart';
 
 void main(){
    WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +30,8 @@ class Gwent extends StatelessWidget {
          MainMenu.routeName: (ctx) => MainMenu(),
          Rules.routeName: (ctx) => Rules(),
          Game.routeName: (ctx) => Game(),
-         SetupDecksMenu.routeName: (ctx) => SetupDecksMenu()
+         SetupDecksMenu.routeName: (ctx) => SetupDecksMenu(),
+         DeckGridView.routeName: (ctx) => DeckGridView()
       },
     );
   }
