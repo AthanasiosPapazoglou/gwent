@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gwent/Card-Models/leader_model.dart';
-import 'package:gwent/Card-Models/special_model.dart';
-import 'package:gwent/Card-Models/unit_model.dart';
 
 class GridCardItem extends StatelessWidget {
   final String cardName;
+  final String assetDirectory;
 
-  GridCardItem({required this.cardName});
+  GridCardItem({
+    required this.cardName,
+    required this.assetDirectory
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class GridCardItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () {},
         child: Image(
-          image: AssetImage('GameAssets/Decks/Monsters/$cardName'),
+          image: AssetImage('$assetDirectory$cardName'),
         ),
       ),
     );

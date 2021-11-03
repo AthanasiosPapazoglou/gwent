@@ -5,8 +5,8 @@ class SpecialCard {
   final int id;
   final String cardName;
   final wEffects weatherEffect;
-  final bRows battlerow;
-  final bEffects battleEffect;
+  final brows battlerow;
+  final beffects battleEffect;
 
   SpecialCard(
       {required this.id,

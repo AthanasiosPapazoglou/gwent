@@ -6,15 +6,23 @@ import 'package:gwent/App-Utilities/deckDataBase.dart';
 
 class DeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
+  
+  final List listToRender;
+  final String assetDirectory;
+
+  DeckGridView({
+    required this.listToRender,
+    required this.assetDirectory
+    });
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       //padding: const EdgeInsets.all(8),
-      itemCount: monstersUnits.length,
+      itemCount: listToRender.length,
       itemBuilder: (ctx, i){
-        print(monstersUnits[i].cardName);
-        return GridCardItem(cardName: monstersUnits[i].cardName);
+        print(listToRender[i].cardName);
+        return GridCardItem(cardName: listToRender[i].cardName, assetDirectory: assetDirectory,);
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,

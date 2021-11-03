@@ -31,7 +31,6 @@ class Gwent extends StatelessWidget {
          Rules.routeName: (ctx) => Rules(),
          Game.routeName: (ctx) => Game(),
          SetupDecksMenu.routeName: (ctx) => SetupDecksMenu(),
-         DeckGridView.routeName: (ctx) => DeckGridView()
       },
     );
   }

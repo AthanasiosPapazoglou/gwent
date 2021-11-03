@@ -11,31 +11,33 @@ class MainMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.black54,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-                child: Image(
-                  image: AssetImage('GameAssets/Back/Neutral back.png'),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: Colors.black54,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                  child: Image(
+                    image: AssetImage('GameAssets/Back/Neutral back.png'),
+                  ),
                 ),
+              MenuButtons(
+                buttonTitle: 'PLAY GAME',
+                routeToNavigateAt: Game.routeName,
               ),
-            MenuButtons(
-              buttonTitle: 'PLAY GAME',
-              routeToNavigateAt: Game.routeName,
-            ),
-            MenuButtons(
-              buttonTitle: 'HOW TO PLAY',
-              routeToNavigateAt: Rules.routeName,
-            ),
-            MenuButtons(
-              buttonTitle: 'SETUP DECKS',
-              routeToNavigateAt: SetupDecksMenu.routeName,
-            ),
-          ],
+              MenuButtons(
+                buttonTitle: 'HOW TO PLAY',
+                routeToNavigateAt: Rules.routeName,
+              ),
+              MenuButtons(
+                buttonTitle: 'SETUP DECKS',
+                routeToNavigateAt: SetupDecksMenu.routeName,
+              ),
+            ],
+          ),
         ),
       ),
     );

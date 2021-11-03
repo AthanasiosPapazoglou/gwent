@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-enum bRows { melee, ranged, siege, agile, limitless, arena }
+enum brows { melee, ranged, siege, agile, limitless, arena }
 
 enum wEffects { frost, fog, rain, clear, none}
 
-enum bEffects { none, decoy, horn, scortch, meleeScortch, spy, bond, muster, morale, medic}
+enum beffects { none, decoy, horn, scortch, meleeScortch, spy, bond, muster, morale, medic}
 
 enum CardState { deck, graveyard, played, drawed }
 

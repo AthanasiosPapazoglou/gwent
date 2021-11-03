@@ -5,9 +5,9 @@ class UnitCard {
   final int id;
   final String cardName;
   final int strength;
-  final bRows battlerow;
+  final brows battlerow;
   final bool hasEffect;
-  final bEffects effect;
+  final beffects effect;
   final bool isHero;
   //final CardState cardState;
 

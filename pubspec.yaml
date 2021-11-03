@@ -61,6 +61,8 @@ flutter:
   assets:
     - GameAssets/Back/
     - GameAssets/Decks/Monsters/
+    - GameAssets/Decks/Nilfgaardian Empire/
+    - GameAssets/Decks/Northern Realms/ 
     - GameAssets/Leaders/
     - GameAssets/NeutralUnits/
     - GameAssets/Rules/

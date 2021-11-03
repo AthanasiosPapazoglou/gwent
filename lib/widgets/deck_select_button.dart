@@ -1,26 +1,31 @@
 // ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
+import 'package:gwent/App-Utilities/deckDataBase.dart';
 
 
 class DeckButton extends StatelessWidget {
   final String imageURL;
   final String deckName;
+  final String assetDirectory;
   final Color deckColors;
   final String subtitleText; 
+  final List listToNavigateAt;
 
   DeckButton({
       required this.imageURL,
       required this.deckName,
+      required this.assetDirectory,
       required this.deckColors,
-      required this.subtitleText
+      required this.subtitleText,
+      required this.listToNavigateAt
       });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context, DeckGridView.routeName);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DeckGridView(listToRender: listToNavigateAt, assetDirectory: assetDirectory),),);
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),
