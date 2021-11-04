@@ -14,27 +14,32 @@ class MainMenu extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: Colors.black54,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                  child: Image(
-                    image: AssetImage('GameAssets/Back/Neutral back.png'),
-                  ),
+          color: Colors.black,
+          child: Stack(
+            children: <Widget>[
+              Positioned.fill(
+                child: Image(
+                  //height: MediaQuery.of(context).size.height,
+                  image: AssetImage('GameAssets/Back/Back.png'),
                 ),
-              MenuButtons(
-                buttonTitle: 'PLAY GAME',
-                routeToNavigateAt: Game.routeName,
               ),
-              MenuButtons(
-                buttonTitle: 'HOW TO PLAY',
-                routeToNavigateAt: Rules.routeName,
-              ),
-              MenuButtons(
-                buttonTitle: 'SETUP DECKS',
-                routeToNavigateAt: SetupDecksMenu.routeName,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MenuButtons(
+                    buttonTitle: 'PLAY GAME',
+                    routeToNavigateAt: Game.routeName,
+                  ),
+                  MenuButtons(
+                    buttonTitle: 'HOW TO PLAY',
+                    routeToNavigateAt: Rules.routeName,
+                  ),
+                  MenuButtons(
+                    buttonTitle: 'SETUP DECKS',
+                    routeToNavigateAt: SetupDecksMenu.routeName,
+                  ),
+                ],
               ),
             ],
           ),
