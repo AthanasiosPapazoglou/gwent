@@ -9,9 +9,9 @@ import 'Screens/setup_deck_menu.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
 
 void main(){
-   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    WidgetsFlutterBinding.ensureInitialized();
+   // SystemChrome.setPreferredOrientations(
+   // [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
       print('print works');
 
   ///////////// 

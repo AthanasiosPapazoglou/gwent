@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:gwent/Screens/customise_deck.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 
@@ -10,7 +11,7 @@ class DeckButton extends StatelessWidget {
   final String assetDirectory;
   final Color deckColors;
   final String subtitleText; 
-  final List listToNavigateAt;
+  final List listToRender;
 
   DeckButton({
       required this.imageURL,
@@ -18,14 +19,15 @@ class DeckButton extends StatelessWidget {
       required this.assetDirectory,
       required this.deckColors,
       required this.subtitleText,
-      required this.listToNavigateAt
+      required this.listToRender
       });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => DeckGridView(listToRender: listToNavigateAt, assetDirectory: assetDirectory),),);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => CustomiseDeck(listToRender: listToRender, assetDirectory: assetDirectory),),);
+       // Navigator.push(context, MaterialPageRoute(builder: (context) => DeckGridView(listToRender: listToRender, assetDirectory: assetDirectory),),);
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),
