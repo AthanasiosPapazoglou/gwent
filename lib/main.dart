@@ -7,6 +7,7 @@ import 'Screens/game_screen.dart';
 import 'Screens/rules_screen.dart';
 import 'Screens/setup_deck_menu.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();
