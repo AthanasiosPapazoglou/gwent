@@ -38,11 +38,13 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
       child: Row(
         children: [
           Flexible(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: DeckGridView(listToRender: widget.listToRender, assetDirectory: widget.assetDirectory),
+            //child: Column(
+              //children: [
+                //εδω custom row για επιλογες 
+               child: DeckGridView(listToRender: widget.listToRender, assetDirectory: widget.assetDirectory),
+             // ],
             ),
-          ),
+         // ),
           SizedBox(width: MediaQuery.of(context).size.width * (1/3),),
           Flexible(
             child: Padding(
