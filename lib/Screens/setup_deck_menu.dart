@@ -48,7 +48,7 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: 'GameAssets/Decks/Scoia\'tael/',
                 deckColors: Colors.green.shade400,
                 subtitleText: kSCDescription,
-                listToNavigateAt: monstersUnits,
+                listToNavigateAt: ScoiataelUnits,
               ),
             ]),
           ),
