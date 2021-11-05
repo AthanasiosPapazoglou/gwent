@@ -27,8 +27,8 @@ class DeckGridView extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         childAspectRatio: 2/3,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
+        crossAxisSpacing: 1,
+        mainAxisSpacing: 4,
       ),
     );
   }
