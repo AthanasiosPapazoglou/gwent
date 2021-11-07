@@ -9,8 +9,10 @@ class MiddleBarInfo extends StatelessWidget {
   final String leaderCardName;
   final String leaderSetDirectory;
 
-  MiddleBarInfo(
-      {required this.leaderCardName, required this.leaderSetDirectory});
+  MiddleBarInfo({
+    required this.leaderCardName,
+    required this.leaderSetDirectory,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +106,6 @@ class MiddleBarInfo extends StatelessWidget {
                 color: kInfoNumColor,
               ),
             ),
-            
           ],
         ),
       ),
