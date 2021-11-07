@@ -218,22 +218,14 @@ UnitCard(id: 33, cardName: 'Vrihedd Brigade Recruit.png', strength: 4, battlerow
 UnitCard(id: 34, cardName: 'Vrihedd Brigade Veteran 1.png', strength: 5, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
 UnitCard(id: 35, cardName: 'Vrihedd Brigade Veteran 2.png', strength: 5, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
 UnitCard(id: 36, cardName: 'Yaevinn.png', strength: 6, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
-
-
-
-
 ];
 
 
 
 
-
-
-
-
 List<LeaderCard> monstersLeaders = [
-  LeaderCard(id: 0, cardName: 'Ereding Bringer of Death.png', leaderEffect: LeaderEffect.mon1,),
+  LeaderCard(id: 0, cardName: 'Eredin Bringer of Death.png', leaderEffect: LeaderEffect.mon1,),
   LeaderCard(id: 1, cardName: 'Eredin Commander of the Red Riders.png', leaderEffect: LeaderEffect.mon2),
   LeaderCard(id: 2, cardName: 'Eredin Destroyer of Worlds.png', leaderEffect: LeaderEffect.mon3),
-  LeaderCard(id: 3, cardName: '', leaderEffect: LeaderEffect.mon4),
+  LeaderCard(id: 3, cardName: 'Eredin King of the Wild Hunt.png', leaderEffect: LeaderEffect.mon4),
 ];

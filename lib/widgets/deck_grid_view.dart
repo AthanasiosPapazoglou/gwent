@@ -21,7 +21,6 @@ class DeckGridView extends StatelessWidget {
       //padding: const EdgeInsets.all(8),
       itemCount: listToRender.length,
       itemBuilder: (ctx, i){
-        print(listToRender[i].cardName);
         return GridCardItem(cardName: listToRender[i].cardName, assetDirectory: assetDirectory,);
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

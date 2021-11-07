@@ -61,7 +61,7 @@ flutter:
     - GameAssets/Decks/Nilfgaardian Empire/
     - GameAssets/Decks/Northern Realms/
     - GameAssets/Decks/Scoia'tael/
-    - GameAssets/Leaders/
+    - GameAssets/Leaders/Monsters/
     - GameAssets/NeutralUnits/
     - GameAssets/Rules/
     - GameAssets/SpecialCards/
