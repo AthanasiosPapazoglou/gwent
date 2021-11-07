@@ -8,6 +8,7 @@ import 'Screens/rules_screen.dart';
 import 'Screens/setup_deck_menu.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:audio_service/audio_service.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();
