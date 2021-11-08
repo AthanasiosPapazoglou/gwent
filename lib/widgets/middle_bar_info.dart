@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/constants.dart';
+import 'package:gwent/widgets/cancel_save.dart';
 
 class MiddleBarInfo extends StatelessWidget {
   final String leaderCardName;
@@ -17,7 +18,7 @@ class MiddleBarInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(26.0),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.25,
         child: Column(
@@ -106,6 +107,8 @@ class MiddleBarInfo extends StatelessWidget {
                 color: kInfoNumColor,
               ),
             ),
+            SizedBox(height: 6),
+            CancelorSaveRow()
           ],
         ),
       ),
