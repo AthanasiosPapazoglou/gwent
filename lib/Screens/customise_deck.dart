@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
@@ -23,11 +24,14 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-    ]);
+    landscapeMode();
   }
+
+  @override
+  dispose(){
+  portraitMode();
+  super.dispose();
+}
 
   @override
   Widget build(BuildContext context) {
