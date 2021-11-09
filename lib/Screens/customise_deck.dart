@@ -9,10 +9,11 @@ import 'package:gwent/widgets/leader_card_widget.dart';
 import 'package:gwent/widgets/middle_bar_info.dart';
 
 class CustomiseDeck extends StatefulWidget {
-  final List listToRender;
+  final List unselectedListToRender;
+  final List selectedListToRender;
   final String assetDirectory;
 
-  CustomiseDeck({required this.listToRender, required this.assetDirectory});
+  CustomiseDeck({required this.unselectedListToRender, required this.selectedListToRender, required this.assetDirectory});
 
   //String
 
@@ -46,7 +47,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(26.0),
               child: DeckGridView(
-                listToRender: widget.listToRender,
+                listToRender: widget.unselectedListToRender,
                 assetDirectory: widget.assetDirectory,
               ),
             ),
@@ -62,7 +63,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(26.0),
               child: DeckGridView(
-                listToRender: widget.listToRender,
+                listToRender: widget.selectedListToRender,
                 assetDirectory: widget.assetDirectory,
               ),
             ),

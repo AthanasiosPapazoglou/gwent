@@ -26,7 +26,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kMonUnitsAD,
                 deckColors: Colors.red.shade400,
                 subtitleText: kMonDesc,
-                listToRender: monstersUnits,
+                unselectedListToRender: monstersUnitsUnselected,
+                selectedListToRender: monstersUnitsSelected,
               ),
               DeckButton(
                 imageURL: kNilfBackAD,
@@ -34,15 +35,17 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kNilfUnitsAD,
                 deckColors: Colors.yellow.shade400,
                 subtitleText: kNilfDesc,
-                listToRender: nilfggardUnits,
+                unselectedListToRender: nilfggardUnitsUnselected,
+                selectedListToRender: nilfggardUnitsSelected,
               ),
               DeckButton(
                 imageURL: kNorthBackAD,
                 deckName: 'Northern Realms',
                 assetDirectory: kNorthUnitsAD,
                 deckColors: Colors.blue.shade400,
-                subtitleText: kNorthDescription,
-                listToRender: northernRealmsUnits,
+                subtitleText: kNorthDesc,
+                unselectedListToRender: unselectedNorthernRealmsUnits,
+                selectedListToRender: selectedNorthernRealmsUnits
               ),
               DeckButton(
                 imageURL: kScoiaBackAD,
@@ -50,7 +53,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kScoiaUnitsAD,
                 deckColors: Colors.green.shade400,
                 subtitleText: kScoiaDesc,
-                listToRender: ScoiataelUnits,
+                unselectedListToRender: unselectedScoiataelUnits,
+                selectedListToRender: selectedScoiataelUnits
               ),
             ]),
           ),

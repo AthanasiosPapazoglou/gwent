@@ -4,14 +4,14 @@ import 'package:gwent/Screens/customise_deck.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 
-
 class DeckButton extends StatelessWidget {
   final String imageURL;
   final String deckName;
   final String assetDirectory;
   final Color deckColors;
-  final String subtitleText; 
-  final List listToRender;
+  final String subtitleText;
+  final List unselectedListToRender;
+  final List selectedListToRender;
 
   DeckButton({
       required this.imageURL,
@@ -19,15 +19,25 @@ class DeckButton extends StatelessWidget {
       required this.assetDirectory,
       required this.deckColors,
       required this.subtitleText,
-      required this.listToRender
+      required this.unselectedListToRender,
+      required this.selectedListToRender,
       });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => CustomiseDeck(listToRender: listToRender, assetDirectory: assetDirectory),),);
-       // Navigator.push(context, MaterialPageRoute(builder: (context) => DeckGridView(listToRender: listToRender, assetDirectory: assetDirectory),),);
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CustomiseDeck(
+              unselectedListToRender: unselectedListToRender,
+              selectedListToRender: selectedListToRender,
+              assetDirectory: assetDirectory,
+            ),
+          ),
+        );
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => DeckGridView(listToRender: listToRender, assetDirectory: assetDirectory),),);
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),
@@ -36,18 +46,18 @@ class DeckButton extends StatelessWidget {
           color: deckColors,
           child: ListTile(
             trailing: Image(
-                height: 40,
-                width: 22.5,
-                image: AssetImage(imageURL),
-              ),
-             title: Text(
-                deckName,
-                style: TextStyle(fontSize: 30, color: Colors.black87),
-              ),
-              subtitle: Text(
-                subtitleText,
-                style: TextStyle(fontSize: 16),
-              ),
+              height: 40,
+              width: 22.5,
+              image: AssetImage(imageURL),
+            ),
+            title: Text(
+              deckName,
+              style: TextStyle(fontSize: 30, color: Colors.black87),
+            ),
+            subtitle: Text(
+              subtitleText,
+              style: TextStyle(fontSize: 16),
+            ),
           ),
         ),
       ),

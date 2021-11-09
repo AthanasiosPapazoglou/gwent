@@ -13,7 +13,7 @@ class CancelorSaveRow extends StatelessWidget {
           height: 27,
           child: Center(
             child: Text(
-              'Cancel',
+              'Menu',
               style: TextStyle(fontSize: 12, color: Colors.red.shade600),
             ),
           ),
@@ -31,7 +31,7 @@ class CancelorSaveRow extends StatelessWidget {
           height: 27,
           child: Center(
             child: Text(
-              'Accept',
+              'Decks',
               style: TextStyle(fontSize: 12, color: Colors.green),
             ),
           ),

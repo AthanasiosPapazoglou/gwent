@@ -6,7 +6,7 @@ String kMonLeadersAD = 'GameAssets/Leaders/Monsters/';
 String kMonBackAD = 'GameAssets/Back/Monsters back.png';
 
 
-String kNorthDescription = 'A Strongly Bonded Deck';
+String kNorthDesc = 'A Strongly Bonded Deck';
 String kNorthUnitsAD = 'GameAssets/Decks/Northern Realms/';
 String kNorthLeadersAD = 'GameAssets/Leaders/Northern Realms/';
 String kNorthBackAD = 'GameAssets/Back/Northern Realms back.png';
