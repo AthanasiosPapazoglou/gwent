@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
+import 'package:gwent/App-Utilities/customDecks.dart';
 import 'package:gwent/widgets/deck_select_button.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 
@@ -10,6 +12,7 @@ class SetupDecksMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    portraitMode();
     return Scaffold(
       body: Center(
         child: Container(
@@ -24,7 +27,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kMonUnitsAD,
                 deckColors: Colors.red.shade400,
                 subtitleText: kMonDesc,
-                listToRender: monstersUnits,
+                unselectedListToRender: monstersUnitsUnselected,
+                selectedListToRender: monstersUnitsSelected,
               ),
               DeckButton(
                 imageURL: kNilfBackAD,
@@ -32,15 +36,17 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kNilfUnitsAD,
                 deckColors: Colors.yellow.shade400,
                 subtitleText: kNilfDesc,
-                listToRender: nilfggardUnits,
+                unselectedListToRender: nilfggardUnitsUnselected,
+                selectedListToRender: nilfggardUnitsSelected,
               ),
               DeckButton(
                 imageURL: kNorthBackAD,
                 deckName: 'Northern Realms',
                 assetDirectory: kNorthUnitsAD,
                 deckColors: Colors.blue.shade400,
-                subtitleText: kNorthDescription,
-                listToRender: northernRealmsUnits,
+                subtitleText: kNorthDesc,
+                unselectedListToRender: unselectedNorthernRealmsUnits,
+                selectedListToRender: selectedNorthernRealmsUnits
               ),
               DeckButton(
                 imageURL: kScoiaBackAD,
@@ -48,7 +54,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kScoiaUnitsAD,
                 deckColors: Colors.green.shade400,
                 subtitleText: kScoiaDesc,
-                listToRender: ScoiataelUnits,
+                unselectedListToRender: unselectedScoiataelUnits,
+                selectedListToRender: selectedScoiataelUnits
               ),
             ]),
           ),

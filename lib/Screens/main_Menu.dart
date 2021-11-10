@@ -1,16 +1,19 @@
 // ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/widgets/menu_buttons.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/rules_screen.dart';
 import 'package:gwent/Screens/setup_deck_menu.dart';
+
 
 class MainMenu extends StatelessWidget {
   static const routeName = '/main-menu';
 
   @override
   Widget build(BuildContext context) {
+    portraitMode();
     return SafeArea(
       child: Scaffold(
         body: Container(

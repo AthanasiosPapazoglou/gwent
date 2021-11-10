@@ -27,18 +27,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  audio_service: ^0.18.1
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
   flutter_svg: ^0.23.0+1
 
 dev_dependencies:
-  
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
@@ -61,7 +56,7 @@ flutter:
     - GameAssets/Decks/Nilfgaardian Empire/
     - GameAssets/Decks/Northern Realms/
     - GameAssets/Decks/Scoia'tael/
-    - GameAssets/Leaders/
+    - GameAssets/Leaders/Monsters/
     - GameAssets/NeutralUnits/
     - GameAssets/Rules/
     - GameAssets/SpecialCards/
@@ -73,10 +68,6 @@ flutter:
     - GameAssets/svgAssets/helmet-svgrepo-com.svg
     - GameAssets/svgAssets/sword-svgrepo-com.svg
     - GameAssets/svgAssets/playing-cards-svgrepo-com.svg
-
-
-
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

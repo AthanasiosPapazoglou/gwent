@@ -1,6 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
-
-import 'dart:convert';
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/enums.dart';
@@ -8,46 +6,8 @@ import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/Card-Models/special_model.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
 
-List <UnitCard> neutralUnits = [
-  UnitCard(id: 0, cardName: 'Cirilla Fiona Elen Rianno 2.png', strength: 15, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: true,),
-  UnitCard(id: 1, cardName: 'Dandelion 2.png', strength: 2, battlerow: brows.melee, hasEffect: true, effect: beffects.horn, isHero: false,),
-  UnitCard(id: 2, cardName: 'Emiel Regis Rohellec Terzieff 2.png', strength: 5, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false,),
-  UnitCard(id: 3, cardName: 'Geralt of Rivia 2.png', strength: 15, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: true,),
-  UnitCard(id: 4, cardName: 'Mysterious Elf 2.png', strength: 0, battlerow: brows.melee, hasEffect: true, effect: beffects.spy, isHero: true,),
-  UnitCard(id: 5, cardName: 'Triss Merigold 2.png', strength: 7, battlerow: brows.ranged, hasEffect: false, effect: beffects.none, isHero: true,),
-  UnitCard(id: 6, cardName: 'Vesemir 2.png', strength: 6, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false,),
-  UnitCard(id: 7, cardName: 'Villentretenmerth 2.png', strength: 7, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false,),
-  UnitCard(id: 8, cardName: 'Yennefer of Vengerberg 2.png', strength: 7, battlerow: brows.ranged, hasEffect: true, effect: beffects.medic, isHero: true,),
-  UnitCard(id: 9, cardName: 'Zoltan Chivay 2.png', strength: 5, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false),
-];
 
-List <SpecialCard> specialCards = [
-  SpecialCard(id: 0, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: brows.arena, battleEffect: beffects.none,),
-  SpecialCard(id: 1, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: brows.arena, battleEffect: beffects.none,),
-  SpecialCard(id: 2, cardName: 'Biting Frost 1.png', weatherEffect: wEffects.frost, battlerow: brows.arena, battleEffect: beffects.none,),
-  SpecialCard(id: 3, cardName: 'Impenetrable Fog 1.png', weatherEffect: wEffects.fog, battlerow: brows.arena, battleEffect: beffects.none),
-  SpecialCard(id: 4, cardName: 'Impenetrable Fog 1.png', weatherEffect: wEffects.fog, battlerow: brows.arena, battleEffect: beffects.none),
-  SpecialCard(id: 5, cardName: 'Impenetrable Fog 1.png', weatherEffect: wEffects.fog, battlerow: brows.arena, battleEffect: beffects.none),
-  SpecialCard(id: 6, cardName: 'Torrential Rain 1.png', weatherEffect: wEffects.rain, battlerow: brows.arena, battleEffect: beffects.none),
-  SpecialCard(id: 7, cardName: 'Torrential Rain 1.png', weatherEffect: wEffects.rain, battlerow: brows.arena, battleEffect: beffects.none),
-  SpecialCard(id: 8, cardName: 'Torrential Rain 1.png', weatherEffect: wEffects.rain, battlerow: brows.arena, battleEffect: beffects.none),
-  SpecialCard(id: 9, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: brows.arena, battleEffect: beffects.none,),
-  SpecialCard(id: 10, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: brows.arena, battleEffect: beffects.none,),
-  SpecialCard(id: 11, cardName: 'Clear Weather 1.png', weatherEffect: wEffects.clear, battlerow: brows.arena, battleEffect: beffects.none,),
-  SpecialCard(id: 12, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: brows.limitless, battleEffect: beffects.horn,),
-  SpecialCard(id: 13, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: brows.limitless, battleEffect: beffects.horn,),
-  SpecialCard(id: 14, cardName: 'Commander \'s Horn 1.png', weatherEffect: wEffects.none, battlerow: brows.limitless, battleEffect: beffects.horn,),
-  SpecialCard(id: 15, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: brows.limitless, battleEffect: beffects.decoy,),
-  SpecialCard(id: 16, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: brows.limitless, battleEffect: beffects.decoy,),
-  SpecialCard(id: 17, cardName: 'Decoy 1.png', weatherEffect: wEffects.none, battlerow: brows.limitless, battleEffect: beffects.decoy,),
-  SpecialCard(id: 18, cardName: 'Scorch 1.png', weatherEffect: wEffects.none, battlerow: brows.arena, battleEffect: beffects.scortch),
-  SpecialCard(id: 19, cardName: 'Scorch 1.png', weatherEffect: wEffects.none, battlerow: brows.arena, battleEffect: beffects.scortch),
-  SpecialCard(id: 20, cardName: 'Scorch 1.png', weatherEffect: wEffects.none, battlerow: brows.arena, battleEffect: beffects.scortch),
-];
-
-
-//! MONSTARZ------------------------------------
-List <UnitCard> monstersUnits = [
+List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Arachas 1.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),
   UnitCard(id: 1, cardName: 'Arachas 2.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),
   UnitCard(id: 2, cardName: 'Arachas 3.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),
@@ -90,10 +50,14 @@ List <UnitCard> monstersUnits = [
   UnitCard(id: 39, cardName: 'Wyvern.png', strength: 2, battlerow: brows.ranged, hasEffect: false, effect: beffects.none, isHero: false),
 ];
 
+List<UnitCard> monstersUnitsSelected =[];
 
 
-//! MILFGUARD ---------------------------------
-List <UnitCard> nilfggardUnits = [
+
+
+
+
+List<UnitCard> nilfggardUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Albrich.png', strength: 2, battlerow: brows.ranged, hasEffect: false, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Assire var Anahid.png', strength: 6, battlerow: brows.ranged, hasEffect: false, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Black Infantry Archer 1.png', strength: 10, battlerow: brows.ranged, hasEffect: false, effect: beffects.none, isHero: false),
@@ -133,10 +97,14 @@ List <UnitCard> nilfggardUnits = [
   UnitCard(id: 36, cardName: 'Zerrikanian Fire Scorpion.png', strength: 5, battlerow: brows.siege, hasEffect: false, effect: beffects.none, isHero: false)
 ];
 
+List<UnitCard> nilfggardUnitsSelected = [];
 
 
-//! Northern Realms----------------------
-List <UnitCard> northernRealmsUnits = [
+
+
+
+
+List <UnitCard> unselectedNorthernRealmsUnits = [
   UnitCard(id: 0, cardName: 'Ballista 1.png', strength: 6, battlerow: brows.siege, hasEffect: false, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Ballista 2.png', strength: 6, battlerow: brows.siege, hasEffect: false, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Blue Stripes Commando 1.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.bond, isHero: false),
@@ -177,8 +145,12 @@ List <UnitCard> northernRealmsUnits = [
   UnitCard(id: 37, cardName: 'Yarpen Zigrin.png', strength: 2, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false),
 ];
 
+List<UnitCard> selectedNorthernRealmsUnits = [];
 
-List <UnitCard> ScoiataelUnits = [
+
+
+
+List <UnitCard> unselectedScoiataelUnits = [
 UnitCard(id: 0, cardName: 'Barclay Els.png', strength: 6, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
 UnitCard(id: 1, cardName: 'Ciaran aep Easnillien.png', strength: 3, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
 UnitCard(id: 2, cardName: 'Dennis Cranmer.png', strength: 6, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false),
@@ -219,13 +191,4 @@ UnitCard(id: 36, cardName: 'Yaevinn.png', strength: 6, battlerow: brows.agile, h
 ];
 
 
-
-
-List<LeaderCard> monstersLeaders = [
-  LeaderCard(id: 0, cardName: 'Eredin Bringer of Death.png', leaderEffect: LeaderEffect.mon1,),
-  LeaderCard(id: 1, cardName: 'Eredin Commander of the Red Riders.png', leaderEffect: LeaderEffect.mon2),
-  LeaderCard(id: 2, cardName: 'Eredin Destroyer of Worlds.png', leaderEffect: LeaderEffect.mon3),
-  LeaderCard(id: 3, cardName: 'Eredin King of the Wild Hunt.png', leaderEffect: LeaderEffect.mon4),
-];
-
-
+List<UnitCard> selectedScoiataelUnits = [];
