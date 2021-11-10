@@ -7,7 +7,7 @@ import 'package:gwent/App-Utilities/deckDataBase.dart';
 class DeckButton extends StatelessWidget {
   final String imageURL;
   final String deckName;
-  final String assetDirectory;
+  final String assetDirectory;//path συγκεκριμενου Units Deck
   final Color deckColors;
   final String subtitleText;
   final List unselectedListToRender;
@@ -16,7 +16,7 @@ class DeckButton extends StatelessWidget {
   DeckButton({
       required this.imageURL,
       required this.deckName,
-      required this.assetDirectory,
+      required this.assetDirectory,//path συγκεκριμενου Units Deck
       required this.deckColors,
       required this.subtitleText,
       required this.unselectedListToRender,
@@ -31,9 +31,9 @@ class DeckButton extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => CustomiseDeck(
-              unselectedListToRender: unselectedListToRender,
-              selectedListToRender: selectedListToRender,
-              assetDirectory: assetDirectory,
+              unselectedList: unselectedListToRender,
+              selectedList: selectedListToRender,
+              assetDirectory: assetDirectory, //αφορα τις εικονες του deck
             ),
           ),
         );
