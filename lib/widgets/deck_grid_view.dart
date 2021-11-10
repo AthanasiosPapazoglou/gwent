@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/Card-Models/unit_model.dart';
 import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 
@@ -23,6 +24,7 @@ class DeckGridView extends StatelessWidget {
       itemCount: listToRender.length,
       itemBuilder: (ctx, i) {
         return GridCardItem(
+          unitCard: listToRender[i],
           cardName: listToRender[i].cardName,
           assetDirectory: assetDirectory,
           listToRender: listToRender,
