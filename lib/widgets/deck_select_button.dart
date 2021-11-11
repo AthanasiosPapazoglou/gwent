@@ -10,8 +10,8 @@ class DeckButton extends StatelessWidget {
   final String assetDirectory;//path συγκεκριμενου Units Deck
   final Color deckColors;
   final String subtitleText;
-  final List unselectedListToRender;
-  final List selectedListToRender;
+  //final List unselectedListToRender;
+  //final List selectedListToRender;
 
   DeckButton({
       required this.imageURL,
@@ -19,8 +19,8 @@ class DeckButton extends StatelessWidget {
       required this.assetDirectory,//path συγκεκριμενου Units Deck
       required this.deckColors,
       required this.subtitleText,
-      required this.unselectedListToRender,
-      required this.selectedListToRender,
+      //required this.unselectedListToRender,
+      //required this.selectedListToRender,
       });
 
   @override
@@ -31,8 +31,8 @@ class DeckButton extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => CustomiseDeck(
-              unselectedList: unselectedListToRender,
-              selectedList: selectedListToRender,
+              //unselectedList: unselectedListToRender,
+              //selectedList: selectedListToRender,
               assetDirectory: assetDirectory, //αφορα τις εικονες του deck
             ),
           ),

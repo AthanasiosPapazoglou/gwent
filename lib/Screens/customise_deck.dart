@@ -7,15 +7,13 @@ import 'package:gwent/widgets/deck_grid_view.dart';
 import 'package:gwent/widgets/filter_row.dart';
 import 'package:gwent/widgets/leader_card_widget.dart';
 import 'package:gwent/widgets/middle_bar_info.dart';
+import 'package:gwent/widgets/other_deck.dart';
 
 class CustomiseDeck extends StatefulWidget {
-  final List unselectedList;
-  final List selectedList;
+  
   final String assetDirectory;//path συγκεκριμενου Units Deck
 
-  CustomiseDeck({required this.unselectedList, required this.selectedList, required this.assetDirectory});
-
-  //String
+  CustomiseDeck({ required this.assetDirectory});
 
   @override
   _CustomiseDeckState createState() => _CustomiseDeckState();
@@ -47,8 +45,8 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(26.0),
               child: DeckGridView(
-                listToRender: widget.unselectedList,
-                listToCompare: widget.selectedList,
+                //listToRender: widget.unselectedList,
+                //listToCompare: widget.selectedList,
                 assetDirectory: widget.assetDirectory,
               ),
             ),
@@ -63,9 +61,9 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             flex: 4,
             child: Padding(
               padding: const EdgeInsets.all(26.0),
-              child: DeckGridView(
-                listToRender: widget.selectedList,
-                listToCompare: widget.unselectedList,
+              child: OtherDeckGridView(
+                //listToRender: widget.selectedList,
+                //listToCompare: widget.unselectedList,
                 assetDirectory: widget.assetDirectory,
               ),
             ),

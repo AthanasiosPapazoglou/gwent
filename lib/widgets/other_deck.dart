@@ -7,27 +7,26 @@ import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:provider/provider.dart';
 
-class DeckGridView extends StatelessWidget {
+class OtherDeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
 
   final String assetDirectory;
 
-  DeckGridView({required this.assetDirectory});
+  OtherDeckGridView({ required this.assetDirectory});
 
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
     return GridView.builder(
-      //padding: const EdgeInsets.all(8),
-      itemCount: customDecks.monstersUnitsUnselected.length,
+      itemCount: customDecks.monstersUnitsSelected.length,
       itemBuilder: (ctx, i) {
         return GridCardItem(
-          unitCard: customDecks.monstersUnitsUnselected[i],
-          cardName: customDecks.monstersUnitsUnselected[i].cardName,
+          unitCard: customDecks.monstersUnitsSelected[i],
+          cardName: customDecks.monstersUnitsSelected[i].cardName,
           assetDirectory: assetDirectory,
-          listToRender: customDecks.monstersUnitsUnselected,
-          listToCompare: customDecks.monstersUnitsSelected,
-        ); //path συγκεκριμενου Units Deck
+          listToRender: customDecks.monstersUnitsSelected,
+          listToCompare: customDecks.monstersUnitsUnselected,
+        );
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
