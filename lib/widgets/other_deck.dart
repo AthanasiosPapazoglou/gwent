@@ -10,20 +10,14 @@ import 'package:provider/provider.dart';
 class OtherDeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
 
-  //final List listToRender;
-  //final List listToCompare;
   final String assetDirectory;
 
-  OtherDeckGridView(
-      {//required this.listToRender,
-      //required this.listToCompare,
-      required this.assetDirectory});
+  OtherDeckGridView({ required this.assetDirectory});
 
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
     return GridView.builder(
-      //padding: const EdgeInsets.all(8),
       itemCount: customDecks.monstersUnitsSelected.length,
       itemBuilder: (ctx, i) {
         return GridCardItem(
@@ -32,7 +26,7 @@ class OtherDeckGridView extends StatelessWidget {
           assetDirectory: assetDirectory,
           listToRender: customDecks.monstersUnitsSelected,
           listToCompare: customDecks.monstersUnitsUnselected,
-        ); //path συγκεκριμενου Units Deck
+        );
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,

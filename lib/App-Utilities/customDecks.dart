@@ -13,6 +13,7 @@ class CustomDecks extends ChangeNotifier{
     notifyListeners();
   }
 
+  
 List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Arachas 1.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),
   UnitCard(id: 1, cardName: 'Arachas 2.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),

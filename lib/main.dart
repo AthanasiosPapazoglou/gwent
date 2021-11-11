@@ -15,8 +15,6 @@ import 'App-Utilities/customDecks.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();
-   // SystemChrome.setPreferredOrientations(
-   // [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     SystemChrome.setEnabledSystemUIOverlays([]);
       print('print works');
 

@@ -1,10 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/customDecks.dart';
 import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
+import 'package:gwent/App-Utilities/customDecks.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/widgets/cancel_save.dart';
+import 'package:provider/provider.dart';
 
 class MiddleBarInfo extends StatelessWidget {
   final String leaderCardName;
@@ -17,6 +20,15 @@ class MiddleBarInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final customDecks = Provider.of<CustomDecks>(context);
+    int power = 0;
+    int heroes = 0;
+    for(int i=0; i < customDecks.monstersUnitsSelected.length; i++){
+      power = power + customDecks.monstersUnitsSelected[i].strength;
+      if(customDecks.monstersUnitsSelected[i].isHero){
+        heroes++;
+      }
+    }
     return Padding(
       padding: const EdgeInsets.all(26.0),
       child: Container(
@@ -37,7 +49,7 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '12',
+              customDecks.monstersUnitsSelected.length.toString(),
               style: TextStyle(
                 fontSize: 12,
                 color: kInfoNumColor,
@@ -53,11 +65,12 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '12/22',
+              '${customDecks.monstersUnitsSelected.length.toString()}/22',
               style: TextStyle(
-                fontSize: 12,
-                color: kInfoNumColor,
-              ),
+                  fontSize: 12,
+                  color: (customDecks.monstersUnitsSelected.length < 22)
+                      ? Colors.red
+                      : Colors.green),
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
@@ -85,7 +98,7 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '62',
+              power.toString(),
               style: TextStyle(
                 fontSize: 12,
                 color: kInfoNumColor,
@@ -101,7 +114,7 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '3',
+              heroes.toString(),
               style: TextStyle(
                 fontSize: 12,
                 color: kInfoNumColor,

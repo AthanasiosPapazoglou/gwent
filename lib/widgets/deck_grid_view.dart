@@ -10,14 +10,9 @@ import 'package:provider/provider.dart';
 class DeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
 
-  //final List listToRender;
-  //final List listToCompare;
   final String assetDirectory;
 
-  DeckGridView(
-      {//required this.listToRender,
-      //required this.listToCompare,
-      required this.assetDirectory});
+  DeckGridView({required this.assetDirectory});
 
   @override
   Widget build(BuildContext context) {

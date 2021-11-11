@@ -34,8 +34,6 @@ class GridCardItem extends StatelessWidget {
             listToCompare.remove(unitCard);
           }
           refresh.refreshLists();
-          print(listToCompare);
-          print(listToRender);
         },
         child: Image(
           image: AssetImage('$assetDirectory$cardName'),

@@ -10,13 +10,10 @@ import 'package:gwent/widgets/middle_bar_info.dart';
 import 'package:gwent/widgets/other_deck.dart';
 
 class CustomiseDeck extends StatefulWidget {
-  //final List unselectedList;
-  //final List selectedList;
+  
   final String assetDirectory;//path συγκεκριμενου Units Deck
 
-  CustomiseDeck({/*required this.unselectedList, required this.selectedList,*/ required this.assetDirectory});
-
-  //String
+  CustomiseDeck({ required this.assetDirectory});
 
   @override
   _CustomiseDeckState createState() => _CustomiseDeckState();
