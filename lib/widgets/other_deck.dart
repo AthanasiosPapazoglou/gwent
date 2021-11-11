@@ -7,14 +7,14 @@ import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:provider/provider.dart';
 
-class DeckGridView extends StatelessWidget {
+class OtherDeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
 
   //final List listToRender;
   //final List listToCompare;
   final String assetDirectory;
 
-  DeckGridView(
+  OtherDeckGridView(
       {//required this.listToRender,
       //required this.listToCompare,
       required this.assetDirectory});
@@ -24,14 +24,14 @@ class DeckGridView extends StatelessWidget {
     final customDecks = Provider.of<CustomDecks>(context);
     return GridView.builder(
       //padding: const EdgeInsets.all(8),
-      itemCount: customDecks.monstersUnitsUnselected.length,
+      itemCount: customDecks.monstersUnitsSelected.length,
       itemBuilder: (ctx, i) {
         return GridCardItem(
-          unitCard: customDecks.monstersUnitsUnselected[i],
-          cardName: customDecks.monstersUnitsUnselected[i].cardName,
+          unitCard: customDecks.monstersUnitsSelected[i],
+          cardName: customDecks.monstersUnitsSelected[i].cardName,
           assetDirectory: assetDirectory,
-          listToRender: customDecks.monstersUnitsUnselected,
-          listToCompare: customDecks.monstersUnitsSelected,
+          listToRender: customDecks.monstersUnitsSelected,
+          listToCompare: customDecks.monstersUnitsUnselected,
         ); //path συγκεκριμενου Units Deck
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
