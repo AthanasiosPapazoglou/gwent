@@ -5,8 +5,15 @@ import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/Card-Models/special_model.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
+import 'package:provider/provider.dart';
 
+class CustomDecks extends ChangeNotifier{
 
+  void refreshLists () {
+    notifyListeners();
+  }
+
+  
 List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Arachas 1.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),
   UnitCard(id: 1, cardName: 'Arachas 2.png', strength: 4, battlerow: brows.melee, hasEffect: true, effect: beffects.muster, isHero: false,),
@@ -51,9 +58,6 @@ List <UnitCard> monstersUnitsUnselected = [
 ];
 
 List<UnitCard> monstersUnitsSelected =[];
-
-
-
 
 
 
@@ -191,4 +195,7 @@ UnitCard(id: 36, cardName: 'Yaevinn.png', strength: 6, battlerow: brows.agile, h
 ];
 
 
+
 List<UnitCard> selectedScoiataelUnits = [];
+
+}

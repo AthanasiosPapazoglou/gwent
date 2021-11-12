@@ -6,6 +6,8 @@ import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/customDecks.dart';
 import 'package:gwent/widgets/deck_select_button.dart';
 import 'package:gwent/App-Utilities/constants.dart';
+import 'package:gwent/App-Utilities/deckDataBase.dart';
+//import 'package:provider/provider.dart';
 
 class SetupDecksMenu extends StatelessWidget {
   static const routeName = '/Setup-Decks-screen';
@@ -13,6 +15,7 @@ class SetupDecksMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     portraitMode();
+    //CustomDecks customDecks = Provider.of<CustomDecks>(context);
     return Scaffold(
       body: Center(
         child: Container(
@@ -27,8 +30,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kMonUnitsAD,
                 deckColors: Colors.red.shade400,
                 subtitleText: kMonDesc,
-                unselectedListToRender: monstersUnitsUnselected,
-                selectedListToRender: monstersUnitsSelected,
+                //unselectedListToRender: customDecks.monstersUnitsUnselected,
+                //selectedListToRender: customDecks.monstersUnitsSelected,
               ),
               DeckButton(
                 imageURL: kNilfBackAD,
@@ -36,8 +39,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kNilfUnitsAD,
                 deckColors: Colors.yellow.shade400,
                 subtitleText: kNilfDesc,
-                unselectedListToRender: nilfggardUnitsUnselected,
-                selectedListToRender: nilfggardUnitsSelected,
+                //unselectedListToRender: customDecks.nilfggardUnitsUnselected,
+                //selectedListToRender: customDecks.nilfggardUnitsSelected,
               ),
               DeckButton(
                 imageURL: kNorthBackAD,
@@ -45,8 +48,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kNorthUnitsAD,
                 deckColors: Colors.blue.shade400,
                 subtitleText: kNorthDesc,
-                unselectedListToRender: unselectedNorthernRealmsUnits,
-                selectedListToRender: selectedNorthernRealmsUnits
+                //unselectedListToRender: customDecks.unselectedNorthernRealmsUnits,
+                //selectedListToRender: customDecks.selectedNorthernRealmsUnits
               ),
               DeckButton(
                 imageURL: kScoiaBackAD,
@@ -54,8 +57,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kScoiaUnitsAD,
                 deckColors: Colors.green.shade400,
                 subtitleText: kScoiaDesc,
-                unselectedListToRender: unselectedScoiataelUnits,
-                selectedListToRender: selectedScoiataelUnits
+                //unselectedListToRender: customDecks.unselectedScoiataelUnits,
+                //selectedListToRender: customDecks.selectedScoiataelUnits
               ),
             ]),
           ),

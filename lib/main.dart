@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/customDecks.dart';
 import 'Screens/main_Menu.dart';
 import 'package:flutter/services.dart';
 import 'Screens/game_screen.dart';
@@ -9,11 +10,11 @@ import 'Screens/setup_deck_menu.dart';
 import 'package:gwent/widgets/deck_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:audio_service/audio_service.dart';
+import 'package:provider/provider.dart';
+import 'App-Utilities/customDecks.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();
-   // SystemChrome.setPreferredOrientations(
-   // [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     SystemChrome.setEnabledSystemUIOverlays([]);
       print('print works');
 
@@ -25,8 +26,9 @@ class Gwent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (ctx) => CustomDecks(),
+    child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainMenu(),
       routes: {
@@ -35,6 +37,7 @@ class Gwent extends StatelessWidget {
          Game.routeName: (ctx) => Game(),
          SetupDecksMenu.routeName: (ctx) => SetupDecksMenu(),
       },
+    ),
     );
   }
 }

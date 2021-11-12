@@ -178,7 +178,7 @@ List <UnitCard> northernRealmsUnits = [
 ];
 
 
-List <UnitCard> ScoiataelUnits = [
+List <UnitCard> scoiataelUnits = [
 UnitCard(id: 0, cardName: 'Barclay Els.png', strength: 6, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
 UnitCard(id: 1, cardName: 'Ciaran aep Easnillien.png', strength: 3, battlerow: brows.agile, hasEffect: false, effect: beffects.none, isHero: false),
 UnitCard(id: 2, cardName: 'Dennis Cranmer.png', strength: 6, battlerow: brows.melee, hasEffect: false, effect: beffects.none, isHero: false),
@@ -229,3 +229,25 @@ List<LeaderCard> monstersLeaders = [
 ];
 
 
+List<LeaderCard> northernRealmsLeaders = [
+  LeaderCard(id: 0, cardName: 'Foltest King of Temeria.png', leaderEffect: LeaderEffect.nr1,),
+  LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png ', leaderEffect: LeaderEffect.nr2),
+  LeaderCard(id: 2, cardName: 'Foltest the Siegemaster.png', leaderEffect: LeaderEffect.nr3),
+  LeaderCard(id: 3, cardName: 'Foltest the Steel-Forged.png', leaderEffect: LeaderEffect.nr4),
+];
+
+
+List<LeaderCard> nilfgaardLeaders = [
+  LeaderCard(id: 0, cardName: 'Emhyr var Emreis Emperor of Nilfgaard.png', leaderEffect: LeaderEffect.nilf1),
+  LeaderCard(id: 1, cardName: 'Emhyr var Emreis His Imperial Majesty.png', leaderEffect: LeaderEffect.nilf2),
+  LeaderCard(id: 2, cardName: 'Emhyr var Emreis the Relentless.png', leaderEffect: LeaderEffect.nilf3),
+  LeaderCard(id: 2, cardName: 'Emhyr var Emreis the White Flame.png', leaderEffect: LeaderEffect.nilf4),
+];
+
+
+List<LeaderCard> scoiataelLeaders = [
+  LeaderCard(id: 0, cardName: 'Francesca Findabair Daisy of The Vaille.png', leaderEffect: LeaderEffect.sco1),
+  LeaderCard(id: 1, cardName: 'Francesca Findabair Pureblood Elf.png', leaderEffect: LeaderEffect.sco2),
+  LeaderCard(id: 2, cardName: 'Francesca Findabair Queen of Dol Blathanna.png', leaderEffect: LeaderEffect.sco3),
+  LeaderCard(id: 3, cardName: 'Francesca Findabair the Beautiful.png', leaderEffect: LeaderEffect.sco4),
+];
