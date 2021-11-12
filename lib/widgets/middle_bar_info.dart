@@ -36,9 +36,9 @@ class MiddleBarInfo extends StatelessWidget {
     ];
     int power = 0;
     int heroes = 0;
-    for(int i=0; i < customDecks.monstersUnitsSelected.length; i++){
-      power = power + customDecks.monstersUnitsSelected[i].strength;
-      if(customDecks.monstersUnitsSelected[i].isHero){
+    for(int i=0; i < customDeckDB[renderIndex].length; i++){
+      power = power + customDeckDB[renderIndex][i].strength;
+      if(customDeckDB[renderIndex][i].isHero){
         heroes++;
       }
     }
@@ -62,7 +62,7 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              customDecks.monstersUnitsSelected.length.toString(),
+              customDeckDB[renderIndex].length.toString(),
               style: TextStyle(
                 fontSize: 12,
                 color: kInfoNumColor,
@@ -78,10 +78,10 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '${customDecks.monstersUnitsSelected.length.toString()}/22',
+              '${customDeckDB[renderIndex].length.toString()}/22',
               style: TextStyle(
                   fontSize: 12,
-                  color: (customDecks.monstersUnitsSelected.length < 22)
+                  color: (customDeckDB[renderIndex].length < 22)
                       ? Colors.red
                       : Colors.green),
             ),

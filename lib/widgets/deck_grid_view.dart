@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'grid_card_item.dart';
@@ -22,7 +23,7 @@ class DeckGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
-    final List<List<UnitCard>> customDeckDB = [
+    final List customDeckDB = [
       customDecks.monstersUnitsUnselected,
       customDecks.monstersUnitsSelected,
       customDecks.nilfggardUnitsUnselected,
@@ -33,21 +34,27 @@ class DeckGridView extends StatelessWidget {
       customDecks.selectedScoiataelUnits
     ];
     return GridView.builder(
-      //padding: const EdgeInsets.all(8),
-      itemCount: customDeckDB[renderIndex]
-          .length, //customDecks.monstersUnitsUnselected.length,
+      itemCount: customDeckDB[renderIndex].length,
       itemBuilder: (ctx, i) {
-        return GridCardItem(
-          unitCard: customDeckDB[renderIndex]
-              [i], //customDecks.monstersUnitsUnselected[i],
-          cardName: customDeckDB[renderIndex][i]
-              .cardName, //customDecks.monstersUnitsUnselected[i].cardName,
-          assetDirectory: assetDirectory,
-          listToRender: customDeckDB[
-              renderIndex], //customDecks.monstersUnitsUnselected,
-          listToCompare: customDeckDB[
-              compareIndex], //customDecks.monstersUnitsSelected,
-        ); //path συγκεκριμενου Units Deck
+        if (customDeckDB[renderIndex][i].id <= 20) {
+          return GridCardItem(
+            unitCard: customDeckDB[renderIndex][i],
+            cardName: customDeckDB[renderIndex][i].cardName,
+            assetDirectory: kSpecialCardsAD,
+            listToRender: customDeckDB[renderIndex],
+            listToCompare: customDeckDB[compareIndex],
+          );
+        } else {
+          return GridCardItem(
+            unitCard: customDeckDB[renderIndex][i],
+            cardName: customDeckDB[renderIndex][i].cardName,
+            assetDirectory: (customDeckDB[renderIndex][i].id <= 30)
+                ? kNeutralUnitsAD
+                : assetDirectory,
+            listToRender: customDeckDB[renderIndex],
+            listToCompare: customDeckDB[compareIndex],
+          );
+        }
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
