@@ -1,31 +1,44 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/widgets/cancel_save.dart';
 import 'package:provider/provider.dart';
+import 'package:gwent/Card-Models/unit_model.dart';
 
 class MiddleBarInfo extends StatelessWidget {
   final String leaderCardName;
   final String leaderSetDirectory;
+  final int renderIndex;
 
   MiddleBarInfo({
     required this.leaderCardName,
     required this.leaderSetDirectory,
+    required this.renderIndex
   });
 
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
+    final List<List<UnitCard>> customDeckDB = [
+      customDecks.monstersUnitsUnselected,
+      customDecks.monstersUnitsSelected,
+      customDecks.nilfggardUnitsUnselected,
+      customDecks.nilfggardUnitsSelected,
+      customDecks.unselectedNorthernRealmsUnits,
+      customDecks.selectedNorthernRealmsUnits,
+      customDecks.unselectedScoiataelUnits,
+      customDecks.selectedScoiataelUnits
+    ];
     int power = 0;
     int heroes = 0;
-    for(int i=0; i < customDecks.monstersUnitsSelected.length; i++){
-      power = power + customDecks.monstersUnitsSelected[i].strength;
-      if(customDecks.monstersUnitsSelected[i].isHero){
+    for(int i=0; i < customDeckDB[renderIndex].length; i++){
+      power = power + customDeckDB[renderIndex][i].strength;
+      if(customDeckDB[renderIndex][i].isHero){
         heroes++;
       }
     }
@@ -49,7 +62,7 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              customDecks.monstersUnitsSelected.length.toString(),
+              customDeckDB[renderIndex].length.toString(),
               style: TextStyle(
                 fontSize: 12,
                 color: kInfoNumColor,
@@ -65,10 +78,10 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '${customDecks.monstersUnitsSelected.length.toString()}/22',
+              '${customDeckDB[renderIndex].length.toString()}/22',
               style: TextStyle(
                   fontSize: 12,
-                  color: (customDecks.monstersUnitsSelected.length < 22)
+                  color: (customDeckDB[renderIndex].length < 22)
                       ? Colors.red
                       : Colors.green),
             ),

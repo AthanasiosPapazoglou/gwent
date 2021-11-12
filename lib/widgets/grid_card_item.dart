@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:provider/provider.dart';
 

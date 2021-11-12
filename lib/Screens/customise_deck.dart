@@ -10,10 +10,14 @@ import 'package:gwent/widgets/middle_bar_info.dart';
 import 'package:gwent/widgets/other_deck.dart';
 
 class CustomiseDeck extends StatefulWidget {
-  
-  final String assetDirectory;//path συγκεκριμενου Units Deck
+  final String assetDirectory; //path συγκεκριμενου Units Deck
+  final int unselectedIndex;
+  final int selectedIndex;
 
-  CustomiseDeck({ required this.assetDirectory});
+  CustomiseDeck(
+      {required this.assetDirectory,
+      required this.unselectedIndex,
+      required this.selectedIndex});
 
   @override
   _CustomiseDeckState createState() => _CustomiseDeckState();
@@ -27,10 +31,10 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
   }
 
   @override
-  dispose(){
-  portraitMode();
-  super.dispose();
-}
+  dispose() {
+    portraitMode();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +52,8 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
                 //listToRender: widget.unselectedList,
                 //listToCompare: widget.selectedList,
                 assetDirectory: widget.assetDirectory,
+                renderIndex: widget.unselectedIndex,
+                compareIndex: widget.selectedIndex,
               ),
             ),
           ),
@@ -55,16 +61,19 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             flex: 3,
             child: MiddleBarInfo(
                 leaderCardName: monstersLeaders[0].cardName,
-                leaderSetDirectory: kMonLeadersAD),
+                leaderSetDirectory: kMonLeadersAD,
+                renderIndex: widget.selectedIndex,),
           ),
           Flexible(
             flex: 4,
             child: Padding(
               padding: const EdgeInsets.all(26.0),
-              child: OtherDeckGridView(
+              child: DeckGridView(
                 //listToRender: widget.selectedList,
                 //listToCompare: widget.unselectedList,
                 assetDirectory: widget.assetDirectory,
+                renderIndex: widget.selectedIndex,
+                compareIndex: widget.unselectedIndex,
               ),
             ),
           ),

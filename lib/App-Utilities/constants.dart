@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+String kNeutralUnitsAD = 'GameAssets/NeutralUnits/';
+String kSpecialCardsAD = 'GameAssets/SpecialCards/';
+
 String kMonDesc = 'A Chaotic Assualt Deck';
 String kMonUnitsAD = 'GameAssets/Decks/Monsters/';
 String kMonLeadersAD = 'GameAssets/Leaders/Monsters/';
@@ -25,6 +28,6 @@ String kScoiaLeadersAD = 'GameAssets/Leaders/Scoia\'tael/';
 String kScoiaBackAD = 'GameAssets/Back/Scoia\'tael back.png';
 
 
-double kDistanceOnInfo = 6;
+double kDistanceOnInfo = 4;
 Color kInfoTextColor = Colors.amber.shade200;
 Color kInfoNumColor = Colors.amber.shade50;

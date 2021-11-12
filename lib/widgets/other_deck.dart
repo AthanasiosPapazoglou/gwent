@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
