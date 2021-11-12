@@ -15,11 +15,10 @@ class MiddleBarInfo extends StatelessWidget {
   final String leaderSetDirectory;
   final int renderIndex;
 
-  MiddleBarInfo({
-    required this.leaderCardName,
-    required this.leaderSetDirectory,
-    required this.renderIndex
-  });
+  MiddleBarInfo(
+      {required this.leaderCardName,
+      required this.leaderSetDirectory,
+      required this.renderIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +37,12 @@ class MiddleBarInfo extends StatelessWidget {
     int units = 0;
     int heroes = 0;
     int special = 0;
-    for(int i=0; i < customDeckDB[renderIndex].length; i++){
+    for (int i = 0; i < customDeckDB[renderIndex].length; i++) {
       power = power + customDeckDB[renderIndex][i].strength;
-      if(customDeckDB[renderIndex][i].isHero){
+      if (customDeckDB[renderIndex][i].isHero) {
         heroes++;
       }
-      (customDeckDB[renderIndex][i].id <= 20) ? special++ : units++ ;
+      (customDeckDB[renderIndex][i].id <= 20) ? special++ : units++;
     }
     return Padding(
       padding: const EdgeInsets.all(26.0),
@@ -83,10 +82,9 @@ class MiddleBarInfo extends StatelessWidget {
             Text(
               '$units/22',
               style: TextStyle(
-                  fontSize: 12,
-                  color: (units < 22)
-                      ? Colors.red
-                      : Colors.green),
+                fontSize: 12,
+                color: (units < 22) ? Colors.red : Colors.green,
+              ),
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
@@ -101,7 +99,7 @@ class MiddleBarInfo extends StatelessWidget {
               '$special/10',
               style: TextStyle(
                 fontSize: 12,
-                color: kInfoNumColor,
+                color: (special < 10) ? Colors.green : Colors.yellow,
               ),
             ),
             SizedBox(height: kDistanceOnInfo),
