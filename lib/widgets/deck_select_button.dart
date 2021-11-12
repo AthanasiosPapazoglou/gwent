@@ -10,6 +10,8 @@ class DeckButton extends StatelessWidget {
   final String assetDirectory;//path συγκεκριμενου Units Deck
   final Color deckColors;
   final String subtitleText;
+  final int unselectedIndex;
+  final int selectedIndex;
   //final List unselectedListToRender;
   //final List selectedListToRender;
 
@@ -19,6 +21,8 @@ class DeckButton extends StatelessWidget {
       required this.assetDirectory,//path συγκεκριμενου Units Deck
       required this.deckColors,
       required this.subtitleText,
+      required this.unselectedIndex,
+      required this.selectedIndex
       //required this.unselectedListToRender,
       //required this.selectedListToRender,
       });
@@ -33,7 +37,10 @@ class DeckButton extends StatelessWidget {
             builder: (context) => CustomiseDeck(
               //unselectedList: unselectedListToRender,
               //selectedList: selectedListToRender,
+              
               assetDirectory: assetDirectory, //αφορα τις εικονες του deck
+              unselectedIndex: unselectedIndex,
+              selectedIndex: selectedIndex,
             ),
           ),
         );
