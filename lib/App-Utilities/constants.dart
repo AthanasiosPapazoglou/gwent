@@ -25,6 +25,6 @@ String kScoiaLeadersAD = 'GameAssets/Leaders/Scoia\'tael/';
 String kScoiaBackAD = 'GameAssets/Back/Scoia\'tael back.png';
 
 
-double kDistanceOnInfo = 6;
+double kDistanceOnInfo = 5;
 Color kInfoTextColor = Colors.amber.shade200;
 Color kInfoNumColor = Colors.amber.shade50;
