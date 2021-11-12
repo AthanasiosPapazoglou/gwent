@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+String kNeutralUnitsAD = 'GameAssets/NeutralUnits/';
+String kSpecialCardsAD = 'GameAssets/SpecialCards/';
+
 String kMonDesc = 'A Chaotic Assualt Deck';
 String kMonUnitsAD = 'GameAssets/Decks/Monsters/';
 String kMonLeadersAD = 'GameAssets/Leaders/Monsters/';
