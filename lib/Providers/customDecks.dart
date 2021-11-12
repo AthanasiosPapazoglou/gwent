@@ -106,8 +106,6 @@ List<UnitCard> nilfggardUnitsSelected = [];
 
 
 
-
-
 List <UnitCard> unselectedNorthernRealmsUnits = [
   UnitCard(id: 0, cardName: 'Ballista 1.png', strength: 6, battlerow: brows.siege, hasEffect: false, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Ballista 2.png', strength: 6, battlerow: brows.siege, hasEffect: false, effect: beffects.none, isHero: false),
@@ -198,4 +196,6 @@ UnitCard(id: 36, cardName: 'Yaevinn.png', strength: 6, battlerow: brows.agile, h
 
 List<UnitCard> selectedScoiataelUnits = [];
 
+
 }
+

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'Screens/main_Menu.dart';
 import 'package:flutter/services.dart';
 import 'Screens/game_screen.dart';
@@ -11,7 +11,7 @@ import 'package:gwent/widgets/deck_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:provider/provider.dart';
-import 'App-Utilities/customDecks.dart';
+import 'Providers/customDecks.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
@@ -11,22 +11,42 @@ class DeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
 
   final String assetDirectory;
+  final int renderIndex;
+  final int compareIndex;
 
-  DeckGridView({required this.assetDirectory});
+  DeckGridView(
+      {required this.assetDirectory,
+      required this.renderIndex,
+      required this.compareIndex});
 
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
+    final List<List<UnitCard>> customDeckDB = [
+      customDecks.monstersUnitsUnselected,
+      customDecks.monstersUnitsSelected,
+      customDecks.nilfggardUnitsUnselected,
+      customDecks.nilfggardUnitsSelected,
+      customDecks.unselectedNorthernRealmsUnits,
+      customDecks.selectedNorthernRealmsUnits,
+      customDecks.unselectedScoiataelUnits,
+      customDecks.selectedScoiataelUnits
+    ];
     return GridView.builder(
       //padding: const EdgeInsets.all(8),
-      itemCount: customDecks.monstersUnitsUnselected.length,
+      itemCount: customDeckDB[renderIndex]
+          .length, //customDecks.monstersUnitsUnselected.length,
       itemBuilder: (ctx, i) {
         return GridCardItem(
-          unitCard: customDecks.monstersUnitsUnselected[i],
-          cardName: customDecks.monstersUnitsUnselected[i].cardName,
+          unitCard: customDeckDB[renderIndex]
+              [i], //customDecks.monstersUnitsUnselected[i],
+          cardName: customDeckDB[renderIndex][i]
+              .cardName, //customDecks.monstersUnitsUnselected[i].cardName,
           assetDirectory: assetDirectory,
-          listToRender: customDecks.monstersUnitsUnselected,
-          listToCompare: customDecks.monstersUnitsSelected,
+          listToRender: customDeckDB[
+              renderIndex], //customDecks.monstersUnitsUnselected,
+          listToCompare: customDeckDB[
+              compareIndex], //customDecks.monstersUnitsSelected,
         ); //path συγκεκριμενου Units Deck
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -38,4 +58,3 @@ class DeckGridView extends StatelessWidget {
     );
   }
 }
-

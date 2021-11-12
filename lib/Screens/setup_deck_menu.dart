@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/App-Utilities/customDecks.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/widgets/deck_select_button.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
@@ -30,6 +30,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kMonUnitsAD,
                 deckColors: Colors.red.shade400,
                 subtitleText: kMonDesc,
+                unselectedIndex: 0,
+                selectedIndex: 1
                 //unselectedListToRender: customDecks.monstersUnitsUnselected,
                 //selectedListToRender: customDecks.monstersUnitsSelected,
               ),
@@ -39,6 +41,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kNilfUnitsAD,
                 deckColors: Colors.yellow.shade400,
                 subtitleText: kNilfDesc,
+                unselectedIndex: 2,
+                selectedIndex: 3,
                 //unselectedListToRender: customDecks.nilfggardUnitsUnselected,
                 //selectedListToRender: customDecks.nilfggardUnitsSelected,
               ),
@@ -48,6 +52,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kNorthUnitsAD,
                 deckColors: Colors.blue.shade400,
                 subtitleText: kNorthDesc,
+                unselectedIndex: 4,
+                selectedIndex: 5,
                 //unselectedListToRender: customDecks.unselectedNorthernRealmsUnits,
                 //selectedListToRender: customDecks.selectedNorthernRealmsUnits
               ),
@@ -57,6 +63,8 @@ class SetupDecksMenu extends StatelessWidget {
                 assetDirectory: kScoiaUnitsAD,
                 deckColors: Colors.green.shade400,
                 subtitleText: kScoiaDesc,
+                unselectedIndex: 6,
+                selectedIndex: 7,
                 //unselectedListToRender: customDecks.unselectedScoiataelUnits,
                 //selectedListToRender: customDecks.selectedScoiataelUnits
               ),
