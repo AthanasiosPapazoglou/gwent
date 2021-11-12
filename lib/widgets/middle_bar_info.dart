@@ -35,12 +35,15 @@ class MiddleBarInfo extends StatelessWidget {
       customDecks.selectedScoiataelUnits
     ];
     int power = 0;
+    int units = 0;
     int heroes = 0;
+    int special = 0;
     for(int i=0; i < customDeckDB[renderIndex].length; i++){
       power = power + customDeckDB[renderIndex][i].strength;
       if(customDeckDB[renderIndex][i].isHero){
         heroes++;
       }
+      (customDeckDB[renderIndex][i].id <= 20) ? special++ : units++ ;
     }
     return Padding(
       padding: const EdgeInsets.all(26.0),
@@ -78,10 +81,10 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '${customDeckDB[renderIndex].length.toString()}/22',
+              '$units/22',
               style: TextStyle(
                   fontSize: 12,
-                  color: (customDeckDB[renderIndex].length < 22)
+                  color: (units < 22)
                       ? Colors.red
                       : Colors.green),
             ),
@@ -95,7 +98,7 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '0/10',
+              '$special/10',
               style: TextStyle(
                 fontSize: 12,
                 color: kInfoNumColor,
