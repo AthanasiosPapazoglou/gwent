@@ -12,8 +12,6 @@ class DeckButton extends StatelessWidget {
   final String subtitleText;
   final int unselectedIndex;
   final int selectedIndex;
-  //final List unselectedListToRender;
-  //final List selectedListToRender;
 
   DeckButton({
       required this.imageURL,
@@ -23,8 +21,6 @@ class DeckButton extends StatelessWidget {
       required this.subtitleText,
       required this.unselectedIndex,
       required this.selectedIndex
-      //required this.unselectedListToRender,
-      //required this.selectedListToRender,
       });
 
   @override
@@ -35,8 +31,6 @@ class DeckButton extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => CustomiseDeck(
-              //unselectedList: unselectedListToRender,
-              //selectedList: selectedListToRender,
               
               assetDirectory: assetDirectory, //αφορα τις εικονες του deck
               unselectedIndex: unselectedIndex,

@@ -58,9 +58,10 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
           Flexible(
             flex: 3,
             child: MiddleBarInfo(
-                leaderCardName: monstersLeaders[0].cardName,
-                leaderSetDirectory: kMonLeadersAD,
-                renderIndex: widget.selectedIndex,),
+              leaderCardName: monstersLeaders[0].cardName,
+              leaderSetDirectory: kMonLeadersAD,
+              renderIndex: widget.selectedIndex,
+            ),
           ),
           Flexible(
             flex: 4,
