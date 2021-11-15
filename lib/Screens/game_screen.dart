@@ -9,12 +9,18 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     landscapeMode();
-    return Scaffold(
-      body: Image(
-        image: AssetImage('GameAssets/GameTable/GwentTable.jpg'),
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        fit: BoxFit.cover,
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Image(
+              image: AssetImage('GameAssets/GameTable/GwentTable.jpg'),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.cover,
+            ),
+          ],
+        ),
       ),
     );
   }
