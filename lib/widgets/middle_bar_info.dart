@@ -45,7 +45,7 @@ class MiddleBarInfo extends StatelessWidget {
       (customDeckDB[renderIndex][i].id <= 20) ? special++ : units++;
     }
     return Padding(
-      padding: const EdgeInsets.all(26.0),
+      padding: const EdgeInsets.all(16.0),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.25,
         child: Column(

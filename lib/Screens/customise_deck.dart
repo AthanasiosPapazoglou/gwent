@@ -47,10 +47,8 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
           Flexible(
             flex: 4,
             child: Padding(
-              padding: const EdgeInsets.all(26.0),
+              padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
-                //listToRender: widget.unselectedList,
-                //listToCompare: widget.selectedList,
                 assetDirectory: widget.assetDirectory,
                 renderIndex: widget.unselectedIndex,
                 compareIndex: widget.selectedIndex,
@@ -67,10 +65,8 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
           Flexible(
             flex: 4,
             child: Padding(
-              padding: const EdgeInsets.all(26.0),
+              padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
-                //listToRender: widget.selectedList,
-                //listToCompare: widget.unselectedList,
                 assetDirectory: widget.assetDirectory,
                 renderIndex: widget.selectedIndex,
                 compareIndex: widget.unselectedIndex,
