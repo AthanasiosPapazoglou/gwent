@@ -61,6 +61,7 @@ flutter:
     - GameAssets/NeutralUnits/
     - GameAssets/Rules/
     - GameAssets/SpecialCards/
+    - GameAssets/GameTable/
 
     # SVG Assets
     - GameAssets/svgAssets/bad-weather-svgrepo-com.svg

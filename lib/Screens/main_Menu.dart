@@ -22,7 +22,7 @@ class MainMenu extends StatelessWidget {
             children: <Widget>[
               Positioned.fill(
                 child: Image(
-                  //height: MediaQuery.of(context).size.height,
+                  fit: BoxFit.fill,
                   image: AssetImage('GameAssets/Back/Back.png'),
                 ),
               ),
