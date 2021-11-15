@@ -1,51 +1,91 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/Screens/game_screen.dart';
+import 'package:gwent/Screens/main_Menu.dart';
+import 'package:gwent/Screens/setup_deck_menu.dart';
 
-class CancelorSaveRow extends StatelessWidget {
+
+
+class MidBarNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          width: 48,
-          height: 27,
-          child: Center(
-            child: Text(
-              'MENU',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.red.shade600,
-                
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, Game.routeName);
+            },
+          child: Container(
+            width: 48,
+            height: 27,
+            child: Center(
+              child: Text(
+                'PLAY',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.red.shade600,
+                ),
               ),
             ),
-          ),
-          decoration: BoxDecoration(
-            color: Colors.grey.shade800,
-            border: Border.all(color: Colors.red.shade600),
-            borderRadius: BorderRadius.circular(12.0),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade800,
+              border: Border.all(color: Colors.red.shade600),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
           ),
         ),
         SizedBox(
-          width: 12,
+          width: 6,
         ),
-        Container(
-          width: 48,
-          height: 27,
-          child: Center(
-            child: Text(
-              'DECKS',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.green,
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, MainMenu.routeName);
+          },
+          child: Container(
+            width: 48,
+            height: 27,
+            child: Center(
+              child: Text(
+                'MENU',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.yellow,
+                ),
               ),
             ),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade800,
+              border: Border.all(color: Colors.yellow),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
           ),
-          decoration: BoxDecoration(
-            color: Colors.grey.shade800,
-            border: Border.all(color: Colors.green),
-            borderRadius: BorderRadius.circular(12.0),
+        ),
+        SizedBox(
+          width: 6,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, SetupDecksMenu.routeName);
+          },
+          child: Container(
+            width: 48,
+            height: 27,
+            child: Center(
+              child: Text(
+                'DECKS',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade800,
+              border: Border.all(color: Colors.green),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
           ),
         ),
       ],

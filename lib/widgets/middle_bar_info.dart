@@ -99,7 +99,7 @@ class MiddleBarInfo extends StatelessWidget {
               '$special/10',
               style: TextStyle(
                 fontSize: 12,
-                color: (special < 10) ? Colors.green : Colors.yellow,
+                color: (special <= 10) ? Colors.green : Colors.red,
               ),
             ),
             SizedBox(height: kDistanceOnInfo),
@@ -135,7 +135,7 @@ class MiddleBarInfo extends StatelessWidget {
               ),
             ),
             SizedBox(height: 6),
-            CancelorSaveRow()
+            MidBarNav()
           ],
         ),
       ),
