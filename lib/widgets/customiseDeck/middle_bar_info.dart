@@ -13,11 +13,13 @@ import 'package:gwent/Card-Models/unit_model.dart';
 class MiddleBarInfo extends StatelessWidget {
   final String leaderCardName;
   final String leaderSetDirectory;
+  final String deckPath;
   final int renderIndex;
 
   MiddleBarInfo(
       {required this.leaderCardName,
       required this.leaderSetDirectory,
+      required this.deckPath,
       required this.renderIndex});
 
   @override
@@ -135,7 +137,7 @@ class MiddleBarInfo extends StatelessWidget {
               ),
             ),
             SizedBox(height: 6),
-            MidBarNav()
+            MidBarNav(playerDeckPath: deckPath, renderIndex: renderIndex)
           ],
         ),
       ),

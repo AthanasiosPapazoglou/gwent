@@ -23,7 +23,7 @@ class DeckGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
-    final List customDeckDB = [
+    final List<List<UnitCard>>customDeckDB = [
       customDecks.monstersUnitsUnselected,
       customDecks.monstersUnitsSelected,
       customDecks.nilfggardUnitsUnselected,

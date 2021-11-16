@@ -8,6 +8,11 @@ import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
 
+  final String playerDeckPath;
+  final int renderIndex;
+
+  Game({required this.playerDeckPath, required this.renderIndex});
+
   @override
   Widget build(BuildContext context) {
     landscapeMode();
@@ -21,7 +26,7 @@ class Game extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               fit: BoxFit.cover,
             ),
-            HandListView(),
+            HandListView(playerDeckPath: playerDeckPath, renderIndex: renderIndex),
           ],
         ),
       ),

@@ -59,6 +59,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: MiddleBarInfo(
               leaderCardName: monstersLeaders[0].cardName,
               leaderSetDirectory: kMonLeadersAD,
+              deckPath: widget.assetDirectory,
               renderIndex: widget.selectedIndex,
             ),
           ),

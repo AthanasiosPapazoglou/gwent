@@ -1,4 +1,5 @@
 // ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:gwent/Screens/customise_deck.dart';
 import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
@@ -31,7 +32,6 @@ class DeckButton extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => CustomiseDeck(
-              
               assetDirectory: assetDirectory, //αφορα τις εικονες του deck
               unselectedIndex: unselectedIndex,
               selectedIndex: selectedIndex,
