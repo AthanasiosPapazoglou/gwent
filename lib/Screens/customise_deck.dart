@@ -3,11 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/widgets/deck_grid_view.dart';
-import 'package:gwent/widgets/filter_row.dart';
-import 'package:gwent/widgets/leader_card_widget.dart';
-import 'package:gwent/widgets/middle_bar_info.dart';
-import 'package:gwent/widgets/other_deck.dart';
+import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
+import 'package:gwent/widgets/customiseDeck/filter_row.dart';
+import 'package:gwent/widgets/customiseDeck/leader_card_widget.dart';
+import 'package:gwent/widgets/customiseDeck/middle_bar_info.dart';
 
 class CustomiseDeck extends StatefulWidget {
   final String assetDirectory; //path συγκεκριμενου Units Deck

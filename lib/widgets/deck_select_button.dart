@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:gwent/Screens/customise_deck.dart';
-import 'package:gwent/widgets/deck_grid_view.dart';
+import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 
 class DeckButton extends StatelessWidget {
