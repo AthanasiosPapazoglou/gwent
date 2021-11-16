@@ -34,32 +34,25 @@ class HandListView extends StatelessWidget {
     final Random _random = Random();
     int randomPick;
 
-
     // This will populate our hand with 10 random cards from the selected deck
     for (int i = 0; i < 10; i++) {
       randomPick = _random.nextInt(customDeckDB[renderIndex].length);
-      print(randomPick); 
+      print(randomPick);
 
       while (handCards.contains(customDeckDB[renderIndex][randomPick])) {
-        print(handCards.contains(customDeckDB[renderIndex][randomPick]));
-        print(randomPick);
-        print('hand contains up:');
-
         randomPick = _random.nextInt(customDeckDB[renderIndex].length);
-        print('Now trying $randomPick');
       }
       handCards.add(customDeckDB[renderIndex][randomPick]);
-      print('added: ${customDeckDB[renderIndex][randomPick]}');
     }
 
     return ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.all(8.0),
-        itemCount: handCards.length,
-        itemBuilder: (ctx, i) {
-          return ListCardItem(
-              deckAssetsPath: playerDeckPath,
-              cardName: handCards[i].cardName);
-        });
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.all(8.0),
+      itemCount: handCards.length,
+      itemBuilder: (ctx, i) {
+        return ListCardItem(
+            deckAssetsPath: playerDeckPath, cardName: handCards[i].cardName);
+      },
+    );
   }
 }
