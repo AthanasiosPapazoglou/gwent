@@ -3,11 +3,17 @@
 import 'package:flutter/material.dart';
 
 class ListCardItem extends StatelessWidget {
+  final String deckAssetsPath;
+  final String cardName;
+
+  ListCardItem({required this.deckAssetsPath, required this.cardName});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return GridTile(
+      child: Image(
+        image: AssetImage('$deckAssetsPath$cardName'),
+      ),
     );
   }
 }

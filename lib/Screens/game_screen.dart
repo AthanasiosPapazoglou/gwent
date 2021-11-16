@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
+import 'package:gwent/widgets/GamePlay/bRow_list_view.dart';
+import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
@@ -19,6 +21,7 @@ class Game extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               fit: BoxFit.cover,
             ),
+            HandListView()
           ],
         ),
       ),
