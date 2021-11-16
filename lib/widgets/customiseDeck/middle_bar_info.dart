@@ -6,20 +6,21 @@ import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/App-Utilities/constants.dart';
-import 'package:gwent/widgets/cancel_save.dart';
+import 'package:gwent/widgets/customiseDeck/cancel_save.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 
 class MiddleBarInfo extends StatelessWidget {
   final String leaderCardName;
   final String leaderSetDirectory;
+  final String deckPath;
   final int renderIndex;
 
-  MiddleBarInfo({
-    required this.leaderCardName,
-    required this.leaderSetDirectory,
-    required this.renderIndex
-  });
+  MiddleBarInfo(
+      {required this.leaderCardName,
+      required this.leaderSetDirectory,
+      required this.deckPath,
+      required this.renderIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +36,18 @@ class MiddleBarInfo extends StatelessWidget {
       customDecks.selectedScoiataelUnits
     ];
     int power = 0;
+    int units = 0;
     int heroes = 0;
-    for(int i=0; i < customDeckDB[renderIndex].length; i++){
+    int special = 0;
+    for (int i = 0; i < customDeckDB[renderIndex].length; i++) {
       power = power + customDeckDB[renderIndex][i].strength;
-      if(customDeckDB[renderIndex][i].isHero){
+      if (customDeckDB[renderIndex][i].isHero) {
         heroes++;
       }
+      (customDeckDB[renderIndex][i].id <= 20) ? special++ : units++;
     }
     return Padding(
-      padding: const EdgeInsets.all(26.0),
+      padding: const EdgeInsets.all(16.0),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.25,
         child: Column(
@@ -78,12 +82,11 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '${customDeckDB[renderIndex].length.toString()}/22',
+              '$units/22',
               style: TextStyle(
-                  fontSize: 12,
-                  color: (customDeckDB[renderIndex].length < 22)
-                      ? Colors.red
-                      : Colors.green),
+                fontSize: 12,
+                color: (units < 22) ? Colors.red : Colors.green,
+              ),
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
@@ -95,10 +98,10 @@ class MiddleBarInfo extends StatelessWidget {
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(
-              '0/10',
+              '$special/10',
               style: TextStyle(
                 fontSize: 12,
-                color: kInfoNumColor,
+                color: (special <= 10) ? Colors.green : Colors.red,
               ),
             ),
             SizedBox(height: kDistanceOnInfo),
@@ -134,7 +137,7 @@ class MiddleBarInfo extends StatelessWidget {
               ),
             ),
             SizedBox(height: 6),
-            CancelorSaveRow()
+            MidBarNav(playerDeckPath: deckPath, renderIndex: renderIndex)
           ],
         ),
       ),

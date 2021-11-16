@@ -12,6 +12,17 @@ class CustomDecks extends ChangeNotifier{
     notifyListeners();
   }
 
+List <UnitCard> playerHand = [];
+List <UnitCard> playerMeleeList = [];
+List <UnitCard> playerRangedList = [];
+List <UnitCard> playerSiegeList = [];
+
+List <UnitCard> opponentHand = [];
+List <UnitCard> opponentMeleeList = [];
+List <UnitCard> opponentRangedList = [];
+List <UnitCard> opponentSiegeList = [];
+
+
   
 List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -62,6 +73,10 @@ List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 45, cardName: 'Fire Elemental.png', strength: 6, weatherEffect: wEffects.none, battlerow: brows.siege,  effect: beffects.none, isHero: false),
   UnitCard(id: 46, cardName: 'Foglet.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 47, cardName: 'Forktail.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
+
+];
+
+List<UnitCard> monstersUnitsSelected =[
   UnitCard(id: 48, cardName: 'Frightener.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 49, cardName: 'Gargoyle.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
   UnitCard(id: 50, cardName: 'Ghoul 1.png', strength: 1, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.muster, isHero: false),
@@ -87,7 +102,6 @@ List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 70, cardName: 'Wyvern.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
 ];
 
-List<UnitCard> monstersUnitsSelected =[];
 
 
 

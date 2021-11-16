@@ -22,7 +22,7 @@ class MainMenu extends StatelessWidget {
             children: <Widget>[
               Positioned.fill(
                 child: Image(
-                  //height: MediaQuery.of(context).size.height,
+                  fit: BoxFit.fill,
                   image: AssetImage('GameAssets/Back/Back.png'),
                 ),
               ),
@@ -30,10 +30,10 @@ class MainMenu extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MenuButtons(
-                    buttonTitle: 'PLAY GAME',
-                    routeToNavigateAt: Game.routeName,
-                  ),
+                  // MenuButtons(
+                  //   buttonTitle: 'PLAY GAME',
+                  //   routeToNavigateAt: Game.routeName,
+                  // ),
                   MenuButtons(
                     buttonTitle: 'HOW TO PLAY',
                     routeToNavigateAt: Rules.routeName,

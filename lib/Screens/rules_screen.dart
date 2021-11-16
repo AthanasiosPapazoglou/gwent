@@ -14,6 +14,8 @@ class Rules extends StatelessWidget {
       body:  Center(
         child: Image(
           fit: BoxFit.fill,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
             image: AssetImage('GameAssets/Rules/Gwent Rules.png'),
           ),
       ),

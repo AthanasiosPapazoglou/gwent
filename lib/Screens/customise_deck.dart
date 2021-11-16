@@ -3,11 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/widgets/deck_grid_view.dart';
-import 'package:gwent/widgets/filter_row.dart';
-import 'package:gwent/widgets/leader_card_widget.dart';
-import 'package:gwent/widgets/middle_bar_info.dart';
-import 'package:gwent/widgets/other_deck.dart';
+import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
+import 'package:gwent/widgets/customiseDeck/filter_row.dart';
+import 'package:gwent/widgets/customiseDeck/leader_card_widget.dart';
+import 'package:gwent/widgets/customiseDeck/middle_bar_info.dart';
 
 class CustomiseDeck extends StatefulWidget {
   final String assetDirectory; //path συγκεκριμενου Units Deck
@@ -47,10 +46,8 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
           Flexible(
             flex: 4,
             child: Padding(
-              padding: const EdgeInsets.all(26.0),
+              padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
-                //listToRender: widget.unselectedList,
-                //listToCompare: widget.selectedList,
                 assetDirectory: widget.assetDirectory,
                 renderIndex: widget.unselectedIndex,
                 compareIndex: widget.selectedIndex,
@@ -60,17 +57,17 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
           Flexible(
             flex: 3,
             child: MiddleBarInfo(
-                leaderCardName: monstersLeaders[0].cardName,
-                leaderSetDirectory: kMonLeadersAD,
-                renderIndex: widget.selectedIndex,),
+              leaderCardName: monstersLeaders[0].cardName,
+              leaderSetDirectory: kMonLeadersAD,
+              deckPath: widget.assetDirectory,
+              renderIndex: widget.selectedIndex,
+            ),
           ),
           Flexible(
             flex: 4,
             child: Padding(
-              padding: const EdgeInsets.all(26.0),
+              padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
-                //listToRender: widget.selectedList,
-                //listToCompare: widget.unselectedList,
                 assetDirectory: widget.assetDirectory,
                 renderIndex: widget.selectedIndex,
                 compareIndex: widget.unselectedIndex,
