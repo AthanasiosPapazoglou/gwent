@@ -11,8 +11,13 @@ class ListCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridTile(
-      child: Image(
-        image: AssetImage('$deckAssetsPath$cardName'),
+      child: Padding(
+        padding: const EdgeInsets.all(2.0),
+        child: Image(
+          width: MediaQuery.of(context).size.width * 0.15,
+          height: MediaQuery.of(context).size.height * 0.265,
+          image: AssetImage('$deckAssetsPath$cardName'),
+        ),
       ),
     );
   }

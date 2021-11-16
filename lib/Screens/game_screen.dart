@@ -21,7 +21,7 @@ class Game extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               fit: BoxFit.cover,
             ),
-            HandListView()
+            HandListView(),
           ],
         ),
       ),
