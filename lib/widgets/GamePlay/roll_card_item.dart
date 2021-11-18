@@ -24,6 +24,7 @@ class RollListCardItem extends StatelessWidget {
     final customDecks = Provider.of<CustomDecks>(context);
     final Random _random = Random();
     int _randomPick;
+    int indexIndicator;
 
     final List<List<UnitCard>> customDeckDB = [
       customDecks.monstersUnitsUnselected, //0
@@ -45,8 +46,13 @@ class RollListCardItem extends StatelessWidget {
           while(customDeckDB[8].contains(customDeckDB[renderIndex][_randomPick],)){
           _randomPick = _random.nextInt(customDeckDB[renderIndex].length);
           }
-          customDeckDB[8].removeWhere((element) => element.cardName == cardName);
-          customDeckDB[8].add(customDeckDB[renderIndex][_randomPick]);
+          /////////
+          indexIndicator = customDeckDB[8].indexWhere((element) => element.cardName == cardName);
+          customDeckDB[8].remove(customDeckDB[8][indexIndicator]);
+          customDeckDB[8].insert(indexIndicator, customDeckDB[renderIndex][_randomPick]);
+          ////////
+          //customDeckDB[8].removeWhere((element) => element.cardName == cardName);
+          //customDeckDB[8].add(customDeckDB[renderIndex][_randomPick]);
           customDecks.cardsRerolled++;
           customDecks.refreshLists();
         },
