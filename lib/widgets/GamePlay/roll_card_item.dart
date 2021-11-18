@@ -47,6 +47,7 @@ class RollListCardItem extends StatelessWidget {
           }
           customDeckDB[8].removeWhere((element) => element.cardName == cardName);
           customDeckDB[8].add(customDeckDB[renderIndex][_randomPick]);
+          customDecks.cardsRerolled++;
           customDecks.refreshLists();
         },
         child: Padding(
