@@ -5,6 +5,7 @@ import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/widgets/GamePlay/roll_card_item.dart';
 import 'package:provider/provider.dart';
+import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
 
 class HandListView extends StatefulWidget {
@@ -65,8 +66,16 @@ class _HandListViewState extends State<HandListView> {
       padding: const EdgeInsets.all(8.0),
       itemCount: customDeckDB[8].length,
       itemBuilder: (ctx, i) {
+        String pathset;
+        if(customDeckDB[8][i].id <= 20) {
+           pathset = kSpecialCardsAD;
+        } else if (customDeckDB[8][i].id <= 30){
+          pathset = kNeutralUnitsAD;
+        } else {
+          pathset = widget.playerDeckPath;
+        }
         return RollListCardItem(
-          deckAssetsPath: widget.playerDeckPath, 
+          deckAssetsPath: pathset, //widget.playerDeckPath,
           cardName: customDeckDB[8][i].cardName, 
           renderIndex: widget.renderIndex
           );
