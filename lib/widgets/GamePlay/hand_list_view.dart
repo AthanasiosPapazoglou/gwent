@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/Providers/customDecks.dart';
-import 'package:gwent/widgets/GamePlay/List_Card_Item.dart';
+import 'package:gwent/widgets/GamePlay/roll_card_item.dart';
 import 'package:provider/provider.dart';
 import 'dart:math';
 
@@ -50,9 +50,15 @@ class HandListView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       itemCount: handCards.length,
       itemBuilder: (ctx, i) {
-        return ListCardItem(
-            deckAssetsPath: playerDeckPath, cardName: handCards[i].cardName);
+        return RollListCardItem(
+          deckAssetsPath: playerDeckPath, 
+          cardName: handCards[i].cardName, 
+          renderIndex: renderIndex
+          );
       },
     );
   }
 }
+
+// deckAssetsPath: playerDeckPath, 
+// cardName: handCards[i].cardName,
