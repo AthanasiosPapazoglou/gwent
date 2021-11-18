@@ -12,7 +12,7 @@ class CustomDecks extends ChangeNotifier{
     notifyListeners();
   }
 
-List <UnitCard> playerHand = [];
+List <UnitCard> handCards = [];
 List <UnitCard> playerMeleeList = [];
 List <UnitCard> playerRangedList = [];
 List <UnitCard> playerSiegeList = [];
