@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/widgets/GamePlay/bRow_list_view.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
+import 'package:gwent/Providers/customDecks.dart';
+import 'package:provider/provider.dart';
 
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
@@ -16,6 +18,7 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     landscapeMode();
+    final customDecks = Provider.of<CustomDecks>(context);
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
@@ -41,7 +44,7 @@ class Game extends StatelessWidget {
                     style: TextStyle(color: Colors.orange.shade100, fontSize: 32),
                   ),
                   Text(
-                    '0/2',
+                    '${customDecks.cardsRerolled}/2',
                     style: TextStyle(color: Colors.green, fontSize: 32),
                   ),
                 ],
