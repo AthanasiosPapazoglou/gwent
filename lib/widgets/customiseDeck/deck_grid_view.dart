@@ -11,18 +11,11 @@ import 'package:provider/provider.dart';
 class DeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
 
-  final String assetDirectory;
-  final int renderIndex;
-  final int compareIndex;
-
-  DeckGridView(
-      {required this.assetDirectory,
-      required this.renderIndex,
-      required this.compareIndex});
-
   @override
   Widget build(BuildContext context) {
+
     final customDecks = Provider.of<CustomDecks>(context);
+    
     final List<List<UnitCard>>customDeckDB = [
       customDecks.monstersUnitsUnselected,
       customDecks.monstersUnitsSelected,

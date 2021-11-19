@@ -1,44 +1,35 @@
 // ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Screens/customise_deck.dart';
 import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
+import 'package:gwent/App-Utilities/enums.dart';
+import 'package:provider/provider.dart';
 
 class DeckButton extends StatelessWidget {
   final String imageURL;
   final String deckName;
-  final String assetDirectory;//path συγκεκριμενου Units Deck
   final Color deckColors;
   final String subtitleText;
-  final int unselectedIndex;
-  final int selectedIndex;
+  final deckAssets assets;
 
   DeckButton({
       required this.imageURL,
       required this.deckName,
-      required this.assetDirectory,//path συγκεκριμενου Units Deck
       required this.deckColors,
       required this.subtitleText,
-      required this.unselectedIndex,
-      required this.selectedIndex
+      required this.assets
       });
 
   @override
   Widget build(BuildContext context) {
+    final customDecks = Provider.of<CustomDecks>(context);
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CustomiseDeck(
-              assetDirectory: assetDirectory, //αφορα τις εικονες του deck
-              unselectedIndex: unselectedIndex,
-              selectedIndex: selectedIndex,
-            ),
-          ),
-        );
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => DeckGridView(listToRender: listToRender, assetDirectory: assetDirectory),),);
+        customDecks.playerDeckSelection = assets;
+        Navigator.pushNamed(context, CustomiseDeck.routeName);
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),

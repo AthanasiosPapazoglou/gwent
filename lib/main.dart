@@ -14,6 +14,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:provider/provider.dart';
 import 'Providers/customDecks.dart';
+import 'package:gwent/Screens/customise_deck.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +39,7 @@ class Gwent extends StatelessWidget {
          Rules.routeName: (ctx) => Rules(),
          //Game.routeName: (ctx) => Game(),
          SetupDecksMenu.routeName: (ctx) => SetupDecksMenu(),
+         CustomiseDeck.routeName: (ctx) => CustomiseDeck()
       },
     ),
     );

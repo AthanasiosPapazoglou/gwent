@@ -12,6 +12,9 @@ class CustomDecks extends ChangeNotifier{
     notifyListeners();
   }
 
+deckAssets playerDeckSelection = deckAssets.none;
+deckAssets opponentDeckSelection = deckAssets.none;
+
 int cardsRerolled = 0;
 
 List <UnitCard> handCards = [];
