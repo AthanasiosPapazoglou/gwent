@@ -21,7 +21,7 @@ class GridCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final refresh = Provider.of<CustomDecks>(context);
+    final customDecks = Provider.of<CustomDecks>(context);
     return GridTile(
       child: GestureDetector(
         onTap: () {
@@ -33,7 +33,7 @@ class GridCardItem extends StatelessWidget {
             listToRender.add(unitCard);
             listToCompare.remove(unitCard);
           }
-          refresh.refreshLists();
+          customDecks.refreshLists();
         },
         child: Image(
           image: AssetImage('$assetDirectory$cardName'),
