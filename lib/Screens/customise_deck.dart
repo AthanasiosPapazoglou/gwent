@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
@@ -41,6 +42,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
+                whichToRender: gridViewRender.unselected,
                 // assetDirectory: widget.assetDirectory,
                 // renderIndex: widget.unselectedIndex,
                 // compareIndex: widget.selectedIndex,
@@ -61,6 +63,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
+                whichToRender: gridViewRender.selected,
                 // assetDirectory: widget.assetDirectory,
                 // renderIndex: widget.selectedIndex,
                 // compareIndex: widget.unselectedIndex,
