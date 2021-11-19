@@ -10,10 +10,11 @@ import 'package:provider/provider.dart';
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
 
-  final String playerDeckPath;
-  final int renderIndex;
+  //TODO diminish prop drilling
+  // final String playerDeckPath;
+  // final int renderIndex;
 
-  Game({required this.playerDeckPath, required this.renderIndex});
+  // Game({required this.playerDeckPath, required this.renderIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +32,9 @@ class Game extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             HandListView(
-              playerDeckPath: playerDeckPath,
-              renderIndex: renderIndex,
+              //TODO diminish prop drilling
+              //playerDeckPath: playerDeckPath,
+              //renderIndex: renderIndex,
             ),
             Positioned(
               top: 50,

@@ -7,6 +7,8 @@ import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'dart:math';
 
+//TODO Challenge: See if eliminating prop drilling or keeping it is ideal for rollCardItem
+
 class RollListCardItem extends StatelessWidget {
   final String deckAssetsPath;
   final String cardName;

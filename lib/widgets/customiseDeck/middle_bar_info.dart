@@ -52,23 +52,7 @@ class MiddleBarInfo extends StatelessWidget {
       leadersPath = kScoiaUnitsAD;
       break;
 
-      case deckAssets.none:
-      statList = [];
-      leadersPath = '';
-      print('WTF');
-      break;
     }
-    
-    // final List<List<UnitCard>> customDeckDB = [
-    //   customDecks.monstersUnitsUnselected,
-    //   customDecks.monstersUnitsSelected,
-    //   customDecks.nilfggardUnitsUnselected,
-    //   customDecks.nilfggardUnitsSelected,
-    //   customDecks.unselectedNorthernRealmsUnits,
-    //   customDecks.selectedNorthernRealmsUnits,
-    //   customDecks.unselectedScoiataelUnits,
-    //   customDecks.selectedScoiataelUnits
-    // ];
     
     int power = 0;
     int units = 0;
@@ -172,7 +156,7 @@ class MiddleBarInfo extends StatelessWidget {
               ),
             ),
             SizedBox(height: 6),
-            //MidBarNav(playerDeckPath: deckPath, renderIndex: renderIndex)
+            MidBarNav()
           ],
         ),
       ),

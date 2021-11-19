@@ -9,10 +9,12 @@ import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
 
 class HandListView extends StatefulWidget {
-  final String playerDeckPath;
-  final int renderIndex;
+  //TODO diminish prop drilling
+  
+  // final String playerDeckPath;
+  // final int renderIndex;
 
-  HandListView({required this.playerDeckPath, required this.renderIndex});
+  // HandListView({required this.playerDeckPath, required this.renderIndex});
 
   @override
   State<HandListView> createState() => _HandListViewState();
@@ -27,17 +29,17 @@ class _HandListViewState extends State<HandListView> {
     // Providing
     final customDecks = Provider.of<CustomDecks>(context);
 
-    final List<List<UnitCard>> customDeckDB = [
-      customDecks.monstersUnitsUnselected, //0
-      customDecks.monstersUnitsSelected, //1
-      customDecks.nilfggardUnitsUnselected, //2
-      customDecks.nilfggardUnitsSelected, //3
-      customDecks.unselectedNorthernRealmsUnits, //4
-      customDecks.selectedNorthernRealmsUnits, //5
-      customDecks.unselectedScoiataelUnits, //6
-      customDecks.selectedScoiataelUnits, //7
-      customDecks.handCards, //8
-    ];
+    // final List<List<UnitCard>> customDeckDB = [
+    //   customDecks.monstersUnitsUnselected, //0
+    //   customDecks.monstersUnitsSelected, //1
+    //   customDecks.nilfggardUnitsUnselected, //2
+    //   customDecks.nilfggardUnitsSelected, //3
+    //   customDecks.unselectedNorthernRealmsUnits, //4
+    //   customDecks.selectedNorthernRealmsUnits, //5
+    //   customDecks.unselectedScoiataelUnits, //6
+    //   customDecks.selectedScoiataelUnits, //7
+    //   customDecks.handCards, //8
+    // ];
 
     // Our hand, a Random math Instance & a variable to save the result
     final Random _random = Random();

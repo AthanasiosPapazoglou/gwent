@@ -51,13 +51,7 @@ class DeckGridView extends StatelessWidget {
       compareList = (whichToRender == gridViewRender.unselected) ? customDecks.selectedNorthernRealmsUnits : customDecks.unselectedScoiataelUnits;
       assetDirectory = kScoiaUnitsAD;
       break;
-
-      case deckAssets.none:
-      renderList = [];
-      compareList = [];
-      assetDirectory = '';
-      print('WTF');
-      break;
+      
     }
 
     return GridView.builder(
