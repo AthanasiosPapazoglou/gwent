@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/Card-Models/leader_model.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
@@ -12,44 +13,44 @@ import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
 class MiddleBarInfo extends StatelessWidget {
-  // final String leaderCardName;
-  // final String leaderSetDirectory;
-  // final String deckPath;
-  // final int renderIndex;
-
-  // MiddleBarInfo(
-  //     {required this.leaderCardName,
-  //     required this.leaderSetDirectory,
-  //     required this.deckPath,
-  //     required this.renderIndex});
 
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
     final assets = customDecks.playerDeckSelection;
     final List<UnitCard> statList;
+    final List<LeaderCard> leadersList;
     final String leadersPath;
+    final String selectedLeader;
 
     switch (assets){
       
       case deckAssets.monsters : 
       statList = customDecks.monstersUnitsSelected;
+      leadersList = customDecks.pMonstersLeaders;
       leadersPath = kMonLeadersAD;
+      selectedLeader = customDecks.selectedMonstersLeader;
       break;
 
       case deckAssets.nilfgaard:
       statList = customDecks.nilfggardUnitsSelected;
+      leadersList = customDecks.pNilfgaardLeaders;
       leadersPath = kNilfLeadersAD;
+      selectedLeader = customDecks.selectedNilfggardLeader;
       break;
 
       case deckAssets.northernRealms:
-      statList = customDecks.selectedNorthernRealmsUnits;
+      statList = customDecks.NorthernRealmsUnitsSelected;
+      leadersList = customDecks.pNorthernRealmsLeaders;
       leadersPath = kNorthLeadersAD;
+      selectedLeader = customDecks.selectedNorthernRealmsLeader;
       break;
 
       case deckAssets.scoiatael:
-      statList = customDecks.selectedNorthernRealmsUnits;
-      leadersPath = kScoiaUnitsAD;
+      statList = customDecks.NorthernRealmsUnitsSelected;
+      leadersList = customDecks.pScoiataelLeaders;
+      leadersPath = kScoiaLeadersAD;
+      selectedLeader = customDecks.selectedScoiataelLeader;
       break;
 
     }
@@ -58,6 +59,7 @@ class MiddleBarInfo extends StatelessWidget {
     int units = 0;
     int heroes = 0;
     int special = 0;
+
     for (int i = 0; i < statList.length; i++) {
       power = power + statList[i].strength;
       if (statList[i].isHero) {
@@ -72,8 +74,8 @@ class MiddleBarInfo extends StatelessWidget {
         child: Column(
           children: [
             LeaderCardWidget(
-              cardName: monstersLeaders[0].cardName,
-              assetDirectory: kMonLeadersAD,
+              cardName: selectedLeader,
+              assetDirectory: leadersPath,
             ),
             SizedBox(height: kDistanceOnInfo),
             Text(

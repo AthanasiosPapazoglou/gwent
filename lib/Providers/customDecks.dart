@@ -27,6 +27,11 @@ List <UnitCard> opponentMeleeList = [];
 List <UnitCard> opponentRangedList = [];
 List <UnitCard> opponentSiegeList = [];
 
+String selectedMonstersLeader = 'Eredin Bringer of Death.png';
+String selectedNilfggardLeader = 'Emhyr var Emreis Emperor of Nilfgaard.png';
+String selectedNorthernRealmsLeader = 'Foltest King of Temeria.png';
+String selectedScoiataelLeader = 'Francesca Findabair Daisy of The Valle.png';
+
 
   
 List <UnitCard> monstersUnitsUnselected = [
@@ -186,7 +191,7 @@ List<UnitCard> nilfggardUnitsSelected = [];
 
 
 
-List <UnitCard> unselectedNorthernRealmsUnits = [
+List <UnitCard> NorthernRealmsUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Biting Frost 2.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Biting Frost 3.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -258,12 +263,12 @@ List <UnitCard> unselectedNorthernRealmsUnits = [
   UnitCard(id: 68, cardName: 'Yarpen Zigrin.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
 ];
 
-List<UnitCard> selectedNorthernRealmsUnits = [];
+List<UnitCard> NorthernRealmsUnitsSelected = [];
 
 
 
 
-List <UnitCard> unselectedScoiataelUnits = [
+List <UnitCard> ScoiataelUnitsUnselected = [
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Biting Frost 2.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Biting Frost 3.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -334,10 +339,38 @@ List <UnitCard> unselectedScoiataelUnits = [
   UnitCard(id: 67, cardName: 'Yaevinn.png', strength: 6, weatherEffect: wEffects.none, battlerow: brows.agile,  effect: beffects.none, isHero: false),
 ];
 
+List<UnitCard> ScoiataelUnitsSelected = [];
 
 
-List<UnitCard> selectedScoiataelUnits = [];
 
+List<LeaderCard> pMonstersLeaders = [
+  LeaderCard(id: 0, cardName: 'Eredin Bringer of Death.png', leaderEffect: LeaderEffect.mon1,),
+  LeaderCard(id: 1, cardName: 'Eredin Commander of the Red Riders.png', leaderEffect: LeaderEffect.mon2),
+  LeaderCard(id: 2, cardName: 'Eredin Destroyer of Worlds.png', leaderEffect: LeaderEffect.mon3),
+  LeaderCard(id: 3, cardName: 'Eredin King of the Wild Hunt.png', leaderEffect: LeaderEffect.mon4),
+];
+
+List<LeaderCard> pNilfgaardLeaders = [
+  LeaderCard(id: 0, cardName: 'Emhyr var Emreis Emperor of Nilfgaard.png', leaderEffect: LeaderEffect.nilf1),
+  LeaderCard(id: 1, cardName: 'Emhyr var Emreis His Imperial Majesty.png', leaderEffect: LeaderEffect.nilf2),
+  LeaderCard(id: 2, cardName: 'Emhyr var Emreis the Relentless.png', leaderEffect: LeaderEffect.nilf3),
+  LeaderCard(id: 2, cardName: 'Emhyr var Emreis the White Flame.png', leaderEffect: LeaderEffect.nilf4),
+];
+
+List<LeaderCard> pNorthernRealmsLeaders = [
+  LeaderCard(id: 0, cardName: 'Foltest King of Temeria.png', leaderEffect: LeaderEffect.nr1,),
+  LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png ', leaderEffect: LeaderEffect.nr2),
+  LeaderCard(id: 2, cardName: 'Foltest the Siegemaster.png', leaderEffect: LeaderEffect.nr3),
+  LeaderCard(id: 3, cardName: 'Foltest the Steel-Forged.png', leaderEffect: LeaderEffect.nr4),
+];
+
+
+List<LeaderCard> pScoiataelLeaders = [
+  LeaderCard(id: 0, cardName: 'Francesca Findabair Daisy of The Valle.png', leaderEffect: LeaderEffect.sco1),
+  LeaderCard(id: 1, cardName: 'Francesca Findabair Pureblood Elf.png', leaderEffect: LeaderEffect.sco2),
+  LeaderCard(id: 2, cardName: 'Francesca Findabair Queen of Dol Blathanna.png', leaderEffect: LeaderEffect.sco3),
+  LeaderCard(id: 3, cardName: 'Francesca Findabair the Beautiful.png', leaderEffect: LeaderEffect.sco4),
+];
 
 }
 

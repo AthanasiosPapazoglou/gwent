@@ -245,7 +245,7 @@ List<LeaderCard> nilfgaardLeaders = [
 
 
 List<LeaderCard> scoiataelLeaders = [
-  LeaderCard(id: 0, cardName: 'Francesca Findabair Daisy of The Vaille.png', leaderEffect: LeaderEffect.sco1),
+  LeaderCard(id: 0, cardName: 'Francesca Findabair Daisy of The Valle.png', leaderEffect: LeaderEffect.sco1),
   LeaderCard(id: 1, cardName: 'Francesca Findabair Pureblood Elf.png', leaderEffect: LeaderEffect.sco2),
   LeaderCard(id: 2, cardName: 'Francesca Findabair Queen of Dol Blathanna.png', leaderEffect: LeaderEffect.sco3),
   LeaderCard(id: 3, cardName: 'Francesca Findabair the Beautiful.png', leaderEffect: LeaderEffect.sco4),
