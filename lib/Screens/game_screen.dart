@@ -6,6 +6,7 @@ import 'package:gwent/widgets/GamePlay/bRow_list_view.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:provider/provider.dart';
+import 'package:gwent/Providers/customDecks.dart';
 
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
@@ -17,6 +18,27 @@ class Game extends StatelessWidget {
     landscapeMode();
     final customDecks = Provider.of<CustomDecks>(context);
     final size = MediaQuery.of(context).size;
+
+    if (customDecks.cardsRerolled >= 2) {
+
+      return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Image(
+              image: AssetImage('GameAssets/GameTable/GwentTable.jpg'),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.cover,
+            ),
+            
+            ],
+        ),
+      ),
+      );
+    
+    } else {
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -47,20 +69,26 @@ class Game extends StatelessWidget {
             Positioned(
               bottom: 40,
               left: size.width * 0.45,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade800,
-                  border: Border.all(color: Colors.red.shade600),
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                width: size.width * 0.1,
-                height: size.height * 0.1,
-                child: Center(
-                  child: Text(
-                    'PLAY',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.red.shade600,
+              child: GestureDetector(
+                onTap: () {
+                  customDecks.cardsRerolled = 2;
+                  customDecks.refreshLists();
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade800,
+                    border: Border.all(color: Colors.red.shade600),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  width: size.width * 0.1,
+                  height: size.height * 0.1,
+                  child: Center(
+                    child: Text(
+                      'PLAY',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.red.shade600,
+                      ),
                     ),
                   ),
                 ),
@@ -70,5 +98,8 @@ class Game extends StatelessWidget {
         ),
       ),
     );
+    
+    } 
+  
   }
 }

@@ -12,4 +12,4 @@ enum LeaderEffect { mon1, mon2, mon3, mon4, nr1, nr2, nr3, nr4, nilf1, nilf2, ni
 
 enum deckAssets { monsters, nilfgaard, northernRealms, scoiatael }
 
-enum gridViewRender { unselected, selected }
+enum GridViewRender { unselected, selected }

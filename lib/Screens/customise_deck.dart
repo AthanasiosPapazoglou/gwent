@@ -42,7 +42,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
-                whichToRender: gridViewRender.unselected,
+                whichToRender: GridViewRender.unselected,
               ),
             ),
           ),
@@ -56,7 +56,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
-                whichToRender: gridViewRender.selected,
+                whichToRender: GridViewRender.selected,
               ),
             ),
           ),

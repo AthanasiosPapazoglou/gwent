@@ -12,6 +12,10 @@ class CustomDecks extends ChangeNotifier{
     notifyListeners();
   }
 
+  void resetGame () {
+    notifyListeners();
+  }
+
 deckAssets playerDeckSelection = deckAssets.monsters;
 deckAssets opponentDeckSelection = deckAssets.monsters;
 
@@ -31,6 +35,14 @@ String selectedMonstersLeader = 'Eredin Bringer of Death.png';
 String selectedNilfggardLeader = 'Emhyr var Emreis Emperor of Nilfgaard.png';
 String selectedNorthernRealmsLeader = 'Foltest King of Temeria.png';
 String selectedScoiataelLeader = 'Francesca Findabair Daisy of The Valle.png';
+
+void reconfigureLists (UnitCard cardToReposition, List<UnitCard> listToReconfigure) {
+  int i = 0;
+  while(listToReconfigure[i].id < cardToReposition.id){
+    i++;
+  }
+  listToReconfigure.insert(i, cardToReposition);
+}
 
 
   
