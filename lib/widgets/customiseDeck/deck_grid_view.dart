@@ -20,13 +20,13 @@ class DeckGridView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final customDecks = Provider.of<CustomDecks>(context);
-    final assets = customDecks.playerDeckSelection;
+    final _assets = customDecks.playerDeckSelection;
     final List<UnitCard> renderList;
     final List<UnitCard> compareList;
     final String assetDirectory;
 
    
-    switch (assets){
+    switch (_assets){
       
       case deckAssets.monsters : 
       renderList = (whichToRender == gridViewRender.unselected) ? customDecks.monstersUnitsUnselected : customDecks.monstersUnitsSelected;
