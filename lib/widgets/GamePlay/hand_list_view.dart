@@ -7,6 +7,7 @@ import 'package:gwent/widgets/GamePlay/roll_card_item.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
+import 'package:gwent/App-Utilities/enums.dart';
 
 class HandListView extends StatefulWidget {
   //TODO diminish prop drilling
@@ -29,6 +30,36 @@ class _HandListViewState extends State<HandListView> {
     // Providing
     final customDecks = Provider.of<CustomDecks>(context);
 
+    final deckAssets _assets = customDecks.playerDeckSelection;
+    List<UnitCard> cardsInHand = customDecks.handCards;
+    List<UnitCard> deckList;
+    String deckPath;
+    
+
+    switch (_assets){
+      
+      case deckAssets.monsters :
+      deckList = customDecks.monstersUnitsSelected; 
+      deckPath = kMonUnitsAD;
+      break;
+
+      case deckAssets.nilfgaard:
+      deckList = customDecks.nilfggardUnitsSelected;
+      deckPath = kNilfUnitsAD;
+      break;
+
+      case deckAssets.northernRealms:
+      deckList = customDecks.selectedNorthernRealmsUnits;
+      deckPath = kNorthUnitsAD;
+      break;
+
+      case deckAssets.scoiatael:
+      deckList = customDecks.selectedScoiataelUnits;
+      deckPath = kScoiaUnitsAD;
+      break;
+      
+    }
+
     // final List<List<UnitCard>> customDeckDB = [
     //   customDecks.monstersUnitsUnselected, //0
     //   customDecks.monstersUnitsSelected, //1
@@ -48,38 +79,37 @@ class _HandListViewState extends State<HandListView> {
     // This will populate our hand with 10 random cards from the selected deck
     if (isFirstRender){
     for (int i = 0; i < 10; i++) {
-      randomPick = _random.nextInt(customDeckDB[widget.renderIndex].length);
+      randomPick = _random.nextInt(deckList.length);
 
 
-      while (customDeckDB[8].contains(customDeckDB[widget.renderIndex][randomPick])) {
-        randomPick = _random.nextInt(customDeckDB[widget.renderIndex].length);
+      while (cardsInHand.contains(deckList[randomPick])) {
+        randomPick = _random.nextInt(deckList.length);
       }
-      customDeckDB[8].add(customDeckDB[widget.renderIndex][randomPick]);
+      cardsInHand.add(deckList[randomPick]);
     }
     setState(() {
       isFirstRender = false;
     });
     }
 
-    print(customDeckDB[8]);
+    print(cardsInHand);
 
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(8.0),
-      itemCount: customDeckDB[8].length,
+      itemCount: cardsInHand.length,
       itemBuilder: (ctx, i) {
         String pathset;
-        if(customDeckDB[8][i].id <= 20) {
+        if(cardsInHand[i].id <= 20) {
            pathset = kSpecialCardsAD;
-        } else if (customDeckDB[8][i].id <= 30){
+        } else if (cardsInHand[i].id <= 30){
           pathset = kNeutralUnitsAD;
         } else {
-          pathset = widget.playerDeckPath;
+          pathset = deckPath;
         }
         return RollListCardItem(
           deckAssetsPath: pathset, //widget.playerDeckPath,
-          cardName: customDeckDB[8][i].cardName, 
-          renderIndex: widget.renderIndex
+          cardName: cardsInHand[i].cardName, 
           );
       },
     );
