@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gwent/Screens/leader_selection.dart';
 
 class LeaderCardWidget extends StatelessWidget {
   
@@ -13,9 +14,14 @@ class LeaderCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image(
-      width: MediaQuery.of(context).size.width * 0.1,
-      image: AssetImage('$assetDirectory$cardName'),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, LeaderSelection.routeName);
+      },
+      child: Image(
+        width: MediaQuery.of(context).size.width * 0.1,
+        image: AssetImage('$assetDirectory$cardName'),
+      ),
     );
   }
 }

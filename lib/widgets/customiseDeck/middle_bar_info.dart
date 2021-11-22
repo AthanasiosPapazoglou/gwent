@@ -21,6 +21,7 @@ class MiddleBarInfo extends StatelessWidget {
     final List<UnitCard> statList;
     final List<LeaderCard> leadersList;
     final String leadersPath;
+    final String selectedLeader;
 
     switch (assets){
       
@@ -28,24 +29,28 @@ class MiddleBarInfo extends StatelessWidget {
       statList = customDecks.monstersUnitsSelected;
       leadersList = customDecks.pMonstersLeaders;
       leadersPath = kMonLeadersAD;
+      selectedLeader = customDecks.selectedMonstersLeader;
       break;
 
       case deckAssets.nilfgaard:
       statList = customDecks.nilfggardUnitsSelected;
       leadersList = customDecks.pNilfgaardLeaders;
       leadersPath = kNilfLeadersAD;
+      selectedLeader = customDecks.selectedNilfggardLeader;
       break;
 
       case deckAssets.northernRealms:
       statList = customDecks.NorthernRealmsUnitsSelected;
       leadersList = customDecks.pNorthernRealmsLeaders;
       leadersPath = kNorthLeadersAD;
+      selectedLeader = customDecks.selectedNorthernRealmsLeader;
       break;
 
       case deckAssets.scoiatael:
       statList = customDecks.NorthernRealmsUnitsSelected;
       leadersList = customDecks.pScoiataelLeaders;
       leadersPath = kScoiaLeadersAD;
+      selectedLeader = customDecks.selectedScoiataelLeader;
       break;
 
     }
@@ -69,7 +74,7 @@ class MiddleBarInfo extends StatelessWidget {
         child: Column(
           children: [
             LeaderCardWidget(
-              cardName: leadersList[0].cardName,
+              cardName: selectedLeader,
               assetDirectory: leadersPath,
             ),
             SizedBox(height: kDistanceOnInfo),

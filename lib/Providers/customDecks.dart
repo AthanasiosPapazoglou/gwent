@@ -27,6 +27,11 @@ List <UnitCard> opponentMeleeList = [];
 List <UnitCard> opponentRangedList = [];
 List <UnitCard> opponentSiegeList = [];
 
+String selectedMonstersLeader = 'Eredin Bringer of Death.png';
+String selectedNilfggardLeader = 'Emhyr var Emreis Emperor of Nilfgaard.png';
+String selectedNorthernRealmsLeader = 'Foltest King of Temeria.png';
+String selectedScoiataelLeader = 'Francesca Findabair Daisy of The Valle.png';
+
 
   
 List <UnitCard> monstersUnitsUnselected = [
