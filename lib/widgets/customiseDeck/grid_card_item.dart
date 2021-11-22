@@ -47,7 +47,7 @@ class GridCardItem extends StatelessWidget {
           break;
           
           case GridViewRender.selected:
-          
+
           if(listToRender.contains(unitCard)){
             customDecks.reconfigureLists(unitCard, listToCompare);
             listToRender.remove(unitCard);
@@ -57,6 +57,7 @@ class GridCardItem extends StatelessWidget {
             listToCompare.remove(unitCard);
           }
           customDecks.refreshLists();
+          break;
         }
       },
         child: Image(
