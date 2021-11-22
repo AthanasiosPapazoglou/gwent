@@ -9,10 +9,7 @@ import 'package:gwent/Screens/setup_deck_menu.dart';
 
 class MidBarNav extends StatelessWidget {
 
-  final String playerDeckPath;
-  final int renderIndex;
-
-  MidBarNav({required this.playerDeckPath, required this.renderIndex});
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +18,7 @@ class MidBarNav extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Game(playerDeckPath: playerDeckPath, renderIndex: renderIndex)),
-  );
-            //Navigator.pushNamed(context, Game.routeName);
+          Navigator.pushNamed(context, Game.routeName);
             },
           child: Container(
             width: 48,

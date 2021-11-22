@@ -4,6 +4,8 @@ import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:provider/provider.dart';
 
+//TODO Challenge: See if eliminating prop drilling or keeping it is ideal for rollCardItem (λογικα ειναι)
+
 class GridCardItem extends StatelessWidget {
   final UnitCard unitCard;
   final String cardName;

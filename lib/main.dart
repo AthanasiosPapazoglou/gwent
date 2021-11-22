@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 // HELLO WORLD!!!!
 
+//TODO Diminish prop drill on gameplay screen
+//TODO Refactor Provider so that we define the assets directories with the use of a methods from the provider
+//TODO 
+
 
 import 'package:flutter/material.dart';
 import 'package:gwent/Providers/customDecks.dart';
@@ -14,6 +18,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:provider/provider.dart';
 import 'Providers/customDecks.dart';
+import 'package:gwent/Screens/customise_deck.dart';
 
 void main(){
     WidgetsFlutterBinding.ensureInitialized();
@@ -36,8 +41,9 @@ class Gwent extends StatelessWidget {
       routes: {
          MainMenu.routeName: (ctx) => MainMenu(),
          Rules.routeName: (ctx) => Rules(),
-         //Game.routeName: (ctx) => Game(),
+         Game.routeName: (ctx) => Game(),
          SetupDecksMenu.routeName: (ctx) => SetupDecksMenu(),
+         CustomiseDeck.routeName: (ctx) => CustomiseDeck()
       },
     ),
     );

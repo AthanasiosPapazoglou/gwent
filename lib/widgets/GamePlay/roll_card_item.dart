@@ -1,21 +1,21 @@
 // ignore_for_file: file_names, use_key_in_widget_constructors, list_remove_unrelated_type
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
+import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
 
 class RollListCardItem extends StatelessWidget {
   final String deckAssetsPath;
   final String cardName;
-  final int renderIndex;
 
   RollListCardItem({
       required this.deckAssetsPath,
       required this.cardName,
-      required this.renderIndex
       });
 
   @override
@@ -26,33 +26,50 @@ class RollListCardItem extends StatelessWidget {
     int _randomPick;
     int indexIndicator;
 
-    final List<List<UnitCard>> customDeckDB = [
-      customDecks.monstersUnitsUnselected, //0
-      customDecks.monstersUnitsSelected, //1
-      customDecks.nilfggardUnitsUnselected, //2
-      customDecks.nilfggardUnitsSelected, //3
-      customDecks.unselectedNorthernRealmsUnits, //4
-      customDecks.selectedNorthernRealmsUnits, //5
-      customDecks.unselectedScoiataelUnits, //6
-      customDecks.selectedScoiataelUnits, //7
-      customDecks.handCards, //8
-    ];
+    List<UnitCard> cardsInHand = customDecks.handCards;
+
+    final deckAssets _assets = customDecks.playerDeckSelection;
+    List<UnitCard> deckList;
+    String deckPath;
+    
+
+     switch (_assets){
+      
+      case deckAssets.monsters :
+      deckList = customDecks.monstersUnitsSelected; 
+      deckPath = kMonUnitsAD;
+      break;
+
+      case deckAssets.nilfgaard:
+      deckList = customDecks.nilfggardUnitsSelected;
+      deckPath = kNilfUnitsAD;
+      break;
+
+      case deckAssets.northernRealms:
+      deckList = customDecks.selectedNorthernRealmsUnits;
+      deckPath = kNorthUnitsAD;
+      break;
+
+      case deckAssets.scoiatael:
+      deckList = customDecks.selectedScoiataelUnits;
+      deckPath = kScoiaUnitsAD;
+      break;
+      
+    }
 
     return GridTile(
       child: InkWell(
         onTap: () {
-          _randomPick = _random.nextInt(customDeckDB[renderIndex].length);
+          _randomPick = _random.nextInt(deckList.length);
           
-          while(customDeckDB[8].contains(customDeckDB[renderIndex][_randomPick],)){
-          _randomPick = _random.nextInt(customDeckDB[renderIndex].length);
+          while(cardsInHand.contains(deckList[_randomPick],)){
+          _randomPick = _random.nextInt(deckList.length);
           }
-          /////////
-          indexIndicator = customDeckDB[8].indexWhere((element) => element.cardName == cardName);
-          customDeckDB[8].remove(customDeckDB[8][indexIndicator]);
-          customDeckDB[8].insert(indexIndicator, customDeckDB[renderIndex][_randomPick]);
-          ////////
-          //customDeckDB[8].removeWhere((element) => element.cardName == cardName);
-          //customDeckDB[8].add(customDeckDB[renderIndex][_randomPick]);
+
+          indexIndicator = cardsInHand.indexWhere((element) => element.cardName == cardName);
+          cardsInHand.remove(cardsInHand[indexIndicator]);
+          cardsInHand.insert(indexIndicator, deckList[_randomPick]);
+   
           customDecks.cardsRerolled++;
           customDecks.refreshLists();
         },

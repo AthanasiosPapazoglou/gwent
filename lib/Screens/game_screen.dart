@@ -10,10 +10,7 @@ import 'package:provider/provider.dart';
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
 
-  final String playerDeckPath;
-  final int renderIndex;
-
-  Game({required this.playerDeckPath, required this.renderIndex});
+  //TODO diminish prop drilling
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +27,7 @@ class Game extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               fit: BoxFit.cover,
             ),
-            HandListView(
-              playerDeckPath: playerDeckPath,
-              renderIndex: renderIndex,
-            ),
+            HandListView(),
             Positioned(
               top: 50,
               left: size.width * 0.35,
