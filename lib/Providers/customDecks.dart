@@ -371,7 +371,7 @@ List<LeaderCard> pNilfgaardLeaders = [
 
 List<LeaderCard> pNorthernRealmsLeaders = [
   LeaderCard(id: 0, cardName: 'Foltest King of Temeria.png', leaderEffect: LeaderEffect.nr1,),
-  LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png ', leaderEffect: LeaderEffect.nr2),
+  LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png', leaderEffect: LeaderEffect.nr2),
   LeaderCard(id: 2, cardName: 'Foltest the Siegemaster.png', leaderEffect: LeaderEffect.nr3),
   LeaderCard(id: 3, cardName: 'Foltest the Steel-Forged.png', leaderEffect: LeaderEffect.nr4),
 ];
