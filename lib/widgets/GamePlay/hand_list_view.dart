@@ -10,12 +10,6 @@ import 'dart:math';
 import 'package:gwent/App-Utilities/enums.dart';
 
 class HandListView extends StatefulWidget {
-  //TODO diminish prop drilling
-  
-  // final String playerDeckPath;
-  // final int renderIndex;
-
-  // HandListView({required this.playerDeckPath, required this.renderIndex});
 
   @override
   State<HandListView> createState() => _HandListViewState();
@@ -60,18 +54,6 @@ class _HandListViewState extends State<HandListView> {
       
     }
 
-    // final List<List<UnitCard>> customDeckDB = [
-    //   customDecks.monstersUnitsUnselected, //0
-    //   customDecks.monstersUnitsSelected, //1
-    //   customDecks.nilfggardUnitsUnselected, //2
-    //   customDecks.nilfggardUnitsSelected, //3
-    //   customDecks.unselectedNorthernRealmsUnits, //4
-    //   customDecks.selectedNorthernRealmsUnits, //5
-    //   customDecks.unselectedScoiataelUnits, //6
-    //   customDecks.selectedScoiataelUnits, //7
-    //   customDecks.handCards, //8
-    // ];
-
     // Our hand, a Random math Instance & a variable to save the result
     final Random _random = Random();
     int randomPick;
@@ -94,11 +76,13 @@ class _HandListViewState extends State<HandListView> {
 
     print(cardsInHand);
 
+    
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(8.0),
       itemCount: cardsInHand.length,
       itemBuilder: (ctx, i) {
+        //TODO fix data models so that this if clause is not required
         String pathset;
         if(cardsInHand[i].id <= 20) {
            pathset = kSpecialCardsAD;
@@ -108,7 +92,7 @@ class _HandListViewState extends State<HandListView> {
           pathset = deckPath;
         }
         return RollListCardItem(
-          deckAssetsPath: pathset, //widget.playerDeckPath,
+          deckAssetsPath: pathset, 
           cardName: cardsInHand[i].cardName, 
           );
       },
@@ -116,5 +100,3 @@ class _HandListViewState extends State<HandListView> {
   }
 }
 
-// deckAssetsPath: playerDeckPath, 
-// cardName: handCards[i].cardName,

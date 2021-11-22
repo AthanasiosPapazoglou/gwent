@@ -11,10 +11,6 @@ class Game extends StatelessWidget {
   static const routeName = '/game-screen';
 
   //TODO diminish prop drilling
-  // final String playerDeckPath;
-  // final int renderIndex;
-
-  // Game({required this.playerDeckPath, required this.renderIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +27,7 @@ class Game extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               fit: BoxFit.cover,
             ),
-            HandListView(
-              //TODO diminish prop drilling
-              //playerDeckPath: playerDeckPath,
-              //renderIndex: renderIndex,
-            ),
+            HandListView(),
             Positioned(
               top: 50,
               left: size.width * 0.35,

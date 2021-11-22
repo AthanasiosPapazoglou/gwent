@@ -9,17 +9,13 @@ import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
 
-//TODO Challenge: See if eliminating prop drilling or keeping it is ideal for rollCardItem
-
 class RollListCardItem extends StatelessWidget {
   final String deckAssetsPath;
   final String cardName;
-  //final int renderIndex;
 
   RollListCardItem({
       required this.deckAssetsPath,
       required this.cardName,
-      //required this.renderIndex
       });
 
   @override
@@ -69,14 +65,11 @@ class RollListCardItem extends StatelessWidget {
           while(cardsInHand.contains(deckList[_randomPick],)){
           _randomPick = _random.nextInt(deckList.length);
           }
-          /////////
+
           indexIndicator = cardsInHand.indexWhere((element) => element.cardName == cardName);
           cardsInHand.remove(cardsInHand[indexIndicator]);
           cardsInHand.insert(indexIndicator, deckList[_randomPick]);
-          ////////
-          //customDeckDB[8].removeWhere((element) => element.cardName == cardName);
-          //customDeckDB[8].add(customDeckDB[renderIndex][_randomPick]);
-          
+   
           customDecks.cardsRerolled++;
           customDecks.refreshLists();
         },
