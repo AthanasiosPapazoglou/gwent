@@ -43,19 +43,12 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
               padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
                 whichToRender: gridViewRender.unselected,
-                // assetDirectory: widget.assetDirectory,
-                // renderIndex: widget.unselectedIndex,
-                // compareIndex: widget.selectedIndex,
               ),
             ),
           ),
           Flexible(
             flex: 3,
             child: MiddleBarInfo(
-              // leaderCardName: monstersLeaders[0].cardName,
-              // leaderSetDirectory: kMonLeadersAD,
-              // deckPath: widget.assetDirectory,
-              // renderIndex: widget.selectedIndex,
             ),
           ),
           Flexible(
@@ -64,9 +57,6 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
               padding: const EdgeInsets.all(16.0),
               child: DeckGridView(
                 whichToRender: gridViewRender.selected,
-                // assetDirectory: widget.assetDirectory,
-                // renderIndex: widget.selectedIndex,
-                // compareIndex: widget.unselectedIndex,
               ),
             ),
           ),

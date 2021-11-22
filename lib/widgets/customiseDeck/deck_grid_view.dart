@@ -41,14 +41,14 @@ class DeckGridView extends StatelessWidget {
       break;
 
       case deckAssets.northernRealms:
-      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.unselectedNorthernRealmsUnits : customDecks.selectedNorthernRealmsUnits;
-      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.selectedNorthernRealmsUnits : customDecks.unselectedNorthernRealmsUnits;
+      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.NorthernRealmsUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
+      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.NorthernRealmsUnitsUnselected;
       assetDirectory = kNorthUnitsAD;
       break;
 
       case deckAssets.scoiatael:
-      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.unselectedScoiataelUnits : customDecks.selectedNorthernRealmsUnits;
-      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.selectedNorthernRealmsUnits : customDecks.unselectedScoiataelUnits;
+      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
+      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.ScoiataelUnitsUnselected;
       assetDirectory = kScoiaUnitsAD;
       break;
       
@@ -60,7 +60,6 @@ class DeckGridView extends StatelessWidget {
         if (renderList[i].id <= 20) {
           return GridCardItem(
             unitCard: renderList[i],
-            cardName: renderList[i].cardName,
             assetDirectory: kSpecialCardsAD,
             listToRender: renderList,
             listToCompare: compareList,
@@ -68,7 +67,6 @@ class DeckGridView extends StatelessWidget {
         } else {
           return GridCardItem(
             unitCard: renderList[i],
-            cardName: renderList[i].cardName,
             assetDirectory: (renderList[i].id <= 30)
                 ? kNeutralUnitsAD
                 : assetDirectory,

@@ -58,6 +58,9 @@ flutter:
     - GameAssets/Decks/Northern Realms/
     - GameAssets/Decks/Scoia'tael/
     - GameAssets/Leaders/Monsters/
+    - GameAssets/Leaders/Nilfgaardian Empire/
+    - GameAssets/Leaders/Northern Realms/
+    - GameAssets/Leaders/Scoia'tael/
     - GameAssets/NeutralUnits/
     - GameAssets/Rules/
     - GameAssets/SpecialCards/
@@ -70,6 +73,7 @@ flutter:
     - GameAssets/svgAssets/helmet-svgrepo-com.svg
     - GameAssets/svgAssets/sword-svgrepo-com.svg
     - GameAssets/svgAssets/playing-cards-svgrepo-com.svg
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

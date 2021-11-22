@@ -43,12 +43,12 @@ class _HandListViewState extends State<HandListView> {
       break;
 
       case deckAssets.northernRealms:
-      deckList = customDecks.selectedNorthernRealmsUnits;
+      deckList = customDecks.NorthernRealmsUnitsSelected;
       deckPath = kNorthUnitsAD;
       break;
 
       case deckAssets.scoiatael:
-      deckList = customDecks.selectedScoiataelUnits;
+      deckList = customDecks.ScoiataelUnitsSelected;
       deckPath = kScoiaUnitsAD;
       break;
       

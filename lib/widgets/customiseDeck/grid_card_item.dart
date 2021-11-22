@@ -8,15 +8,13 @@ import 'package:provider/provider.dart';
 
 class GridCardItem extends StatelessWidget {
   final UnitCard unitCard;
-  final String cardName;
-  final String assetDirectory; //path συγκεκριμενου Units Deck
+  final String assetDirectory; 
   final List listToRender;
   final List listToCompare;
 
   GridCardItem({
     required this.unitCard,
-    required this.cardName,
-    required this.assetDirectory, //path συγκεκριμενου Units Deck
+    required this.assetDirectory, 
     required this.listToRender,
     required this.listToCompare,
   });
@@ -24,6 +22,8 @@ class GridCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
+    
+
     return GridTile(
       child: GestureDetector(
         onTap: () {
@@ -38,7 +38,7 @@ class GridCardItem extends StatelessWidget {
           customDecks.refreshLists();
         },
         child: Image(
-          image: AssetImage('$assetDirectory$cardName'),
+          image: AssetImage('$assetDirectory${unitCard.cardName}'),
         ),
       ),
     );
