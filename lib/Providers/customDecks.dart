@@ -95,10 +95,6 @@ List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 45, cardName: 'Fire Elemental.png', strength: 6, weatherEffect: wEffects.none, battlerow: brows.siege,  effect: beffects.none, isHero: false),
   UnitCard(id: 46, cardName: 'Foglet.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 47, cardName: 'Forktail.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
-
-];
-
-List<UnitCard> monstersUnitsSelected =[
   UnitCard(id: 48, cardName: 'Frightener.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 49, cardName: 'Gargoyle.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
   UnitCard(id: 50, cardName: 'Ghoul 1.png', strength: 1, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.muster, isHero: false),
@@ -122,7 +118,10 @@ List<UnitCard> monstersUnitsSelected =[
   UnitCard(id: 68, cardName: 'Vampire Katakan.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.muster, isHero: false),
   UnitCard(id: 69, cardName: 'Werewolf.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 70, cardName: 'Wyvern.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
+
 ];
+
+List<UnitCard> monstersUnitsSelected =[];
 
 
 

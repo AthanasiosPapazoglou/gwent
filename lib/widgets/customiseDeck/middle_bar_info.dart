@@ -47,7 +47,7 @@ class MiddleBarInfo extends StatelessWidget {
       break;
 
       case deckAssets.scoiatael:
-      statList = customDecks.NorthernRealmsUnitsSelected;
+      statList = customDecks.ScoiataelUnitsSelected;
       leadersList = customDecks.pScoiataelLeaders;
       leadersPath = kScoiaLeadersAD;
       selectedLeader = customDecks.selectedScoiataelLeader;

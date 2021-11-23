@@ -47,8 +47,8 @@ class DeckGridView extends StatelessWidget {
       break;
 
       case deckAssets.scoiatael:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.ScoiataelUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.ScoiataelUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsSelected : customDecks.ScoiataelUnitsUnselected;
       assetDirectory = kScoiaUnitsAD;
       break;
       
