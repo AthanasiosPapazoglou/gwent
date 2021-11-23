@@ -40,14 +40,21 @@ void reconfigureLists (UnitCard cardToReposition, List<UnitCard> listToReconfigu
   int i = 0;
   bool endOfList = false;
 
+  if(listToReconfigure.length == 0){
+    listToReconfigure.add(cardToReposition);
+  }
+  else if(listToReconfigure.length == 1){
+    listToReconfigure[0].id < cardToReposition.id ? listToReconfigure.add(cardToReposition) : listToReconfigure.insert(0, cardToReposition);
+  } 
+  else {
   while(listToReconfigure[i].id < cardToReposition.id && endOfList == false){
     i++;
-    print(i);
     if (listToReconfigure.length == i+1){
       endOfList = true;
     }
   }
  endOfList ? listToReconfigure.add(cardToReposition) : listToReconfigure.insert(i, cardToReposition);
+}
 }
 
 
