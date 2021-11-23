@@ -38,11 +38,18 @@ String selectedScoiataelLeader = 'Francesca Findabair Daisy of The Valle.png';
 
 void reconfigureLists (UnitCard cardToReposition, List<UnitCard> listToReconfigure) {
   int i = 0;
-  while(listToReconfigure[i].id < cardToReposition.id){
+  bool endOfList = false;
+
+  while(listToReconfigure[i].id < cardToReposition.id && endOfList == false){
     i++;
+    print(i);
+    if (listToReconfigure.length == i+1){
+      endOfList = true;
+    }
   }
-  listToReconfigure.insert(i, cardToReposition);
+ endOfList ? listToReconfigure.add(cardToReposition) : listToReconfigure.insert(i, cardToReposition);
 }
+
 
 
   
