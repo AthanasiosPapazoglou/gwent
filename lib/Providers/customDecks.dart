@@ -12,8 +12,14 @@ class CustomDecks extends ChangeNotifier{
     notifyListeners();
   }
 
+  void resetGame () {
+    notifyListeners();
+  }
+
 deckAssets playerDeckSelection = deckAssets.monsters;
 deckAssets opponentDeckSelection = deckAssets.monsters;
+
+bool gameHasBegun = false;
 
 int cardsRerolled = 0;
 
@@ -31,6 +37,28 @@ String selectedMonstersLeader = 'Eredin Bringer of Death.png';
 String selectedNilfggardLeader = 'Emhyr var Emreis Emperor of Nilfgaard.png';
 String selectedNorthernRealmsLeader = 'Foltest King of Temeria.png';
 String selectedScoiataelLeader = 'Francesca Findabair Daisy of The Valle.png';
+
+void reconfigureLists (UnitCard cardToReposition, List<UnitCard> listToReconfigure) {
+  int i = 0;
+  bool endOfList = false;
+
+  if(listToReconfigure.length == 0){
+    listToReconfigure.add(cardToReposition);
+  }
+  else if(listToReconfigure.length == 1){
+    listToReconfigure[0].id < cardToReposition.id ? listToReconfigure.add(cardToReposition) : listToReconfigure.insert(0, cardToReposition);
+  } 
+  else {
+  while(listToReconfigure[i].id < cardToReposition.id && endOfList == false){
+    i++;
+    if (listToReconfigure.length == i+1){
+      endOfList = true;
+    }
+  }
+ endOfList ? listToReconfigure.add(cardToReposition) : listToReconfigure.insert(i, cardToReposition);
+}
+}
+
 
 
   
@@ -83,10 +111,6 @@ List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 45, cardName: 'Fire Elemental.png', strength: 6, weatherEffect: wEffects.none, battlerow: brows.siege,  effect: beffects.none, isHero: false),
   UnitCard(id: 46, cardName: 'Foglet.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 47, cardName: 'Forktail.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
-
-];
-
-List<UnitCard> monstersUnitsSelected =[
   UnitCard(id: 48, cardName: 'Frightener.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 49, cardName: 'Gargoyle.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
   UnitCard(id: 50, cardName: 'Ghoul 1.png', strength: 1, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.muster, isHero: false),
@@ -110,7 +134,10 @@ List<UnitCard> monstersUnitsSelected =[
   UnitCard(id: 68, cardName: 'Vampire Katakan.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.muster, isHero: false),
   UnitCard(id: 69, cardName: 'Werewolf.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 70, cardName: 'Wyvern.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
+
 ];
+
+List<UnitCard> monstersUnitsSelected =[];
 
 
 
@@ -359,7 +386,7 @@ List<LeaderCard> pNilfgaardLeaders = [
 
 List<LeaderCard> pNorthernRealmsLeaders = [
   LeaderCard(id: 0, cardName: 'Foltest King of Temeria.png', leaderEffect: LeaderEffect.nr1,),
-  LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png ', leaderEffect: LeaderEffect.nr2),
+  LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png', leaderEffect: LeaderEffect.nr2),
   LeaderCard(id: 2, cardName: 'Foltest the Siegemaster.png', leaderEffect: LeaderEffect.nr3),
   LeaderCard(id: 3, cardName: 'Foltest the Steel-Forged.png', leaderEffect: LeaderEffect.nr4),
 ];

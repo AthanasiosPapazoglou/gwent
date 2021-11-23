@@ -60,6 +60,7 @@ class RollListCardItem extends StatelessWidget {
     return GridTile(
       child: InkWell(
         onTap: () {
+          if(customDecks.cardsRerolled < 2){
           _randomPick = _random.nextInt(deckList.length);
           
           while(cardsInHand.contains(deckList[_randomPick],)){
@@ -72,6 +73,9 @@ class RollListCardItem extends StatelessWidget {
    
           customDecks.cardsRerolled++;
           customDecks.refreshLists();
+          } else {
+            return;
+          }
         },
         child: Padding(
           padding: const EdgeInsets.all(2.0),

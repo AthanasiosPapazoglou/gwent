@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 class DeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
   
-  final gridViewRender whichToRender;
+  final GridViewRender whichToRender;
 
   DeckGridView({required this.whichToRender});
 
@@ -29,26 +29,26 @@ class DeckGridView extends StatelessWidget {
     switch (_assets){
       
       case deckAssets.monsters : 
-      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.monstersUnitsUnselected : customDecks.monstersUnitsSelected;
-      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.monstersUnitsSelected : customDecks.monstersUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsUnselected : customDecks.monstersUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsSelected : customDecks.monstersUnitsUnselected;
       assetDirectory = kMonUnitsAD;
       break;
 
       case deckAssets.nilfgaard:
-      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.nilfggardUnitsUnselected : customDecks.nilfggardUnitsSelected;
-      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.nilfggardUnitsSelected : customDecks.nilfggardUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsUnselected : customDecks.nilfggardUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsSelected : customDecks.nilfggardUnitsUnselected;
       assetDirectory = kNilfUnitsAD;
       break;
 
       case deckAssets.northernRealms:
-      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.NorthernRealmsUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
-      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.NorthernRealmsUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.NorthernRealmsUnitsUnselected;
       assetDirectory = kNorthUnitsAD;
       break;
 
       case deckAssets.scoiatael:
-      renderList = (whichToRender == gridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
-      compareList = (whichToRender == gridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.ScoiataelUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.ScoiataelUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsSelected : customDecks.ScoiataelUnitsUnselected;
       assetDirectory = kScoiaUnitsAD;
       break;
       
@@ -63,6 +63,7 @@ class DeckGridView extends StatelessWidget {
             assetDirectory: kSpecialCardsAD,
             listToRender: renderList,
             listToCompare: compareList,
+            whatRenders: whichToRender,
           );
         } else {
           return GridCardItem(
@@ -72,6 +73,7 @@ class DeckGridView extends StatelessWidget {
                 : assetDirectory,
             listToRender: renderList,
             listToCompare: compareList,
+            whatRenders: whichToRender,
           );
         }
       },
