@@ -28,29 +28,29 @@ class RollListCardItem extends StatelessWidget {
 
     List<UnitCard> cardsInHand = customDecks.handCards;
 
-    final deckAssets _assets = customDecks.playerDeckSelection;
+    final DeckAssets _assets = customDecks.playerDeckSelection;
     List<UnitCard> deckList;
     String deckPath;
     
 
      switch (_assets){
       
-      case deckAssets.monsters :
+      case DeckAssets.monsters :
       deckList = customDecks.monstersUnitsSelected; 
       deckPath = kMonUnitsAD;
       break;
 
-      case deckAssets.nilfgaard:
+      case DeckAssets.nilfgaard:
       deckList = customDecks.nilfggardUnitsSelected;
       deckPath = kNilfUnitsAD;
       break;
 
-      case deckAssets.northernRealms:
+      case DeckAssets.northernRealms:
       deckList = customDecks.NorthernRealmsUnitsSelected;
       deckPath = kNorthUnitsAD;
       break;
 
-      case deckAssets.scoiatael:
+      case DeckAssets.scoiatael:
       deckList = customDecks.ScoiataelUnitsSelected;
       deckPath = kScoiaUnitsAD;
       break;

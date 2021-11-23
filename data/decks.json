@@ -1,0 +1,10 @@
+{
+    "monsters": {
+        "id": "monsters",
+        "cards": ["unit_arachas", "unit_bothcling"],
+        "name": "Monsters Inc."
+    },
+    "nilfgard": {
+
+    }
+}

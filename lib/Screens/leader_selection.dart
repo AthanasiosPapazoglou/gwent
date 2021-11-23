@@ -15,28 +15,28 @@ class LeaderSelection extends StatelessWidget {
   Widget build(BuildContext context) {
     landscapeMode();
     final customDecks = Provider.of<CustomDecks>(context);
-    deckAssets _assets = customDecks.playerDeckSelection;
+    DeckAssets _assets = customDecks.playerDeckSelection;
     List <LeaderCard> deckLeaders;
     String leadersPath;
 
     switch (_assets) {
 
-      case deckAssets.monsters:
+      case DeckAssets.monsters:
       deckLeaders = customDecks.pMonstersLeaders;
       leadersPath = kMonLeadersAD;
       break;
 
-      case deckAssets.nilfgaard:
+      case DeckAssets.nilfgaard:
       deckLeaders = customDecks.pNilfgaardLeaders;
       leadersPath = kNilfLeadersAD;
       break;
 
-      case deckAssets.northernRealms:
+      case DeckAssets.northernRealms:
       deckLeaders = customDecks.pNorthernRealmsLeaders;
       leadersPath = kNorthLeadersAD;
       break;
 
-      case deckAssets.scoiatael:
+      case DeckAssets.scoiatael:
       deckLeaders = customDecks.pScoiataelLeaders;
       leadersPath = kScoiaLeadersAD;
       break;

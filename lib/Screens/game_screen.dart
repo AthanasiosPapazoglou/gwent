@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/widgets/GamePlay/bRow_list_view.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/Providers/customDecks.dart';
+import 'package:gwent/widgets/GamePlay/battle_rows.dart';
 
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
@@ -30,6 +32,7 @@ class Game extends StatelessWidget {
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
+              Positioned(child: BattleRowView(rowToRender: RenderRow.melee))
             ],
           ),
         ),

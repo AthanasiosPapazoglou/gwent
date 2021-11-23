@@ -13,7 +13,7 @@ class DeckButton extends StatelessWidget {
   final String deckName;
   final Color deckColors;
   final String subtitleText;
-  final deckAssets assets;
+  final DeckAssets assets;
 
   DeckButton({
       required this.imageURL,

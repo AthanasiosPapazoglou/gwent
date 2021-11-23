@@ -1,0 +1,19 @@
+{
+    "units": {
+        "unit_arachas": {
+            "id": "unit_arachas",
+            "imageFilename": "Arachas 1.png",
+            "strength": 4,
+            "row": "melee",
+            "effect": "muster",
+            "isHero": false
+        },
+        "botchling": {}
+    },
+    "weather": {
+
+    },
+    "special": {
+        
+    }
+}

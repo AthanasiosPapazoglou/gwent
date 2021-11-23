@@ -28,25 +28,25 @@ class DeckGridView extends StatelessWidget {
    
     switch (_assets){
       
-      case deckAssets.monsters : 
+      case DeckAssets.monsters : 
       renderList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsUnselected : customDecks.monstersUnitsSelected;
       compareList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsSelected : customDecks.monstersUnitsUnselected;
       assetDirectory = kMonUnitsAD;
       break;
 
-      case deckAssets.nilfgaard:
+      case DeckAssets.nilfgaard:
       renderList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsUnselected : customDecks.nilfggardUnitsSelected;
       compareList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsSelected : customDecks.nilfggardUnitsUnselected;
       assetDirectory = kNilfUnitsAD;
       break;
 
-      case deckAssets.northernRealms:
+      case DeckAssets.northernRealms:
       renderList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
       compareList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.NorthernRealmsUnitsUnselected;
       assetDirectory = kNorthUnitsAD;
       break;
 
-      case deckAssets.scoiatael:
+      case DeckAssets.scoiatael:
       renderList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.ScoiataelUnitsSelected;
       compareList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsSelected : customDecks.ScoiataelUnitsUnselected;
       assetDirectory = kScoiaUnitsAD;

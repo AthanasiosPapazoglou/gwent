@@ -25,28 +25,28 @@ class MiddleBarInfo extends StatelessWidget {
 
     switch (assets){
       
-      case deckAssets.monsters : 
+      case DeckAssets.monsters : 
       statList = customDecks.monstersUnitsSelected;
       leadersList = customDecks.pMonstersLeaders;
       leadersPath = kMonLeadersAD;
       selectedLeader = customDecks.selectedMonstersLeader;
       break;
 
-      case deckAssets.nilfgaard:
+      case DeckAssets.nilfgaard:
       statList = customDecks.nilfggardUnitsSelected;
       leadersList = customDecks.pNilfgaardLeaders;
       leadersPath = kNilfLeadersAD;
       selectedLeader = customDecks.selectedNilfggardLeader;
       break;
 
-      case deckAssets.northernRealms:
+      case DeckAssets.northernRealms:
       statList = customDecks.NorthernRealmsUnitsSelected;
       leadersList = customDecks.pNorthernRealmsLeaders;
       leadersPath = kNorthLeadersAD;
       selectedLeader = customDecks.selectedNorthernRealmsLeader;
       break;
 
-      case deckAssets.scoiatael:
+      case DeckAssets.scoiatael:
       statList = customDecks.ScoiataelUnitsSelected;
       leadersList = customDecks.pScoiataelLeaders;
       leadersPath = kScoiaLeadersAD;
