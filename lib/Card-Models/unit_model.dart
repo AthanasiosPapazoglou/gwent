@@ -47,7 +47,8 @@ class UnitCard {
     }
 
     isHero = json['isHero'];
-
+  }
+    
     Map<String, dynamic> toJson() => {
       'id': id,
       'imageFilename': imageFilename,
@@ -55,10 +56,11 @@ class UnitCard {
       'battleRow': battleRow,
       'effect': effect,
     };
+  
   }
 
   
-}
+
 
 
 

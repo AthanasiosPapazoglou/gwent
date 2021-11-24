@@ -8,6 +8,10 @@ import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
 import 'package:gwent/widgets/customiseDeck/filter_row.dart';
 import 'package:gwent/widgets/customiseDeck/leader_card_widget.dart';
 import 'package:gwent/widgets/customiseDeck/middle_bar_info.dart';
+import 'package:gwent/Providers/customDecks.dart';
+import 'package:provider/provider.dart';
+import 'dart:convert';
+
 
 class CustomiseDeck extends StatefulWidget {
   static const routeName = '/customise-decks-screen';
@@ -31,6 +35,12 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
 
   @override
   Widget build(BuildContext context) {
+    final customDecks = Provider.of<CustomDecks>(context);
+    for(int i=0; i<customDecks.monstersUnitsUnselected.length; i++){
+      print(jsonEncode(customDecks.monstersUnitsUnselected[i]));
+    }
+    
+
     return Container(
       color: Colors.black87,
       width: MediaQuery.of(context).size.width,
