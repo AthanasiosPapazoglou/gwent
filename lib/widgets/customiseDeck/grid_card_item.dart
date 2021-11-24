@@ -61,7 +61,7 @@ class GridCardItem extends StatelessWidget {
         }
       },
         child: Image(
-          image: AssetImage('$assetDirectory${unitCard.cardName}'),
+          image: AssetImage('$assetDirectory${unitCard.imageFilename}'),
         ),
       ),
     );

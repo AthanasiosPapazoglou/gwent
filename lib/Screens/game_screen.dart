@@ -32,7 +32,7 @@ class Game extends StatelessWidget {
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
-              Positioned(child: BattleRowView(rowToRender: RenderRow.melee))
+             // Positioned(child: BattleRowView(rowToRender: RenderRow.melee))
             ],
           ),
         ),

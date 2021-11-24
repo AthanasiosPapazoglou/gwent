@@ -67,7 +67,7 @@ class RollListCardItem extends StatelessWidget {
           _randomPick = _random.nextInt(deckList.length);
           }
 
-          indexIndicator = cardsInHand.indexWhere((element) => element.cardName == cardName);
+          indexIndicator = cardsInHand.indexWhere((element) => element.imageFilename == cardName);
           cardsInHand.remove(cardsInHand[indexIndicator]);
           cardsInHand.insert(indexIndicator, deckList[_randomPick]);
    

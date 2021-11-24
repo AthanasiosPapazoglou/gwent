@@ -4,7 +4,7 @@
             "id": "unit_arachas",
             "imageFilename": "Arachas 1.png",
             "strength": 4,
-            "row": "melee",
+            "battleRow": "melee",
             "effect": "muster",
             "isHero": false
         },

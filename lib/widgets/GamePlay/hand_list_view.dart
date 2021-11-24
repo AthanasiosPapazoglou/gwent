@@ -93,7 +93,7 @@ class _HandListViewState extends State<HandListView> {
         }
         return RollListCardItem(
           deckAssetsPath: pathset, 
-          cardName: cardsInHand[i].cardName, 
+          cardName: cardsInHand[i].imageFilename, 
           );
       },
     );
