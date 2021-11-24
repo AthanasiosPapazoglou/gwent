@@ -7,19 +7,6 @@ import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
 
-List <UnitCard> neutralUnits = [
-  UnitCard(id: 21, imageFilename: 'Cirilla Fiona Elen Rianno 2.png', strength: 15,  battleRow: Brows.melee,  effect: Beffects.none, isHero: true,),
-  UnitCard(id: 22, imageFilename: 'Dandelion 2.png', strength: 2,  battleRow: Brows.melee,  effect: Beffects.horn, isHero: false,),
-  UnitCard(id: 23, imageFilename: 'Emiel Regis Rohellec Terzieff 2.png', strength: 5,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false,),
-  UnitCard(id: 24, imageFilename: 'Geralt of Rivia 2.png', strength: 15,  battleRow: Brows.melee,  effect: Beffects.none, isHero: true,),
-  UnitCard(id: 25, imageFilename: 'Mysterious Elf 2.png', strength: 0,  battleRow: Brows.melee,  effect: Beffects.spy, isHero: true,),
-  UnitCard(id: 26, imageFilename: 'Triss Merigold 2.png', strength: 7,  battleRow: Brows.ranged,  effect: Beffects.none, isHero: true,),
-  UnitCard(id: 27, imageFilename: 'Vesemir 2.png', strength: 6,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false,),
-  UnitCard(id: 28, imageFilename: 'Villentretenmerth 2.png', strength: 7,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false,),
-  UnitCard(id: 29, imageFilename: 'Yennefer of Vengerberg 2.png', strength: 7,  battleRow: Brows.ranged,  effect: Beffects.medic, isHero: true,),
-  UnitCard(id: 30, imageFilename: 'Zoltan Chivay 2.png', strength: 5,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false),
-];
-
 List <UnitCard> specialCards = [
   UnitCard(id: 0, imageFilename: 'Biting Frost 1.png', strength: 0, battleRow: Brows.arena, effect: Beffects.none, isHero: false),
   UnitCard(id: 1, imageFilename: 'Biting Frost 2.png', strength: 0, battleRow: Brows.arena, effect: Beffects.none, isHero: false),
@@ -42,6 +29,19 @@ List <UnitCard> specialCards = [
   UnitCard(id: 18, imageFilename: 'Scorch 1.png', strength: 0,  battleRow: Brows.arena, effect: Beffects.scortch, isHero: false),
   UnitCard(id: 19, imageFilename: 'Scorch 2.png', strength: 0,  battleRow: Brows.arena, effect: Beffects.scortch, isHero: false),
   UnitCard(id: 20, imageFilename: 'Scorch 3.png', strength: 0,  battleRow: Brows.arena, effect: Beffects.scortch, isHero: false),
+];
+
+List <UnitCard> neutralUnits = [
+  UnitCard(id: 21, imageFilename: 'Cirilla Fiona Elen Rianno 2.png', strength: 15,  battleRow: Brows.melee,  effect: Beffects.none, isHero: true,),
+  UnitCard(id: 22, imageFilename: 'Dandelion 2.png', strength: 2,  battleRow: Brows.melee,  effect: Beffects.horn, isHero: false,),
+  UnitCard(id: 23, imageFilename: 'Emiel Regis Rohellec Terzieff 2.png', strength: 5,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false,),
+  UnitCard(id: 24, imageFilename: 'Geralt of Rivia 2.png', strength: 15,  battleRow: Brows.melee,  effect: Beffects.none, isHero: true,),
+  UnitCard(id: 25, imageFilename: 'Mysterious Elf 2.png', strength: 0,  battleRow: Brows.melee,  effect: Beffects.spy, isHero: true,),
+  UnitCard(id: 26, imageFilename: 'Triss Merigold 2.png', strength: 7,  battleRow: Brows.ranged,  effect: Beffects.none, isHero: true,),
+  UnitCard(id: 27, imageFilename: 'Vesemir 2.png', strength: 6,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false,),
+  UnitCard(id: 28, imageFilename: 'Villentretenmerth 2.png', strength: 7,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false,),
+  UnitCard(id: 29, imageFilename: 'Yennefer of Vengerberg 2.png', strength: 7,  battleRow: Brows.ranged,  effect: Beffects.medic, isHero: true,),
+  UnitCard(id: 30, imageFilename: 'Zoltan Chivay 2.png', strength: 5,  battleRow: Brows.melee,  effect: Beffects.none, isHero: false),
 ];
 
 
