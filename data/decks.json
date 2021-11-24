@@ -2,9 +2,21 @@
     "monsters": {
         "id": "monsters",
         "cards": ["unit_arachas", "unit_bothcling"],
-        "name": "Monsters Inc."
+        "name": "Monsters"
     },
     "nilfgard": {
-
+        "id": "nilfgaard",
+        "cards": [],
+        "name": "Nilfgaard"
+    },
+    "northern realms": {
+        "id": "northern_realms",
+        "cards": [],
+        "name": "Northern Realms"
+    },
+    "scoiatael": {
+        "id": "scoiatael",
+        "cards": [],
+        "name": "Scoiatael"
     }
 }
