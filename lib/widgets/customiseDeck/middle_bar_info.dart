@@ -69,97 +69,100 @@ class MiddleBarInfo extends StatelessWidget {
     }
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.25,
-        child: Column(
-          children: [
-            LeaderCardWidget(
-              cardName: selectedLeader,
-              assetDirectory: leadersPath,
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              'Total Cards in Deck',
-              style: TextStyle(
-                fontSize: 10,
-                color: kInfoTextColor,
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Container(
+          width: MediaQuery.of(context).size.width * 0.25,
+          child: Column(
+            children: [
+              LeaderCardWidget(
+                cardName: selectedLeader,
+                assetDirectory: leadersPath,
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              statList.length.toString(),
-              style: TextStyle(
-                fontSize: 12,
-                color: kInfoNumColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                'Total Cards in Deck',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: kInfoTextColor,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              'Number of Unit Cards',
-              style: TextStyle(
-                fontSize: 10,
-                color: kInfoTextColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                statList.length.toString(),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: kInfoNumColor,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              '$units/22',
-              style: TextStyle(
-                fontSize: 12,
-                color: (units < 22) ? Colors.red : Colors.green,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                'Number of Unit Cards',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: kInfoTextColor,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              'Special Cards',
-              style: TextStyle(
-                fontSize: 10,
-                color: kInfoTextColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                '$units/22',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: (units < 22) ? Colors.red : Colors.green,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              '$special/10',
-              style: TextStyle(
-                fontSize: 12,
-                color: (special <= 10) ? Colors.green : Colors.red,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                'Special Cards',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: kInfoTextColor,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              'Total Unit Card Strength',
-              style: TextStyle(
-                fontSize: 10,
-                color: kInfoTextColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                '$special/10',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: (special <= 10) ? Colors.green : Colors.red,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              power.toString(),
-              style: TextStyle(
-                fontSize: 12,
-                color: kInfoNumColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                'Total Unit Card Strength',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: kInfoTextColor,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              'Hero Cards',
-              style: TextStyle(
-                fontSize: 10,
-                color: kInfoTextColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                power.toString(),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: kInfoNumColor,
+                ),
               ),
-            ),
-            SizedBox(height: kDistanceOnInfo),
-            Text(
-              heroes.toString(),
-              style: TextStyle(
-                fontSize: 12,
-                color: kInfoNumColor,
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                'Hero Cards',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: kInfoTextColor,
+                ),
               ),
-            ),
-            SizedBox(height: 6),
-            MidBarNav()
-          ],
+              SizedBox(height: kDistanceOnInfo),
+              Text(
+                heroes.toString(),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: kInfoNumColor,
+                ),
+              ),
+              SizedBox(height: 6),
+              MidBarNav()
+            ],
+          ),
         ),
       ),
     );
