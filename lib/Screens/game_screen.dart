@@ -59,7 +59,7 @@ class Game extends StatelessWidget {
                     Text(
                       '${customDecks.cardsRerolled}/2',
                       style: TextStyle(
-                      color: customDecks.cardsRerolled < 2 ? Colors.green : Colors.yellow, 
+                      color: customDecks.cardsRerolled < 2 ? Colors.green : Colors.red, 
                       fontSize: 32),
                     ),
                   ],
