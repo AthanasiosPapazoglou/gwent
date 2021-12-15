@@ -31,36 +31,39 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black87,
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      child: Row(
-        children: [
-          Flexible(
-            flex: 4,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: DeckGridView(
-                whichToRender: GridViewRender.unselected,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Container(
+        color: Colors.black87,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Row(
+          children: [
+            Flexible(
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: DeckGridView(
+                  whichToRender: GridViewRender.unselected,
+                ),
               ),
             ),
-          ),
-          Flexible(
-            flex: 3,
-            child: MiddleBarInfo(
-            ),
-          ),
-          Flexible(
-            flex: 4,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: DeckGridView(
-                whichToRender: GridViewRender.selected,
+            Flexible(
+              flex: 3,
+              child: MiddleBarInfo(
               ),
             ),
-          ),
-        ],
+            Flexible(
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: DeckGridView(
+                  whichToRender: GridViewRender.selected,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
