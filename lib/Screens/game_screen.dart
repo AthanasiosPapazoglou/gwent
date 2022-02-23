@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
-import 'package:gwent/widgets/GamePlay/bRow_list_view.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'package:provider/provider.dart';
-import 'package:gwent/Providers/customDecks.dart';
 
-class Game extends StatelessWidget {
+class GameScreen extends StatelessWidget {
   static const routeName = '/game-screen';
 
   //TODO diminish prop drilling
@@ -24,11 +24,17 @@ class Game extends StatelessWidget {
         child: Scaffold(
           body: Stack(
             children: [
-              Image(
-                image: AssetImage('GameAssets/GameTable/GwentTable.jpg'),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                fit: BoxFit.cover,
+              FutureBuilder<Directory>(
+                future: getFilesStorageDir(),
+                builder: (context, snapshot) {
+                  return Image(
+                    image: AssetImage(
+                        '${snapshot.data?.path}GameAssets/GameTable/GwentTable.jpg'),
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    fit: BoxFit.cover,
+                  );
+                },
               ),
             ],
           ),
@@ -59,8 +65,10 @@ class Game extends StatelessWidget {
                     Text(
                       '${customDecks.cardsRerolled}/2',
                       style: TextStyle(
-                      color: customDecks.cardsRerolled < 2 ? Colors.green : Colors.red, 
-                      fontSize: 32),
+                          color: customDecks.cardsRerolled < 2
+                              ? Colors.green
+                              : Colors.red,
+                          fontSize: 32),
                     ),
                   ],
                 ),

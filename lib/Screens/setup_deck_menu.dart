@@ -9,7 +9,7 @@ import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
-class SetupDecksMenu extends StatelessWidget {
+class SetupDecksMenuScreen extends StatelessWidget {
   static const routeName = '/Setup-Decks-screen';
 
   @override
@@ -24,32 +24,31 @@ class SetupDecksMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <DeckButton>[
                 DeckButton(
-                  imageURL: kMonBackAD,
-                  deckName: 'Monsters',
-                  deckColors: Colors.red.shade400,
-                  subtitleText: kMonDesc,
-                  assets: deckAssets.monsters
-                ),
+                    imageURL: kMonBackAD,
+                    deckName: 'Monsters',
+                    deckColors: Colors.red.shade400,
+                    subtitleText: kMonDesc,
+                    assets: DeckAsset.monsters),
                 DeckButton(
                   imageURL: kNilfBackAD,
                   deckName: 'Nilfgaardian Empire',
                   deckColors: Colors.yellow.shade400,
                   subtitleText: kNilfDesc,
-                  assets: deckAssets.nilfgaard,
+                  assets: DeckAsset.nilfgaard,
                 ),
                 DeckButton(
                   imageURL: kNorthBackAD,
                   deckName: 'Northern Realms',
                   deckColors: Colors.blue.shade400,
                   subtitleText: kNorthDesc,
-                  assets: deckAssets.northernRealms,
+                  assets: DeckAsset.northernRealms,
                 ),
                 DeckButton(
                   imageURL: kScoiaBackAD,
                   deckName: 'Scoia\'tael',
                   deckColors: Colors.green.shade400,
                   subtitleText: kScoiaDesc,
-                  assets: deckAssets.scoiatael,
+                  assets: DeckAsset.scoiatael,
                 ),
               ],
             ),

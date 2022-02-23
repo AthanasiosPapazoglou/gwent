@@ -3,51 +3,31 @@
 
 //TODO Diminish prop drill on gameplay screen
 //TODO Refactor Provider so that we define the assets directories with the use of a methods from the provider
-//TODO 
-
-
+//TODO
 import 'package:flutter/material.dart';
-import 'package:gwent/Providers/customDecks.dart';
-import 'Screens/main_Menu.dart';
-import 'package:flutter/services.dart';
-import 'Screens/game_screen.dart';
-import 'Screens/rules_screen.dart';
-import 'Screens/setup_deck_menu.dart';
-import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:audio_service/audio_service.dart';
-import 'package:provider/provider.dart';
-import 'Providers/customDecks.dart';
-import 'package:gwent/Screens/customise_deck.dart';
-import 'package:gwent/Screens/leader_selection.dart';
+import 'Routes/route_generator.dart';
+import 'Routes/route_name.dart';
 
-void main(){
-    WidgetsFlutterBinding.ensureInitialized();
-    SystemChrome.setEnabledSystemUIOverlays([]);
-      print('print works');
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setEnabledSystemUIOverlays([]);
+  // print('print works');
+  /* for(UnitCard unitCard in neutralUnits){
 
-  ///////////// 
+    } */
+  /////////////
   runApp(Gwent());
-} 
+}
 
 class Gwent extends StatelessWidget {
+  const Gwent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => CustomDecks(),
-    child: MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainMenu(),
-      routes: {
-         MainMenu.routeName: (ctx) => MainMenu(),
-         Rules.routeName: (ctx) => Rules(),
-         Game.routeName: (ctx) => Game(),
-         SetupDecksMenu.routeName: (ctx) => SetupDecksMenu(),
-         CustomiseDeck.routeName: (ctx) => CustomiseDeck(),
-         LeaderSelection.routeName: (ctx) => LeaderSelection(),
-      },
-    ),
+      initialRoute: RouteName.splash,
+      onGenerateRoute: RouteGenerator().generateRoute,
     );
   }
 }

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/Providers/customDecks.dart';
+import 'package:gwent/Routes/route_name.dart';
 import 'package:gwent/Screens/customise_deck.dart';
 import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
@@ -13,15 +14,14 @@ class DeckButton extends StatelessWidget {
   final String deckName;
   final Color deckColors;
   final String subtitleText;
-  final deckAssets assets;
+  final DeckAsset assets;
 
-  DeckButton({
-      required this.imageURL,
+  DeckButton(
+      {required this.imageURL,
       required this.deckName,
       required this.deckColors,
       required this.subtitleText,
-      required this.assets
-      });
+      required this.assets});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class DeckButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         customDecks.playerDeckSelection = assets;
-        Navigator.pushNamed(context, CustomiseDeck.routeName);
+        Navigator.pushNamed(context, RouteName.deckCustomization);
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),

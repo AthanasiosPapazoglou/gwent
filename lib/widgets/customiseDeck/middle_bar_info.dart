@@ -13,7 +13,6 @@ import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
 class MiddleBarInfo extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
@@ -23,38 +22,36 @@ class MiddleBarInfo extends StatelessWidget {
     final String leadersPath;
     final String selectedLeader;
 
-    switch (assets){
-      
-      case deckAssets.monsters : 
-      statList = customDecks.monstersUnitsSelected;
-      leadersList = customDecks.pMonstersLeaders;
-      leadersPath = kMonLeadersAD;
-      selectedLeader = customDecks.selectedMonstersLeader;
-      break;
+    switch (assets) {
+      case DeckAsset.monsters:
+        statList = customDecks.monstersUnitsSelected;
+        leadersList = customDecks.pMonstersLeaders;
+        leadersPath = kMonLeadersAD;
+        selectedLeader = customDecks.selectedMonstersLeader;
+        break;
 
-      case deckAssets.nilfgaard:
-      statList = customDecks.nilfggardUnitsSelected;
-      leadersList = customDecks.pNilfgaardLeaders;
-      leadersPath = kNilfLeadersAD;
-      selectedLeader = customDecks.selectedNilfggardLeader;
-      break;
+      case DeckAsset.nilfgaard:
+        statList = customDecks.nilfggardUnitsSelected;
+        leadersList = customDecks.pNilfgaardLeaders;
+        leadersPath = kNilfLeadersAD;
+        selectedLeader = customDecks.selectedNilfggardLeader;
+        break;
 
-      case deckAssets.northernRealms:
-      statList = customDecks.NorthernRealmsUnitsSelected;
-      leadersList = customDecks.pNorthernRealmsLeaders;
-      leadersPath = kNorthLeadersAD;
-      selectedLeader = customDecks.selectedNorthernRealmsLeader;
-      break;
+      case DeckAsset.northernRealms:
+        statList = customDecks.NorthernRealmsUnitsSelected;
+        leadersList = customDecks.pNorthernRealmsLeaders;
+        leadersPath = kNorthLeadersAD;
+        selectedLeader = customDecks.selectedNorthernRealmsLeader;
+        break;
 
-      case deckAssets.scoiatael:
-      statList = customDecks.ScoiataelUnitsSelected;
-      leadersList = customDecks.pScoiataelLeaders;
-      leadersPath = kScoiaLeadersAD;
-      selectedLeader = customDecks.selectedScoiataelLeader;
-      break;
-
+      case DeckAsset.scoiatael:
+        statList = customDecks.ScoiataelUnitsSelected;
+        leadersList = customDecks.pScoiataelLeaders;
+        leadersPath = kScoiaLeadersAD;
+        selectedLeader = customDecks.selectedScoiataelLeader;
+        break;
     }
-    
+
     int power = 0;
     int units = 0;
     int heroes = 0;

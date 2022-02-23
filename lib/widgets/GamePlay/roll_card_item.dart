@@ -14,13 +14,12 @@ class RollListCardItem extends StatelessWidget {
   final String cardName;
 
   RollListCardItem({
-      required this.deckAssetsPath,
-      required this.cardName,
-      });
+    required this.deckAssetsPath,
+    required this.cardName,
+  });
 
   @override
   Widget build(BuildContext context) {
-    
     final customDecks = Provider.of<CustomDecks>(context);
     final Random _random = Random();
     int _randomPick;
@@ -28,51 +27,51 @@ class RollListCardItem extends StatelessWidget {
 
     List<UnitCard> cardsInHand = customDecks.handCards;
 
-    final deckAssets _assets = customDecks.playerDeckSelection;
+    final DeckAsset _assets = customDecks.playerDeckSelection;
     List<UnitCard> deckList;
     String deckPath;
-    
 
-     switch (_assets){
-      
-      case deckAssets.monsters :
-      deckList = customDecks.monstersUnitsSelected; 
-      deckPath = kMonUnitsAD;
-      break;
+    switch (_assets) {
+      case DeckAsset.monsters:
+        deckList = customDecks.monstersUnitsSelected;
+        deckPath = kMonUnitsAD;
+        break;
 
-      case deckAssets.nilfgaard:
-      deckList = customDecks.nilfggardUnitsSelected;
-      deckPath = kNilfUnitsAD;
-      break;
+      case DeckAsset.nilfgaard:
+        deckList = customDecks.nilfggardUnitsSelected;
+        deckPath = kNilfUnitsAD;
+        break;
 
-      case deckAssets.northernRealms:
-      deckList = customDecks.NorthernRealmsUnitsSelected;
-      deckPath = kNorthUnitsAD;
-      break;
+      case DeckAsset.northernRealms:
+        deckList = customDecks.NorthernRealmsUnitsSelected;
+        deckPath = kNorthUnitsAD;
+        break;
 
-      case deckAssets.scoiatael:
-      deckList = customDecks.ScoiataelUnitsSelected;
-      deckPath = kScoiaUnitsAD;
-      break;
-      
+      case DeckAsset.scoiatael:
+        deckList = customDecks.ScoiataelUnitsSelected;
+        deckPath = kScoiaUnitsAD;
+        break;
     }
 
     return GridTile(
       child: InkWell(
         onTap: () {
-          if(customDecks.cardsRerolled < 2){
-          _randomPick = _random.nextInt(deckList.length);
-          
-          while(cardsInHand.contains(deckList[_randomPick],)){
-          _randomPick = _random.nextInt(deckList.length);
-          }
+          if (customDecks.cardsRerolled < 2) {
+            _randomPick = _random.nextInt(deckList.length);
 
-          indexIndicator = cardsInHand.indexWhere((element) => element.cardName == cardName);
-          cardsInHand.remove(cardsInHand[indexIndicator]);
-          cardsInHand.insert(indexIndicator, deckList[_randomPick]);
-   
-          customDecks.cardsRerolled++;
-          customDecks.refreshLists();
+            while (cardsInHand.contains(
+              deckList[_randomPick],
+            )) {
+              _randomPick = _random.nextInt(deckList.length);
+            }
+
+            indexIndicator = cardsInHand
+                .indexWhere((element) => element.cardName == cardName);
+            cardsInHand.remove(cardsInHand[indexIndicator]);
+            cardsInHand.insert(indexIndicator, deckList[_randomPick]);
+
+            customDecks.cardsRerolled++;
+            customDecks.refreshLists();
           } else {
             return;
           }

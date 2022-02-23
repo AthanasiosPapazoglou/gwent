@@ -9,14 +9,14 @@ import 'package:gwent/widgets/customiseDeck/filter_row.dart';
 import 'package:gwent/widgets/customiseDeck/leader_card_widget.dart';
 import 'package:gwent/widgets/customiseDeck/middle_bar_info.dart';
 
-class CustomiseDeck extends StatefulWidget {
+class CustomiseDeckScreen extends StatefulWidget {
   static const routeName = '/customise-decks-screen';
 
   @override
   _CustomiseDeckState createState() => _CustomiseDeckState();
 }
 
-class _CustomiseDeckState extends State<CustomiseDeck> {
+class _CustomiseDeckState extends State<CustomiseDeckScreen> {
   @override
   void initState() {
     super.initState();
@@ -50,8 +50,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
             ),
             Flexible(
               flex: 3,
-              child: MiddleBarInfo(
-              ),
+              child: MiddleBarInfo(),
             ),
             Flexible(
               flex: 4,

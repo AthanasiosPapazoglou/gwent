@@ -11,47 +11,59 @@ import 'package:provider/provider.dart';
 
 class DeckGridView extends StatelessWidget {
   static const routeName = '/deck-grid-view';
-  
+
   final GridViewRender whichToRender;
 
   DeckGridView({required this.whichToRender});
 
   @override
   Widget build(BuildContext context) {
-
     final customDecks = Provider.of<CustomDecks>(context);
     final _assets = customDecks.playerDeckSelection;
     final List<UnitCard> renderList;
     final List<UnitCard> compareList;
     final String assetDirectory;
 
-   
-    switch (_assets){
-      
-      case deckAssets.monsters : 
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsUnselected : customDecks.monstersUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsSelected : customDecks.monstersUnitsUnselected;
-      assetDirectory = kMonUnitsAD;
-      break;
+    switch (_assets) {
+      case DeckAsset.monsters:
+        renderList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.monstersUnitsUnselected
+            : customDecks.monstersUnitsSelected;
+        compareList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.monstersUnitsSelected
+            : customDecks.monstersUnitsUnselected;
+        assetDirectory = kMonUnitsAD;
+        break;
 
-      case deckAssets.nilfgaard:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsUnselected : customDecks.nilfggardUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsSelected : customDecks.nilfggardUnitsUnselected;
-      assetDirectory = kNilfUnitsAD;
-      break;
+      case DeckAsset.nilfgaard:
+        renderList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.nilfggardUnitsUnselected
+            : customDecks.nilfggardUnitsSelected;
+        compareList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.nilfggardUnitsSelected
+            : customDecks.nilfggardUnitsUnselected;
+        assetDirectory = kNilfUnitsAD;
+        break;
 
-      case deckAssets.northernRealms:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.NorthernRealmsUnitsUnselected;
-      assetDirectory = kNorthUnitsAD;
-      break;
+      case DeckAsset.northernRealms:
+        renderList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.NorthernRealmsUnitsUnselected
+            : customDecks.NorthernRealmsUnitsSelected;
+        compareList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.NorthernRealmsUnitsSelected
+            : customDecks.NorthernRealmsUnitsUnselected;
+        assetDirectory = kNorthUnitsAD;
+        break;
 
-      case deckAssets.scoiatael:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.ScoiataelUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsSelected : customDecks.ScoiataelUnitsUnselected;
-      assetDirectory = kScoiaUnitsAD;
-      break;
-      
+      case DeckAsset.scoiatael:
+        renderList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.ScoiataelUnitsUnselected
+            : customDecks.ScoiataelUnitsSelected;
+        compareList = (whichToRender == GridViewRender.unselected)
+            ? customDecks.ScoiataelUnitsSelected
+            : customDecks.ScoiataelUnitsUnselected;
+        assetDirectory = kScoiaUnitsAD;
+        break;
     }
 
     return GridView.builder(
@@ -68,9 +80,8 @@ class DeckGridView extends StatelessWidget {
         } else {
           return GridCardItem(
             unitCard: renderList[i],
-            assetDirectory: (renderList[i].id <= 30)
-                ? kNeutralUnitsAD
-                : assetDirectory,
+            assetDirectory:
+                (renderList[i].id <= 30) ? kNeutralUnitsAD : assetDirectory,
             listToRender: renderList,
             listToCompare: compareList,
             whatRenders: whichToRender,

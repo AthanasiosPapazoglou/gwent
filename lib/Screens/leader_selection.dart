@@ -8,39 +8,36 @@ import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/widgets/customiseDeck/leaders_row_item.dart';
 
 class LeaderSelection extends StatelessWidget {
-
   static const routeName = '/select-leader-screen';
 
   @override
   Widget build(BuildContext context) {
     landscapeMode();
     final customDecks = Provider.of<CustomDecks>(context);
-    deckAssets _assets = customDecks.playerDeckSelection;
-    List <LeaderCard> deckLeaders;
+    DeckAsset _assets = customDecks.playerDeckSelection;
+    List<LeaderCard> deckLeaders;
     String leadersPath;
 
     switch (_assets) {
+      case DeckAsset.monsters:
+        deckLeaders = customDecks.pMonstersLeaders;
+        leadersPath = kMonLeadersAD;
+        break;
 
-      case deckAssets.monsters:
-      deckLeaders = customDecks.pMonstersLeaders;
-      leadersPath = kMonLeadersAD;
-      break;
+      case DeckAsset.nilfgaard:
+        deckLeaders = customDecks.pNilfgaardLeaders;
+        leadersPath = kNilfLeadersAD;
+        break;
 
-      case deckAssets.nilfgaard:
-      deckLeaders = customDecks.pNilfgaardLeaders;
-      leadersPath = kNilfLeadersAD;
-      break;
+      case DeckAsset.northernRealms:
+        deckLeaders = customDecks.pNorthernRealmsLeaders;
+        leadersPath = kNorthLeadersAD;
+        break;
 
-      case deckAssets.northernRealms:
-      deckLeaders = customDecks.pNorthernRealmsLeaders;
-      leadersPath = kNorthLeadersAD;
-      break;
-
-      case deckAssets.scoiatael:
-      deckLeaders = customDecks.pScoiataelLeaders;
-      leadersPath = kScoiaLeadersAD;
-      break;
-
+      case DeckAsset.scoiatael:
+        deckLeaders = customDecks.pScoiataelLeaders;
+        leadersPath = kScoiaLeadersAD;
+        break;
     }
 
     return Scaffold(
@@ -50,13 +47,22 @@ class LeaderSelection extends StatelessWidget {
         color: Colors.black,
         child: Row(
           children: [
-            LeadersRowItem(leaderName: deckLeaders[0].cardName, leadersPath: leadersPath, leftPadding: 8,),
-            LeadersRowItem(leaderName: deckLeaders[1].cardName, leadersPath: leadersPath),
-            LeadersRowItem(leaderName: deckLeaders[2].cardName, leadersPath: leadersPath),
-            LeadersRowItem(leaderName: deckLeaders[3].cardName, leadersPath: leadersPath, rightPadding: 8,),
+            LeadersRowItem(
+              leaderName: deckLeaders[0].cardName,
+              leadersPath: leadersPath,
+              leftPadding: 8,
+            ),
+            LeadersRowItem(
+                leaderName: deckLeaders[1].cardName, leadersPath: leadersPath),
+            LeadersRowItem(
+                leaderName: deckLeaders[2].cardName, leadersPath: leadersPath),
+            LeadersRowItem(
+              leaderName: deckLeaders[3].cardName,
+              leadersPath: leadersPath,
+              rightPadding: 8,
+            ),
           ],
         ),
-    
       ),
     );
   }

@@ -27,12 +27,20 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.2.1
   audio_service: ^0.18.1
   cupertino_icons: ^1.0.2
+  dio: ^4.0.4
+  enum_to_string: ^2.0.1
   flutter:
     sdk: flutter
+  flutter_archive: ^4.1.1
   flutter_svg: ^0.23.0+1
+  path_provider: ^2.0.9
+  percent_indicator: ^4.0.0
+  permission_handler: ^9.1.0
   provider: ^6.0.1
+  real_volume: ^1.0.4
 
 dev_dependencies:
   flutter_lints: ^1.0.0
@@ -49,30 +57,6 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-
-    # Card Directory Assets
-    - GameAssets/Back/
-    - GameAssets/Decks/Monsters/
-    - GameAssets/Decks/Nilfgaardian Empire/
-    - GameAssets/Decks/Northern Realms/
-    - GameAssets/Decks/Scoia'tael/
-    - GameAssets/Leaders/Monsters/
-    - GameAssets/Leaders/Nilfgaardian Empire/
-    - GameAssets/Leaders/Northern Realms/
-    - GameAssets/Leaders/Scoia'tael/
-    - GameAssets/NeutralUnits/
-    - GameAssets/Rules/
-    - GameAssets/SpecialCards/
-    - GameAssets/GameTable/
-
-    # SVG Assets
-    - GameAssets/svgAssets/bad-weather-svgrepo-com.svg
-    - GameAssets/svgAssets/catapult-svgrepo-com.svg
-    - GameAssets/svgAssets/crossbow-svgrepo-com.svg
-    - GameAssets/svgAssets/helmet-svgrepo-com.svg
-    - GameAssets/svgAssets/sword-svgrepo-com.svg
-    - GameAssets/svgAssets/playing-cards-svgrepo-com.svg
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

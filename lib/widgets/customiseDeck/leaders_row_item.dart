@@ -12,36 +12,35 @@ class LeadersRowItem extends StatelessWidget {
   double leftPadding;
   double rightPadding;
 
-  LeadersRowItem({
-    required this.leaderName,
-    required this.leadersPath,
-    this.leftPadding = 0.0,
-    this.rightPadding = 0.0
-  });
+  LeadersRowItem(
+      {required this.leaderName,
+      required this.leadersPath,
+      this.leftPadding = 0.0,
+      this.rightPadding = 0.0});
 
   @override
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
-    deckAssets _assets = customDecks.playerDeckSelection;
+    DeckAsset _assets = customDecks.playerDeckSelection;
 
     return Expanded(
       flex: 1,
       child: GestureDetector(
         onTap: () {
           switch (_assets) {
-            case deckAssets.monsters:
+            case DeckAsset.monsters:
               customDecks.selectedMonstersLeader = leaderName;
               break;
 
-            case deckAssets.nilfgaard:
+            case DeckAsset.nilfgaard:
               customDecks.selectedNilfggardLeader = leaderName;
               break;
 
-            case deckAssets.northernRealms:
+            case DeckAsset.northernRealms:
               customDecks.selectedNorthernRealmsLeader = leaderName;
               break;
 
-            case deckAssets.scoiatael:
+            case DeckAsset.scoiatael:
               customDecks.selectedScoiataelLeader = leaderName;
               break;
           }
