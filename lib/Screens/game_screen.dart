@@ -11,7 +11,6 @@ import 'package:gwent/Providers/customDecks.dart';
 class Game extends StatelessWidget {
   static const routeName = '/game-screen';
 
-  //TODO diminish prop drilling
 
   @override
   Widget build(BuildContext context) {
