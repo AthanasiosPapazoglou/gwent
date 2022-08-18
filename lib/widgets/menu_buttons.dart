@@ -6,7 +6,7 @@ class MenuButtons extends StatelessWidget {
   final String buttonTitle;
   final String routeToNavigateAt;
 
-  MenuButtons({required this.buttonTitle, required this.routeToNavigateAt});
+  MenuButtons({@required this.buttonTitle, @required this.routeToNavigateAt});
 
   @override
   Widget build(BuildContext context) {

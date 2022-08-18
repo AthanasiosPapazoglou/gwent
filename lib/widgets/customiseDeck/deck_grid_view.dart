@@ -14,16 +14,16 @@ class DeckGridView extends StatelessWidget {
   
   final GridViewRender whichToRender;
 
-  DeckGridView({required this.whichToRender});
+  DeckGridView({@required this.whichToRender});
 
   @override
   Widget build(BuildContext context) {
 
     final customDecks = Provider.of<CustomDecks>(context);
     final _assets = customDecks.playerDeckSelection;
-    final List<UnitCard> renderList;
-    final List<UnitCard> compareList;
-    final String assetDirectory;
+    List<UnitCard> renderList;
+    List<UnitCard> compareList;
+    String assetDirectory;
 
    
     switch (_assets){

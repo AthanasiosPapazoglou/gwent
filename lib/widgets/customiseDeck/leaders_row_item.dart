@@ -13,8 +13,8 @@ class LeadersRowItem extends StatelessWidget {
   double rightPadding;
 
   LeadersRowItem({
-    required this.leaderName,
-    required this.leadersPath,
+    @required this.leaderName,
+    @required this.leadersPath,
     this.leftPadding = 0.0,
     this.rightPadding = 0.0
   });

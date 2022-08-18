@@ -16,11 +16,11 @@ class DeckButton extends StatelessWidget {
   final deckAssets assets;
 
   DeckButton({
-      required this.imageURL,
-      required this.deckName,
-      required this.deckColors,
-      required this.subtitleText,
-      required this.assets
+      @required this.imageURL,
+      @required this.deckName,
+      @required this.deckColors,
+      @required this.subtitleText,
+      @required this.assets
       });
 
   @override
