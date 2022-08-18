@@ -40,11 +40,11 @@ class _GwentState extends State<Gwent> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    final assetsAudioPlayer = AssetsAudioPlayer();
+    // final assetsAudioPlayer = AssetsAudioPlayer();
 
-    assetsAudioPlayer.open(
-      Audio("GameAssets/Music/I'm Helping the Idiot.mp3"),
-    );
+    // assetsAudioPlayer.open(
+    //   Audio("GameAssets/Music/I'm Helping the Idiot.mp3"),
+    // );
   }
 
   @override
