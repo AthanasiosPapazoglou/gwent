@@ -10,7 +10,7 @@ class Rules extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    portraitMode();
+    //portraitMode();
     return GestureDetector(
       onHorizontalDragStart: (DragStartDetails details) {
         print('Start');

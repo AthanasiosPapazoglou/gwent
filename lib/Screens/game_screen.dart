@@ -8,13 +8,29 @@ import 'package:gwent/Providers/customDecks.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/Providers/customDecks.dart';
 
-class Game extends StatelessWidget {
+class Game extends StatefulWidget {
   static const routeName = '/game-screen';
 
+  @override
+  State<Game> createState() => _GameState();
+}
 
+class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
-    landscapeMode();
+    
+    @override
+    void initState() {
+      super.initState();
+      landscapeMode();
+    }
+
+    @override
+    dispose() {
+      portraitMode();
+      super.dispose();
+    }
+
     final customDecks = Provider.of<CustomDecks>(context);
     final size = MediaQuery.of(context).size;
 
@@ -58,8 +74,10 @@ class Game extends StatelessWidget {
                     Text(
                       '${customDecks.cardsRerolled}/2',
                       style: TextStyle(
-                      color: customDecks.cardsRerolled < 2 ? Colors.green : Colors.red, 
-                      fontSize: 32),
+                          color: customDecks.cardsRerolled < 2
+                              ? Colors.green
+                              : Colors.red,
+                          fontSize: 32),
                     ),
                   ],
                 ),

@@ -10,14 +10,26 @@ class MenuButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * .6,
-      height: 50,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.black54,
-          width: 2,
+    return GestureDetector(
+      onTap: (){
+         Navigator.pushNamed(context, routeToNavigateAt);
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width * .7,
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.amber[50],
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: Colors.black54,
+            width: 2,
+          ),
+        ),
+        child: Center(
+          child: Text(
+            buttonTitle,
+            style: TextStyle(fontSize: 30, color: Colors.black54),
+          ),
         ),
       ),
     );
