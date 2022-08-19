@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/functions.dart';
 
 class MenuButtons extends StatelessWidget {
   final String buttonTitle;
@@ -11,8 +12,11 @@ class MenuButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-         Navigator.pushNamed(context, routeToNavigateAt);
+      onTap: () {
+        Navigator.pushNamed(context, routeToNavigateAt);
+        if (buttonTitle == 'PLAY GAME') {
+          landscapeMode();
+        }
       },
       child: Container(
         width: MediaQuery.of(context).size.width * .7,
