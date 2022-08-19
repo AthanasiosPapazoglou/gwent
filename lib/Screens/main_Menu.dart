@@ -46,7 +46,8 @@ class MainMenu extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(12, 12, 16, 12),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(12, 12, 16, 12),
                     child: Icon(
                       Icons.notifications,
                       color: Colors.amber[50],
@@ -63,9 +64,23 @@ class MainMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MenuButtons(
-                  buttonTitle: 'PLAY GAME',
-                  routeToNavigateAt: Game.routeName,
+                GestureDetector(
+                  //TODO fix this properly
+                  onTap: () {
+                    final snackBar = SnackBar(
+                      content: const Text('Yay! A SnackBar!'),
+                      action: SnackBarAction(
+                        label: 'Undo',
+                        onPressed: () {
+                          // Some code to undo the change.
+                        },
+                      ),
+                    );
+                  },
+                  child: MenuButtons(
+                    buttonTitle: 'PLAY GAME',
+                    routeToNavigateAt: Game.routeName,
+                  ),
                 ),
                 SizedBox(
                   height: 30,
