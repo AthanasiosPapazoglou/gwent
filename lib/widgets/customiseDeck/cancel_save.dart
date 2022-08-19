@@ -1,16 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/main_Menu.dart';
 import 'package:gwent/Screens/setup_deck_menu.dart';
 
-
-
 class MidBarNav extends StatelessWidget {
-
- 
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,8 +14,8 @@ class MidBarNav extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-          Navigator.pushNamed(context, Game.routeName);
-            },
+            Navigator.pushNamed(context, Game.routeName);
+          },
           child: Container(
             width: 48,
             height: 27,
@@ -44,7 +40,8 @@ class MidBarNav extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, MainMenu.routeName);
+            //Navigator.pushNamed(context, MainMenu.routeName);
+            Navigator.pushReplacementNamed(context, MainMenu.routeName);
           },
           child: Container(
             width: 48,
@@ -70,7 +67,7 @@ class MidBarNav extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, SetupDecksMenu.routeName);
+            Navigator.pop(context);
           },
           child: Container(
             width: 48,

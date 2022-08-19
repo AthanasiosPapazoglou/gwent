@@ -15,11 +15,11 @@ class GridCardItem extends StatelessWidget {
   final GridViewRender whatRenders; 
 
   GridCardItem({
-    required this.unitCard,
-    required this.assetDirectory, 
-    required this.listToRender,
-    required this.listToCompare,
-    required this.whatRenders
+    @required this.unitCard,
+    @required this.assetDirectory, 
+    @required this.listToRender,
+    @required this.listToCompare,
+    @required this.whatRenders
   });
 
   @override

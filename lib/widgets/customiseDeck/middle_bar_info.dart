@@ -18,10 +18,10 @@ class MiddleBarInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final customDecks = Provider.of<CustomDecks>(context);
     final assets = customDecks.playerDeckSelection;
-    final List<UnitCard> statList;
-    final List<LeaderCard> leadersList;
-    final String leadersPath;
-    final String selectedLeader;
+    List<UnitCard> statList;
+    List<LeaderCard> leadersList;
+    String leadersPath;
+    String selectedLeader;
 
     switch (assets){
       

@@ -6,6 +6,7 @@
 //TODO
 
 import 'package:flutter/material.dart';
+import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'Screens/main_Menu.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +26,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([]);
   print('print works');
+  portraitMode();
 
   /////////////
   runApp(Gwent());
@@ -40,11 +42,11 @@ class _GwentState extends State<Gwent> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    final assetsAudioPlayer = AssetsAudioPlayer();
+    // final assetsAudioPlayer = AssetsAudioPlayer();
 
-    assetsAudioPlayer.open(
-      Audio("GameAssets/Music/I'm Helping the Idiot.mp3"),
-    );
+    // assetsAudioPlayer.open(
+    //   Audio("GameAssets/Music/I'm Helping the Idiot.mp3"),
+    // );
   }
 
   @override
