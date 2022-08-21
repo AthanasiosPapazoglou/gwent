@@ -64,23 +64,9 @@ class MainMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  //TODO fix this properly
-                  onTap: () {
-                    final snackBar = SnackBar(
-                      content: const Text('Yay! A SnackBar!'),
-                      action: SnackBarAction(
-                        label: 'Undo',
-                        onPressed: () {
-                          // Some code to undo the change.
-                        },
-                      ),
-                    );
-                  },
-                  child: MenuButtons(
-                    buttonTitle: 'PLAY GAME',
-                    routeToNavigateAt: Game.routeName,
-                  ),
+                MenuButtons(
+                  buttonTitle: 'PLAY GAME',
+                  routeToNavigateAt: Game.routeName,
                 ),
                 SizedBox(
                   height: 30,
