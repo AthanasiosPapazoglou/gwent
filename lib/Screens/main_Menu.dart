@@ -6,13 +6,21 @@ import 'package:gwent/widgets/menu_buttons.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/rules_screen.dart';
 import 'package:gwent/Screens/setup_deck_menu.dart';
+import 'package:provider/provider.dart';
+
+import '../Providers/customDecks.dart';
 
 class MainMenu extends StatelessWidget {
   static const routeName = '/main-menu';
 
   @override
   Widget build(BuildContext context) {
-    //portraitMode();
+    final customDecks = Provider.of<CustomDecks>(context);
+    final bool isEligibleToPlay =
+        (customDecks.monstersUnitsSelected.isNotEmpty ||
+            customDecks.ScoiataelUnitsSelected.isNotEmpty ||
+            customDecks.nilfggardUnitsSelected.isNotEmpty ||
+            customDecks.NorthernRealmsUnitsSelected.isNotEmpty);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -67,6 +75,7 @@ class MainMenu extends StatelessWidget {
                 MenuButtons(
                   buttonTitle: 'PLAY GAME',
                   routeToNavigateAt: Game.routeName,
+                  isEligibleToPlay: isEligibleToPlay,
                 ),
                 SizedBox(
                   height: 30,
