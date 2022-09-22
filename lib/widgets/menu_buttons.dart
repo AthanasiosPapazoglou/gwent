@@ -6,17 +6,22 @@ import 'package:gwent/App-Utilities/functions.dart';
 class MenuButtons extends StatelessWidget {
   final String buttonTitle;
   final String routeToNavigateAt;
+  final bool isEligibleToPlay;
 
-  MenuButtons({@required this.buttonTitle, @required this.routeToNavigateAt});
+  MenuButtons(
+      {@required this.buttonTitle,
+      @required this.routeToNavigateAt,
+      this.isEligibleToPlay});
 
   @override
   Widget build(BuildContext context) {
     //TODO fix this properly
     return GestureDetector(
-      onTap: (buttonTitle == 'PLAY GAME')
+      onTap: (buttonTitle == 'PLAY GAME' && (!isEligibleToPlay ?? false))
           ? () {
               final snackBar = SnackBar(
-                content: const Text('You need to setup your decks before playing'),
+                content:
+                    const Text('You need to setup your decks before playing'),
                 // action: SnackBarAction(
                 //   label: 'Undo',
                 //   onPressed: () {
