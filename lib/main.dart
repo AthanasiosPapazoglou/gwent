@@ -21,6 +21,7 @@ import 'Providers/customDecks.dart';
 import 'package:gwent/Screens/customise_deck.dart';
 import 'package:gwent/Screens/leader_selection.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
