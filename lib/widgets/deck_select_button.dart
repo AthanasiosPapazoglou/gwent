@@ -37,6 +37,7 @@ class DeckButton extends StatelessWidget {
     final customDecks = Provider.of<CustomDecks>(context);
     return InkWell(
       onTap: () {
+        customDecks.playerDeckSelection = assets;
         highLightChanger(deckHighlightIndex);
       },
       child: Padding(

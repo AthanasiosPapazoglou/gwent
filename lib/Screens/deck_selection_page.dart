@@ -9,6 +9,8 @@ import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
+import 'customise_deck.dart';
+
 class DeckSelectionMenu extends StatefulWidget {
   static const routeName = '/Setup-Decks-screen';
 
@@ -33,6 +35,13 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
     'GameAssets/CropedBackground/Francesca Findabair Daisy of The Valle.png'
   ];
 
+  List<Color> customiseButtonColorScheme = [
+    Colors.red.shade400,
+    Colors.yellow.shade400,
+    Colors.blue.shade400,
+    Colors.green.shade400,
+  ];
+
   @override
   Widget build(BuildContext context) {
     //portraitMode();
@@ -53,6 +62,7 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
       child: Scaffold(
         backgroundColor: Colors.blueGrey,
         body: Stack(
+          alignment: Alignment.center,
           children: [
             if (selection != null)
               SizedBox(
@@ -148,6 +158,49 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
                       ),
                     ],
                   ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 25,
+              child: GestureDetector(
+                onTap: (){
+                  if(selection != null)
+                  Navigator.pushNamed(context, CustomiseDeck.routeName);
+                },
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      child: Center(
+                        child: Text(
+                          'Customise',
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: (selection != null)
+                                ? customiseButtonColorScheme[selection]
+                                : Colors.grey.shade400,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      width: 200,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(.7),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          if(selection != null)
+                          BoxShadow(
+                            color: customiseButtonColorScheme[selection].withOpacity(.8),
+                            spreadRadius: 2,
+                            blurRadius: 8,
+                            offset: Offset(0, 0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
