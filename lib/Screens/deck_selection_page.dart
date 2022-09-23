@@ -113,25 +113,42 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
               ],
             ),
             Positioned(
-              top: 16,
-              left: 16,
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    color: Colors.white,
+              top: 0,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 60,
+                  color: Colors.black.withOpacity(.7),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 48, 0),
+                        child: Text(
+                          'Tap or Slide to Return',
+                          style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    'Slide to Return',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ],
