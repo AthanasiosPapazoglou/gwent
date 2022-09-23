@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors
+// ignore_for_file: avoid_unnecessary_containers, use_key_in_widget_constructors, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
@@ -9,14 +9,14 @@ import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
-class SetupDecksMenu extends StatefulWidget {
+class DeckSelectionMenu extends StatefulWidget {
   static const routeName = '/Setup-Decks-screen';
 
   @override
-  State<SetupDecksMenu> createState() => _SetupDecksMenuState();
+  State<DeckSelectionMenu> createState() => _DeckSelectionMenuState();
 }
 
-class _SetupDecksMenuState extends State<SetupDecksMenu> {
+class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
   Offset triggerPoint;
   int selection;
 
@@ -47,6 +47,14 @@ class _SetupDecksMenuState extends State<SetupDecksMenu> {
         backgroundColor: Colors.blueGrey,
         body: Stack(
           children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Image.asset(
+                'GameAssets/Back/Monsters back.png',
+                fit: BoxFit.fill,
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -99,9 +107,23 @@ class _SetupDecksMenuState extends State<SetupDecksMenu> {
             Positioned(
               top: 16,
               left: 16,
-              child: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                color: Colors.white,
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    'Slide to Return',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

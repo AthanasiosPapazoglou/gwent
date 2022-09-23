@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/main_Menu.dart';
-import 'package:gwent/Screens/setup_deck_menu.dart';
+import 'package:gwent/Screens/deck_selection_page.dart';
 
 class MidBarNav extends StatelessWidget {
   @override

@@ -5,7 +5,7 @@ import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/widgets/menu_buttons.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/rules_screen.dart';
-import 'package:gwent/Screens/setup_deck_menu.dart';
+import 'package:gwent/Screens/deck_selection_page.dart';
 import 'package:provider/provider.dart';
 
 import '../Providers/customDecks.dart';
@@ -89,7 +89,7 @@ class MainMenu extends StatelessWidget {
                 ),
                 MenuButtons(
                   buttonTitle: 'SETUP DECKS',
-                  routeToNavigateAt: SetupDecksMenu.routeName,
+                  routeToNavigateAt: DeckSelectionMenu.routeName,
                 ),
               ],
             ),
