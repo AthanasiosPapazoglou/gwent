@@ -26,6 +26,13 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
     });
   }
 
+  List<String> deckCoverList = [
+    'GameAssets/Back/Monsters back.png',
+    'GameAssets/Back/Nilfgaardian Empire back.png',
+    'GameAssets/Back/Northern Realms back.png',
+    'GameAssets/Back/Scoia\'tael back.png'
+  ];
+
   @override
   Widget build(BuildContext context) {
     //portraitMode();
@@ -47,14 +54,15 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
         backgroundColor: Colors.blueGrey,
         body: Stack(
           children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Image.asset(
-                'GameAssets/Back/Monsters back.png',
-                fit: BoxFit.fill,
+            if (selection != null)
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Image.asset(
+                  deckCoverList[selection],
+                  fit: BoxFit.fill,
+                ),
               ),
-            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
