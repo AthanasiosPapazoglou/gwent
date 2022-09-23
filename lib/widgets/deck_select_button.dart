@@ -39,8 +39,6 @@ class DeckButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         highLightChanger(deckHighlightIndex);
-        // customDecks.playerDeckSelection = assets;
-        // Navigator.pushNamed(context, CustomiseDeck.routeName);
       },
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
