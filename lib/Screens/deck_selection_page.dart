@@ -27,10 +27,10 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
   }
 
   List<String> deckCoverList = [
-    'GameAssets/Back/Monsters back.png',
-    'GameAssets/Back/Nilfgaardian Empire back.png',
-    'GameAssets/Back/Northern Realms back.png',
-    'GameAssets/Back/Scoia\'tael back.png'
+    'GameAssets/CropedBackground/Eredin Bringer of Death.png',
+    'GameAssets/CropedBackground/Emhyr var Emreis the Relentless.png',
+    'GameAssets/CropedBackground/Foltest King of Temeria.png',
+    'GameAssets/CropedBackground/Francesca Findabair Daisy of The Valle.png'
   ];
 
   @override
@@ -115,7 +115,7 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
             Positioned(
               top: 0,
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pop(context);
                 },
                 child: Container(
