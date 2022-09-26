@@ -164,9 +164,10 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
             Positioned(
               bottom: 25,
               child: GestureDetector(
-                onTap: (){
-                  if(selection != null)
-                  Navigator.pushNamed(context, CustomiseDeck.routeName);
+                onTap: () {
+                  if (selection != null) {
+                    Navigator.pushNamed(context, CustomiseDeck.routeName);
+                  }
                 },
                 child: Stack(
                   alignment: Alignment.center,
@@ -190,13 +191,14 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
                         color: Colors.black.withOpacity(.7),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
-                          if(selection != null)
-                          BoxShadow(
-                            color: customiseButtonColorScheme[selection].withOpacity(.8),
-                            spreadRadius: 2,
-                            blurRadius: 8,
-                            offset: Offset(0, 0),
-                          ),
+                          if (selection != null)
+                            BoxShadow(
+                              color: customiseButtonColorScheme[selection]
+                                  .withOpacity(.8),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                              offset: Offset(0, 0),
+                            ),
                         ],
                       ),
                     ),
