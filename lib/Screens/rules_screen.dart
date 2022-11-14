@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
+import 'package:gwent/widgets/general/page_dismiss_wraper.dart';
 
 import '../widgets/general/page_dismiss_app_bar.dart';
 
@@ -13,18 +14,7 @@ class Rules extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //portraitMode();
-    return GestureDetector(
-      onHorizontalDragStart: (DragStartDetails details) {
-        triggerPoint = details.globalPosition;
-      },
-      onHorizontalDragUpdate: (DragUpdateDetails details) {
-        if (triggerPoint.dx < details.globalPosition.dx - 50) {
-          Navigator.pop(context);
-        }
-      },
-      onHorizontalDragEnd: (DragEndDetails details) {
-        triggerPoint = null;
-      },
+    return PageDismissWraper(
       child: Scaffold(
         backgroundColor: Colors.black54,
         body: Stack(children: [

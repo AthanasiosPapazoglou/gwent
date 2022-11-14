@@ -8,6 +8,7 @@ import 'package:gwent/widgets/deck_select_button.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/enums.dart';
+import 'package:gwent/widgets/general/page_dismiss_wraper.dart';
 
 import '../widgets/general/page_dismiss_app_bar.dart';
 import 'customise_deck.dart';
@@ -46,18 +47,7 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
   @override
   Widget build(BuildContext context) {
     //portraitMode();
-    return GestureDetector(
-      onHorizontalDragStart: (DragStartDetails details) {
-        triggerPoint = details.globalPosition;
-      },
-      onHorizontalDragUpdate: (DragUpdateDetails details) {
-        if (triggerPoint.dx < details.globalPosition.dx - 50) {
-          Navigator.pop(context);
-        }
-      },
-      onHorizontalDragEnd: (DragEndDetails details) {
-        triggerPoint = null;
-      },
+    return PageDismissWraper(
       child: Scaffold(
         backgroundColor: Colors.blueGrey,
         body: Stack(
