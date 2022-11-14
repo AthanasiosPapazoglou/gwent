@@ -9,6 +9,7 @@ import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
+import '../widgets/general/page_dismiss_app_bar.dart';
 import 'customise_deck.dart';
 
 class DeckSelectionMenu extends StatefulWidget {
@@ -47,7 +48,6 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
     //portraitMode();
     return GestureDetector(
       onHorizontalDragStart: (DragStartDetails details) {
-        print('Start');
         triggerPoint = details.globalPosition;
       },
       onHorizontalDragUpdate: (DragUpdateDetails details) {
@@ -56,7 +56,6 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
         }
       },
       onHorizontalDragEnd: (DragEndDetails details) {
-        print('End');
         triggerPoint = null;
       },
       child: Scaffold(
@@ -124,43 +123,7 @@ class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
             ),
             Positioned(
               top: 0,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 60,
-                  color: Colors.black.withOpacity(.7),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(48, 0, 0, 0),
-                        child: Icon(
-                          Icons.arrow_back_ios_new_rounded,
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 25,
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 0, 48, 0),
-                        child: Text(
-                          'Tap or Slide to Return',
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+              child: DismissPromptAppBar()),
             Positioned(
               bottom: 25,
               child: GestureDetector(

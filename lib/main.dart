@@ -25,7 +25,6 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([]);
-  print('print works');
   portraitMode();
 
   /////////////

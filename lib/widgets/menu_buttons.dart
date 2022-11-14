@@ -22,15 +22,8 @@ class MenuButtons extends StatelessWidget {
               final snackBar = SnackBar(
                 content:
                     const Text('You need to setup your decks before playing'),
-                // action: SnackBarAction(
-                //   label: 'Undo',
-                //   onPressed: () {
-                //     // Some code to undo the change.
-                //   },
-                // ),
               );
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              print('fuck yo life');
             }
           : () {
               Navigator.pushNamed(context, routeToNavigateAt);

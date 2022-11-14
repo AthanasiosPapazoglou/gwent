@@ -74,9 +74,6 @@ class _HandListViewState extends State<HandListView> {
     });
     }
 
-    print(cardsInHand);
-
-    
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(8.0),

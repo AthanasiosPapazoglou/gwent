@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 
+import '../widgets/general/page_dismiss_app_bar.dart';
+
 class Rules extends StatelessWidget {
   static const routeName = '/rules-screen';
 
@@ -13,7 +15,6 @@ class Rules extends StatelessWidget {
     //portraitMode();
     return GestureDetector(
       onHorizontalDragStart: (DragStartDetails details) {
-        print('Start');
         triggerPoint = details.globalPosition;
       },
       onHorizontalDragUpdate: (DragUpdateDetails details) {
@@ -22,19 +23,19 @@ class Rules extends StatelessWidget {
         }
       },
       onHorizontalDragEnd: (DragEndDetails details) {
-        print('End');
         triggerPoint = null;
       },
       child: Scaffold(
         backgroundColor: Colors.black54,
-        body: Center(
-          child: Image(
+        body: Stack(children: [
+          Image(
             fit: BoxFit.fill,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             image: AssetImage('GameAssets/Rules/Gwent Rules.png'),
           ),
-        ),
+          Positioned(top: 0, child: DismissPromptAppBar())
+        ]),
       ),
     );
   }
