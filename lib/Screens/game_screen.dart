@@ -45,6 +45,7 @@ class _GameState extends State<Game> {
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
+              
             ],
           ),
         ),

@@ -17,14 +17,19 @@ class MenuButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO fix this properly
     return GestureDetector(
-      onTap: (buttonTitle == 'PLAY GAME' && (!isEligibleToPlay ?? false))
-          ? () {
-              final snackBar = SnackBar(
-                content:
-                    const Text('You need to setup your decks before playing'),
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            }
+      onTap: (buttonTitle == 'PLAY GAME')
+          ? (isEligibleToPlay ?? false)
+              ? () {
+                  Navigator.pushNamed(context, routeToNavigateAt);
+                  landscapeMode();
+                }
+              : () {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                        'You need to setup your decks before playing'),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }
           : () {
               Navigator.pushNamed(context, routeToNavigateAt);
             },
