@@ -35,28 +35,35 @@ class _GameState extends State<Game> {
 
     final customDecks = Provider.of<CustomDecks>(context);
     final size = MediaQuery.of(context).size;
+
     String playerLeaderName;
     String playerLeaderBaseDirectory;
+
+    String playerDeckBacksideDirectory;
 
     switch (customDecks.playerDeckSelection) {
       case deckAssets.monsters:
         playerLeaderName = customDecks.selectedMonstersLeader;
         playerLeaderBaseDirectory = kMonLeadersAD;
+        playerDeckBacksideDirectory = kMonBackAD;
         break;
 
       case deckAssets.nilfgaard:
         playerLeaderName = customDecks.selectedNilfggardLeader;
         playerLeaderBaseDirectory = kNilfLeadersAD;
+        playerDeckBacksideDirectory = kNilfBackAD;
         break;
 
       case deckAssets.northernRealms:
         playerLeaderName = customDecks.selectedNorthernRealmsLeader;
         playerLeaderBaseDirectory = kNorthLeadersAD;
+        playerDeckBacksideDirectory = kNorthBackAD;
         break;
 
       case deckAssets.scoiatael:
         playerLeaderName = customDecks.selectedScoiataelLeader;
         playerLeaderBaseDirectory = kScoiaLeadersAD;
+        playerDeckBacksideDirectory = kScoiaBackAD;
         break;
     }
 
@@ -132,6 +139,14 @@ class _GameState extends State<Game> {
                   height: 80,
                 ),
               ),
+              Positioned(
+                right: 60,
+                bottom: 90,
+                  child: SizedBox(
+                    width: 45,
+                    height: 80,
+                child: Image.asset(playerDeckBacksideDirectory),
+              ),),
             ],
           ),
         ),
