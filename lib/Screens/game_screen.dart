@@ -40,30 +40,35 @@ class _GameState extends State<Game> {
     String playerLeaderBaseDirectory;
 
     String playerDeckBacksideDirectory;
+    String opponentDeckBacksideDirectory;
 
     switch (customDecks.playerDeckSelection) {
       case deckAssets.monsters:
         playerLeaderName = customDecks.selectedMonstersLeader;
         playerLeaderBaseDirectory = kMonLeadersAD;
         playerDeckBacksideDirectory = kMonBackAD;
+        opponentDeckBacksideDirectory = kMonBackAD;
         break;
 
       case deckAssets.nilfgaard:
         playerLeaderName = customDecks.selectedNilfggardLeader;
         playerLeaderBaseDirectory = kNilfLeadersAD;
         playerDeckBacksideDirectory = kNilfBackAD;
+        opponentDeckBacksideDirectory = kNilfBackAD;
         break;
 
       case deckAssets.northernRealms:
         playerLeaderName = customDecks.selectedNorthernRealmsLeader;
         playerLeaderBaseDirectory = kNorthLeadersAD;
         playerDeckBacksideDirectory = kNorthBackAD;
+        opponentDeckBacksideDirectory = kNorthBackAD;
         break;
 
       case deckAssets.scoiatael:
         playerLeaderName = customDecks.selectedScoiataelLeader;
         playerLeaderBaseDirectory = kScoiaLeadersAD;
         playerDeckBacksideDirectory = kScoiaBackAD;
+        opponentDeckBacksideDirectory = kScoiaBackAD;
         break;
     }
 
@@ -78,6 +83,7 @@ class _GameState extends State<Game> {
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
+              //!Player's Hand
               Positioned(
                 bottom: 0,
                 left: 220,
@@ -129,6 +135,7 @@ class _GameState extends State<Game> {
                   ),
                 ),
               ),
+              //!Player Leader
               Positioned(
                 bottom: 18,
                 left: 50,
@@ -139,14 +146,113 @@ class _GameState extends State<Game> {
                   height: 80,
                 ),
               ),
+              //!Player Deck
               Positioned(
                 right: 60,
                 bottom: 90,
-                  child: SizedBox(
-                    width: 45,
-                    height: 80,
-                child: Image.asset(playerDeckBacksideDirectory),
-              ),),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    SizedBox(
+                      width: 45,
+                      height: 80,
+                      child: Image.asset(playerDeckBacksideDirectory),
+                    ),
+                    Container(
+                      width: 25,
+                      height: 25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(90),
+                        color: Colors.white,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '13',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              //!Enemy Deck
+              Positioned(
+                top: 90,
+                right: 60,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    SizedBox(
+                      child: Image.asset(opponentDeckBacksideDirectory),
+                      width: 45,
+                      height: 80,
+                    ),
+                    Container(
+                      width: 25,
+                      height: 25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(90),
+                        color: Colors.white,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '13',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              //!Enemy Leader
+              Positioned(
+                top: 12,
+                left: 51,
+                child: SizedBox(
+                  child: Image.asset(
+                      '$playerLeaderBaseDirectory$playerLeaderName'),
+                  width: 45,
+                  height: 80,
+                ),
+              ),
+              //!Player Row Counters
+              Positioned(
+                left: 180,
+                bottom: 22,
+                child: CounterBubble(),
+              ),
+              Positioned(
+                left: 180,
+                bottom: 88,
+                child: CounterBubble(),
+              ),
+              Positioned(
+                left: 180,
+                bottom: 151,
+                child: CounterBubble(),
+              ),
+              //!Enemies Row Counters
+              Positioned(
+                left: 180,
+                top: 22,
+                child: CounterBubble(),
+              ),
+              Positioned(
+                left: 180,
+                top: 88,
+                child: CounterBubble(),
+              ),
+              Positioned(
+                left: 180,
+                top: 151,
+                child: CounterBubble(),
+              ),
             ],
           ),
         ),
@@ -218,5 +324,32 @@ class _GameState extends State<Game> {
         ),
       );
     }
+  }
+}
+
+class CounterBubble extends StatelessWidget {
+  const CounterBubble({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 25,
+      height: 25,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(90),
+        color: Colors.white,
+      ),
+      child: Center(
+        child: Text(
+          '0',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 12,
+          ),
+        ),
+      ),
+    );
   }
 }
