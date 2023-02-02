@@ -9,16 +9,16 @@ class MenuButtons extends StatelessWidget {
   final bool isEligibleToPlay;
 
   MenuButtons(
-      {@required this.buttonTitle,
-      @required this.routeToNavigateAt,
-      this.isEligibleToPlay});
+      {required this.buttonTitle,
+      required this.routeToNavigateAt,
+      this.isEligibleToPlay = false});
 
   @override
   Widget build(BuildContext context) {
     //TODO fix this properly
     return GestureDetector(
       onTap: (buttonTitle == 'PLAY GAME')
-          ? (isEligibleToPlay ?? false)
+          ? (isEligibleToPlay)
               ? () {
                   Navigator.pushNamed(context, routeToNavigateAt);
                   landscapeMode();

@@ -14,8 +14,8 @@ class RollListCardItem extends StatelessWidget {
   final String cardName;
 
   RollListCardItem({
-      @required this.deckAssetsPath,
-      @required this.cardName,
+      required this.deckAssetsPath,
+      required this.cardName,
       });
 
   @override

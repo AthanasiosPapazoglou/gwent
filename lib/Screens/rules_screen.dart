@@ -9,7 +9,7 @@ import '../widgets/general/page_dismiss_app_bar.dart';
 class Rules extends StatelessWidget {
   static const routeName = '/rules-screen';
 
-  Offset triggerPoint;
+  Offset? triggerPoint;
 
   @override
   Widget build(BuildContext context) {

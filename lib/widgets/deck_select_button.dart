@@ -23,14 +23,14 @@ class DeckButton extends StatelessWidget {
   final int deckHighlightIndex;
 
   DeckButton(
-      {@required this.imageURL,
-      @required this.deckName,
-      @required this.deckColors,
-      @required this.subtitleText,
-      @required this.assets,
-      @required this.highLightChanger,
-      @required this.selectedIndex,
-      @required this.deckHighlightIndex});
+      {required this.imageURL,
+      required this.deckName,
+      required this.deckColors,
+      required this.subtitleText,
+      required this.assets,
+      required this.highLightChanger,
+      required this.selectedIndex,
+      required this.deckHighlightIndex});
 
   @override
   Widget build(BuildContext context) {

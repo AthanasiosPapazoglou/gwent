@@ -32,7 +32,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
     super.dispose();
   }
 
-  String backgroundDeckCover;
+  late String backgroundDeckCover;
 
   @override
   Widget build(BuildContext context) {

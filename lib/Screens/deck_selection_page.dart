@@ -21,8 +21,8 @@ class DeckSelectionMenu extends StatefulWidget {
 }
 
 class _DeckSelectionMenuState extends State<DeckSelectionMenu> {
-  Offset triggerPoint;
-  int selection;
+  Offset? triggerPoint;
+  int selection = 0;
 
   void changeHighLightedDeck(int selectedIndex) {
     setState(() {
