@@ -12,13 +12,13 @@ class UnitCard {
   //final CardState cardState;
 
   UnitCard(
-      {@required this.id,
-      @required this.cardName,
-      @required this.strength,
-      @required this.weatherEffect,
-      @required this.battlerow,
-      @required this.effect,
-      @required this.isHero,
+      {required this.id,
+      required this.cardName,
+      required this.strength,
+      required this.weatherEffect,
+      required this.battlerow,
+      required this.effect,
+      required this.isHero,
       //required this.cardState
       });
 }

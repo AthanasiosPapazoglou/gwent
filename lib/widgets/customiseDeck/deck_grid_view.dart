@@ -14,7 +14,7 @@ class DeckGridView extends StatelessWidget {
   
   final GridViewRender whichToRender;
 
-  DeckGridView({@required this.whichToRender});
+  DeckGridView({required this.whichToRender});
 
   @override
   Widget build(BuildContext context) {

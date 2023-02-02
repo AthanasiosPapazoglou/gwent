@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class PageDismissWraper extends StatefulWidget {
   const PageDismissWraper({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
   }) : super(key: key);
 
   final Widget child;
@@ -15,7 +15,7 @@ class PageDismissWraper extends StatefulWidget {
 }
 
 class _PageDismissWraperState extends State<PageDismissWraper> {
-  Offset triggerPoint;
+  Offset triggerPoint = Offset.zero;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -28,7 +28,7 @@ class _PageDismissWraperState extends State<PageDismissWraper> {
         }
       },
       onHorizontalDragEnd: (DragEndDetails details) {
-        triggerPoint = null;
+        triggerPoint = Offset.zero;
       },
       child: widget.child,
     );

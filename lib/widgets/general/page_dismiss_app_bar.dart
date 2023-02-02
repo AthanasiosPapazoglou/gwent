@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class DismissPromptAppBar extends StatelessWidget {
   const DismissPromptAppBar({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

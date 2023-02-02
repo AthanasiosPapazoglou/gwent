@@ -7,7 +7,7 @@ class GwentLoader extends StatelessWidget {
     this.height = 50,
     this.size = 50,
     this.color = Colors.white,
-    Key key}) : super(key: key);
+    Key? key}) : super(key: key);
 
     final double width;
     final double height; 

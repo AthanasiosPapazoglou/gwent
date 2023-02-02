@@ -7,8 +7,8 @@ class LeaderCard {
   final LeaderEffect leaderEffect;
 
   LeaderCard({
-      @required this.id,
-      @required this.cardName,
-      @required this.leaderEffect,
+      required this.id,
+      required this.cardName,
+      required this.leaderEffect,
       });
 }

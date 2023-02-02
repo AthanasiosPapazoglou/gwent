@@ -7,8 +7,8 @@ class LeaderCardWidget extends StatelessWidget {
   final String assetDirectory;
 
   LeaderCardWidget({
-    @required this.cardName,
-    @required this.assetDirectory
+    required this.cardName,
+    required this.assetDirectory
     });
 
 
