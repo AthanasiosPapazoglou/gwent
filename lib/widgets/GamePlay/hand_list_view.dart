@@ -9,13 +9,13 @@ import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
 import 'package:gwent/App-Utilities/enums.dart';
 
-class HandListView extends StatefulWidget {
+class RerollHandView extends StatefulWidget {
 
   @override
-  State<HandListView> createState() => _HandListViewState();
+  State<RerollHandView> createState() => _RerollHandViewState();
 }
 
-class _HandListViewState extends State<HandListView> {
+class _RerollHandViewState extends State<RerollHandView> {
   
   bool isFirstRender = true;
 
@@ -24,13 +24,11 @@ class _HandListViewState extends State<HandListView> {
     // Providing
     final customDecks = Provider.of<CustomDecks>(context);
 
-    final deckAssets _assets = customDecks.playerDeckSelection;
-    List<UnitCard> cardsInHand = customDecks.handCards;
     List<UnitCard> deckList;
     String deckPath;
     
 
-    switch (_assets){
+    switch (customDecks.playerDeckSelection){
       
       case deckAssets.monsters :
       deckList = customDecks.monstersUnitsSelected; 
@@ -64,10 +62,10 @@ class _HandListViewState extends State<HandListView> {
       randomPick = _random.nextInt(deckList.length);
 
 
-      while (cardsInHand.contains(deckList[randomPick])) {
+      while (customDecks.playerHand.contains(deckList[randomPick])) {
         randomPick = _random.nextInt(deckList.length);
       }
-      cardsInHand.add(deckList[randomPick]);
+      customDecks.playerHand.add(deckList[randomPick]);
     }
     setState(() {
       isFirstRender = false;
@@ -77,20 +75,20 @@ class _HandListViewState extends State<HandListView> {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(8.0),
-      itemCount: cardsInHand.length,
+      itemCount: customDecks.playerHand.length,
       itemBuilder: (ctx, i) {
         //TODO fix data models so that this if clause is not required
         String pathset;
-        if(cardsInHand[i].id <= 20) {
+        if(customDecks.playerHand[i].id <= 20) {
            pathset = kSpecialCardsAD;
-        } else if (cardsInHand[i].id <= 30){
+        } else if (customDecks.playerHand[i].id <= 30){
           pathset = kNeutralUnitsAD;
         } else {
           pathset = deckPath;
         }
         return RollListCardItem(
           deckAssetsPath: pathset, 
-          cardName: cardsInHand[i].cardName, 
+          cardName: customDecks.playerHand[i].cardName, 
           );
       },
     );

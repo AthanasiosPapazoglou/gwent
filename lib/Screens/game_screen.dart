@@ -92,14 +92,14 @@ class _GameState extends State<Game> {
                     width: MediaQuery.of(context).size.width,
                     height: 70,
                     child: ListView.builder(
-                      itemCount: customDecks.handCards.length,
+                      itemCount: customDecks.playerHand.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         String _assetDirectory;
 
-                        if (customDecks.handCards[index].id <= 20) {
+                        if (customDecks.playerHand[index].id <= 20) {
                           _assetDirectory = kSpecialCardsAD;
-                        } else if (customDecks.handCards[index].id <= 30) {
+                        } else if (customDecks.playerHand[index].id <= 30) {
                           _assetDirectory = kNeutralUnitsAD;
                         } else {
                           switch (customDecks.playerDeckSelection) {
@@ -127,7 +127,7 @@ class _GameState extends State<Game> {
                             width: 36,
                             height: 64,
                             child: Image.asset(
-                                '$_assetDirectory${customDecks.handCards[index].cardName}'),
+                                '$_assetDirectory${customDecks.playerHand[index].cardName}'),
                           ),
                         );
                       },
@@ -268,7 +268,7 @@ class _GameState extends State<Game> {
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.cover,
               ),
-              HandListView(),
+              RerollHandView(),
               Positioned(
                 top: 50,
                 left: size.width * 0.35,

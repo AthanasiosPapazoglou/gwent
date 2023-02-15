@@ -26,7 +26,7 @@ class RollListCardItem extends StatelessWidget {
     int _randomPick;
     int indexIndicator;
 
-    List<UnitCard> cardsInHand = customDecks.handCards;
+    List<UnitCard> cardsInHand = customDecks.playerHand;
 
     final deckAssets _assets = customDecks.playerDeckSelection;
     List<UnitCard> deckList;

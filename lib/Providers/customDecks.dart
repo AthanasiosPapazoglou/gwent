@@ -23,12 +23,16 @@ bool gameHasBegun = false;
 
 int cardsRerolled = 0;
 
-List <UnitCard> handCards = [];
+List <UnitCard> playerHand = [];
+List <UnitCard> playerGraveyard = [];
+List <UnitCard> playerRemainingDeck = [];
 List <UnitCard> playerMeleeList = [];
 List <UnitCard> playerRangedList = [];
 List <UnitCard> playerSiegeList = [];
 
 List <UnitCard> opponentHand = [];
+List <UnitCard> opponentGraveyard = [];
+List <UnitCard> opponentRemainingDeck = [];
 List <UnitCard> opponentMeleeList = [];
 List <UnitCard> opponentRangedList = [];
 List <UnitCard> opponentSiegeList = [];
