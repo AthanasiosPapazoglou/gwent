@@ -237,6 +237,7 @@ class _GameState extends State<Game> {
                 bottom: 151,
                 child: CounterBubble(),
               ),
+              //!Player Cards in hand count
               Positioned(
                 left: 40,
                 bottom: 120,
@@ -270,6 +271,7 @@ class _GameState extends State<Game> {
                 top: 151,
                 child: CounterBubble(),
               ),
+              //!Enemy Cards in hand count
               Positioned(
                 left: 40,
                 top: 120,
