@@ -237,6 +237,23 @@ class _GameState extends State<Game> {
                 bottom: 151,
                 child: CounterBubble(),
               ),
+              Positioned(
+                left: 40,
+                bottom: 120,
+                child: Container(padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.orange
+                  ),
+                  child: Text(
+                    'Cards: 10',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
               //!Enemies Row Counters
               Positioned(
                 left: 180,
@@ -252,6 +269,23 @@ class _GameState extends State<Game> {
                 left: 180,
                 top: 151,
                 child: CounterBubble(),
+              ),
+              Positioned(
+                left: 40,
+                top: 120,
+                child: Container(padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.orange
+                  ),
+                  child: Text(
+                    'Cards: 10',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
               ),
             ],
           ),
