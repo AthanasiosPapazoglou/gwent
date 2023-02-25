@@ -241,11 +241,11 @@ class _GameState extends State<Game> {
               Positioned(
                 left: 40,
                 bottom: 120,
-                child: Container(padding: EdgeInsets.all(8),
+                child: Container(
+                  padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.orange
-                  ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.orange),
                   child: Text(
                     'Cards: 10',
                     style: TextStyle(
@@ -275,11 +275,11 @@ class _GameState extends State<Game> {
               Positioned(
                 left: 40,
                 top: 120,
-                child: Container(padding: EdgeInsets.all(8),
+                child: Container(
+                  padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.orange
-                  ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.orange),
                   child: Text(
                     'Cards: 10',
                     style: TextStyle(
@@ -287,6 +287,50 @@ class _GameState extends State<Game> {
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),
+                ),
+              ),
+              //Area of total points User
+              Positioned(
+                left: 35,
+                top: 170,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      padding: EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.blue),
+                      child: Center(
+                        child: Text(
+                          '12',
+                          style: TextStyle(
+                              fontSize: 26,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 4,),
+                    Container(
+                      width: 50,
+                      height: 50,
+                      padding: EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.red),
+                      child: Center(
+                        child: Text(
+                          '12',
+                          style: TextStyle(
+                              fontSize: 26,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
