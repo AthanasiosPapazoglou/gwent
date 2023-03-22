@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
+import 'package:gwent/controllers/decks_controller.dart';
 import 'package:gwent/widgets/GamePlay/bRow_list_view.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
-import 'package:gwent/Providers/customDecks.dart';
 import 'package:provider/provider.dart';
-// import 'package:gwent/Providers/customDecks.dart';
 
 import '../App-Utilities/constants.dart';
 
@@ -21,6 +21,9 @@ class Game extends StatefulWidget {
 class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
+
+    DecksController globalState = DecksController();
+
     @override
     void initState() {
       super.initState();
@@ -33,7 +36,6 @@ class _GameState extends State<Game> {
       super.dispose();
     }
 
-    final customDecks = Provider.of<CustomDecks>(context);
     final size = MediaQuery.of(context).size;
 
     String playerLeaderName;
@@ -42,37 +44,37 @@ class _GameState extends State<Game> {
     String playerDeckBacksideDirectory;
     String opponentDeckBacksideDirectory;
 
-    switch (customDecks.playerDeckSelection) {
+    switch (globalState.playerDeckSelection.value) {
       case deckAssets.monsters:
-        playerLeaderName = customDecks.selectedMonstersLeader;
+        playerLeaderName = globalState.selectedMonstersLeader;
         playerLeaderBaseDirectory = kMonLeadersAD;
         playerDeckBacksideDirectory = kMonBackAD;
         opponentDeckBacksideDirectory = kMonBackAD;
         break;
 
       case deckAssets.nilfgaard:
-        playerLeaderName = customDecks.selectedNilfggardLeader;
+        playerLeaderName = globalState.selectedNilfggardLeader;
         playerLeaderBaseDirectory = kNilfLeadersAD;
         playerDeckBacksideDirectory = kNilfBackAD;
         opponentDeckBacksideDirectory = kNilfBackAD;
         break;
 
       case deckAssets.northernRealms:
-        playerLeaderName = customDecks.selectedNorthernRealmsLeader;
+        playerLeaderName = globalState.selectedNorthernRealmsLeader;
         playerLeaderBaseDirectory = kNorthLeadersAD;
         playerDeckBacksideDirectory = kNorthBackAD;
         opponentDeckBacksideDirectory = kNorthBackAD;
         break;
 
       case deckAssets.scoiatael:
-        playerLeaderName = customDecks.selectedScoiataelLeader;
+        playerLeaderName = globalState.selectedScoiataelLeader;
         playerLeaderBaseDirectory = kScoiaLeadersAD;
         playerDeckBacksideDirectory = kScoiaBackAD;
         opponentDeckBacksideDirectory = kScoiaBackAD;
         break;
     }
 
-    if (customDecks.gameHasBegun) {
+    if (globalState.gameHasBegun.isTrue) {
       return SafeArea(
         child: Scaffold(
           body: Stack(
@@ -92,17 +94,17 @@ class _GameState extends State<Game> {
                     width: MediaQuery.of(context).size.width,
                     height: 70,
                     child: ListView.builder(
-                      itemCount: customDecks.handCards.length,
+                      itemCount: globalState.handCards.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         String _assetDirectory;
 
-                        if (customDecks.handCards[index].id <= 20) {
+                        if (globalState.handCards[index].id <= 20) {
                           _assetDirectory = kSpecialCardsAD;
-                        } else if (customDecks.handCards[index].id <= 30) {
+                        } else if (globalState.handCards[index].id <= 30) {
                           _assetDirectory = kNeutralUnitsAD;
                         } else {
-                          switch (customDecks.playerDeckSelection) {
+                          switch (globalState.playerDeckSelection.value) {
                             case deckAssets.monsters:
                               _assetDirectory = kMonUnitsAD;
                               break;
@@ -127,7 +129,7 @@ class _GameState extends State<Game> {
                             width: 36,
                             height: 64,
                             child: Image.asset(
-                                '$_assetDirectory${customDecks.handCards[index].cardName}'),
+                                '$_assetDirectory${globalState.handCards[index].cardName}'),
                           ),
                         );
                       },
@@ -280,9 +282,9 @@ class _GameState extends State<Game> {
                           color: Colors.orange.shade100, fontSize: 32),
                     ),
                     Text(
-                      '${customDecks.cardsRerolled}/2',
+                      '${globalState.cardsRerolled}/2',
                       style: TextStyle(
-                          color: customDecks.cardsRerolled < 2
+                          color: globalState.cardsRerolled < 2
                               ? Colors.green
                               : Colors.red,
                           fontSize: 32),
@@ -295,9 +297,9 @@ class _GameState extends State<Game> {
                 left: size.width * 0.45,
                 child: GestureDetector(
                   onTap: () {
-                    customDecks.cardsRerolled = 0;
-                    customDecks.gameHasBegun = true;
-                    customDecks.refreshLists();
+                    globalState.cardsRerolled = 0.obs;
+                    globalState.gameHasBegun = true.obs;
+                    globalState.update();
                   },
                   child: Container(
                     decoration: BoxDecoration(
