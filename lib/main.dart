@@ -6,6 +6,7 @@
 //TODO
 
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/Providers/customDecks.dart';
 import 'Screens/main_Menu.dart';
@@ -50,20 +51,17 @@ class _GwentState extends State<Gwent> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => CustomDecks(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MainMenu(),
-        routes: {
-          MainMenu.routeName: (ctx) => MainMenu(),
-          Rules.routeName: (ctx) => Rules(),
-          Game.routeName: (ctx) => Game(),
-          DeckSelectionMenu.routeName: (ctx) => DeckSelectionMenu(),
-          CustomiseDeck.routeName: (ctx) => CustomiseDeck(),
-          LeaderSelection.routeName: (ctx) => LeaderSelection(),
-        },
-      ),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MainMenu(),
+      routes: {
+        MainMenu.routeName: (ctx) => MainMenu(),
+        Rules.routeName: (ctx) => Rules(),
+        Game.routeName: (ctx) => Game(),
+        DeckSelectionMenu.routeName: (ctx) => DeckSelectionMenu(),
+        CustomiseDeck.routeName: (ctx) => CustomiseDeck(),
+        LeaderSelection.routeName: (ctx) => LeaderSelection(),
+      },
     );
   }
 }
