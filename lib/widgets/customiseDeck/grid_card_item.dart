@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
+import 'package:gwent/controllers/decks_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
@@ -10,8 +11,8 @@ import 'package:gwent/App-Utilities/enums.dart';
 class GridCardItem extends StatelessWidget {
   final UnitCard unitCard;
   final String assetDirectory; 
-  final List<UnitCard> listToRender;
-  final List<UnitCard> listToCompare;
+  final RxList<UnitCard> listToRender;
+  final RxList<UnitCard> listToCompare;
   final GridViewRender whatRenders; 
 
   GridCardItem({
@@ -24,7 +25,8 @@ class GridCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final customDecks = Provider.of<CustomDecks>(context);
+
+    DecksController globalState = DecksController();
     
 
     return GridTile(
@@ -40,23 +42,23 @@ class GridCardItem extends StatelessWidget {
             listToRender.remove(unitCard);
           }
           else{
-            customDecks.reconfigureLists(unitCard, listToRender);
+            globalState.reconfigureLists(unitCard, listToRender);
             listToCompare.remove(unitCard);
           }
-          customDecks.refreshLists();
+          globalState.update();
           break;
           
           case GridViewRender.selected:
 
           if(listToRender.contains(unitCard)){
-            customDecks.reconfigureLists(unitCard, listToCompare);
+            globalState.reconfigureLists(unitCard, listToCompare);
             listToRender.remove(unitCard);
           }
           else{
             listToRender.add(unitCard);
             listToCompare.remove(unitCard);
           }
-          customDecks.refreshLists();
+          globalState.update();
           break;
         }
       },

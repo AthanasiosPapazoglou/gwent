@@ -2,34 +2,27 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
+import 'package:gwent/controllers/decks_controller.dart';
 import 'package:gwent/widgets/menu_buttons.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/rules_screen.dart';
 import 'package:gwent/Screens/deck_selection_page.dart';
 import 'package:provider/provider.dart';
 
-import '../Providers/customDecks.dart';
-
 class MainMenu extends StatelessWidget {
   static const routeName = '/main-menu';
 
   @override
   Widget build(BuildContext context) {
-    final customDecks = Provider.of<CustomDecks>(context);
+    DecksController globalState = DecksController();
     final bool isEligibleToPlay =
-        (customDecks.monstersUnitsSelected.isNotEmpty ||
-            customDecks.ScoiataelUnitsSelected.isNotEmpty ||
-            customDecks.nilfggardUnitsSelected.isNotEmpty ||
-            customDecks.NorthernRealmsUnitsSelected.isNotEmpty);
+        (globalState.monstersUnitsSelected.isNotEmpty ||
+            globalState.ScoiataelUnitsSelected.isNotEmpty ||
+            globalState.nilfggardUnitsSelected.isNotEmpty ||
+            globalState.NorthernRealmsUnitsSelected.isNotEmpty);
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          // Positioned.fill(
-          //   child: Image(
-          //     fit: BoxFit.fill,
-          //     image: AssetImage('GameAssets/Back/Back.png'),
-          //   ),
-          // ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,

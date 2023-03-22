@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
-import 'package:gwent/Providers/customDecks.dart';
+import 'package:gwent/controllers/decks_controller.dart';
 import 'package:gwent/widgets/GamePlay/roll_card_item.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/App-Utilities/constants.dart';
@@ -21,11 +21,11 @@ class _HandListViewState extends State<HandListView> {
 
   @override
   Widget build(BuildContext context) {
-    // Providing
-    final customDecks = Provider.of<CustomDecks>(context);
 
-    final deckAssets _assets = customDecks.playerDeckSelection;
-    List<UnitCard> cardsInHand = customDecks.handCards;
+    DecksController globalState = DecksController();
+
+    final deckAssets _assets = globalState.playerDeckSelection.value;
+    List<UnitCard> cardsInHand = globalState.handCards;
     List<UnitCard> deckList;
     String deckPath;
     
@@ -33,22 +33,22 @@ class _HandListViewState extends State<HandListView> {
     switch (_assets){
       
       case deckAssets.monsters :
-      deckList = customDecks.monstersUnitsSelected; 
+      deckList = globalState.monstersUnitsSelected; 
       deckPath = kMonUnitsAD;
       break;
 
       case deckAssets.nilfgaard:
-      deckList = customDecks.nilfggardUnitsSelected;
+      deckList = globalState.nilfggardUnitsSelected;
       deckPath = kNilfUnitsAD;
       break;
 
       case deckAssets.northernRealms:
-      deckList = customDecks.NorthernRealmsUnitsSelected;
+      deckList = globalState.NorthernRealmsUnitsSelected;
       deckPath = kNorthUnitsAD;
       break;
 
       case deckAssets.scoiatael:
-      deckList = customDecks.ScoiataelUnitsSelected;
+      deckList = globalState.ScoiataelUnitsSelected;
       deckPath = kScoiaUnitsAD;
       break;
       
