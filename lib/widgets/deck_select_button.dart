@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gwent/Screens/customise_deck.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/enums.dart';
@@ -34,7 +34,7 @@ class DeckButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
     return InkWell(
       onTap: () {
         globalState.playerDeckSelection.value = assets;

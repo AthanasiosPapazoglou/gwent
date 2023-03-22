@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +21,7 @@ class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
 
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
 
     @override
     void initState() {

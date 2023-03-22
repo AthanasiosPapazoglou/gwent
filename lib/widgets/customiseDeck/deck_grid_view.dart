@@ -5,7 +5,7 @@ import 'package:get/state_manager.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +20,7 @@ class DeckGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
     deckAssets _assets = globalState.playerDeckSelection.value;
     RxList<UnitCard> renderList;
     RxList<UnitCard> compareList;

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/functions.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:gwent/widgets/menu_buttons.dart';
 import 'package:gwent/Screens/game_screen.dart';
 import 'package:gwent/Screens/rules_screen.dart';
@@ -14,7 +14,7 @@ class MainMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
     final bool isEligibleToPlay =
         (globalState.monstersUnitsSelected.isNotEmpty ||
             globalState.ScoiataelUnitsSelected.isNotEmpty ||

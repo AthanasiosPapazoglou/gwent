@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:provider/provider.dart';
 
 class LeadersRowItem extends StatelessWidget {
@@ -21,7 +21,7 @@ class LeadersRowItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
     deckAssets _assets = globalState.playerDeckSelection.value;
 
     return Expanded(

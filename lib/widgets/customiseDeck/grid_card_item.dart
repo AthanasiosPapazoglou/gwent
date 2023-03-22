@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
@@ -26,7 +26,7 @@ class GridCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
     
 
     return GridTile(

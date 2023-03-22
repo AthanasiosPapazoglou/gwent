@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:gwent/App-Utilities/constants.dart';
@@ -15,7 +15,7 @@ class MiddleBarInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
     deckAssets assets = globalState.playerDeckSelection.value;
     List<UnitCard> statList;
     List<LeaderCard> leadersList;

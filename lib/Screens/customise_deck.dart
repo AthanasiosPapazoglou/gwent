@@ -4,14 +4,15 @@ import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
+import 'package:gwent/hoc/with_global_state.dart';
 import 'package:gwent/widgets/customiseDeck/deck_grid_view.dart';
 import 'package:gwent/widgets/customiseDeck/filter_row.dart';
 import 'package:gwent/widgets/customiseDeck/leader_card_widget.dart';
 import 'package:gwent/widgets/customiseDeck/middle_bar_info.dart';
 import 'package:provider/provider.dart';
 
-class CustomiseDeck extends StatefulWidget {
+class CustomiseDeck extends StatefulWidget with WithGlobalState {
   static const routeName = '/customise-decks-screen';
 
   @override
@@ -36,9 +37,7 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
   @override
   Widget build(BuildContext context) {  
     
-    DecksController globalState = DecksController();
-    
-    switch (globalState.playerDeckSelection.value) {
+    switch (globalStateController.playerDeckSelection.value) {
       case deckAssets.monsters:
         backgroundDeckCover = 'GameAssets/Back/Monsters back.png';
         break;

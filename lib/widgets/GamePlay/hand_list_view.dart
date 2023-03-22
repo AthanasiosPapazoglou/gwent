@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
-import 'package:gwent/controllers/decks_controller.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:gwent/widgets/GamePlay/roll_card_item.dart';
 import 'package:provider/provider.dart';
 import 'package:gwent/App-Utilities/constants.dart';
@@ -22,7 +22,7 @@ class _HandListViewState extends State<HandListView> {
   @override
   Widget build(BuildContext context) {
 
-    DecksController globalState = DecksController();
+    GlobalStateController globalState = GlobalStateController();
 
     final deckAssets _assets = globalState.playerDeckSelection.value;
     List<UnitCard> cardsInHand = globalState.handCards;

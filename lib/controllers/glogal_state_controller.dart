@@ -4,7 +4,7 @@ import 'package:gwent/Card-Models/leader_model.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 
-class DecksController extends GetxController {
+class GlobalStateController extends GetxController {
 
 Rx<deckAssets> playerDeckSelection = Rx<deckAssets>(deckAssets.monsters);
 Rx<deckAssets> opponentDeckSelection = Rx<deckAssets>(deckAssets.monsters);

@@ -6,9 +6,11 @@
 //TODO
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/Providers/customDecks.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'Screens/main_Menu.dart';
 import 'package:flutter/services.dart';
 import 'Screens/game_screen.dart';
@@ -38,10 +40,13 @@ class Gwent extends StatefulWidget {
 }
 
 class _GwentState extends State<Gwent> {
+  GlobalStateController _globalStateController = GlobalStateController();
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    Get.put<GlobalStateController>(_globalStateController);
+
     // final assetsAudioPlayer = AssetsAudioPlayer();
 
     // assetsAudioPlayer.open(
