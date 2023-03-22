@@ -36,8 +36,10 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
 
   @override
   Widget build(BuildContext context) {  
+
+    GlobalStateController globalState = GlobalStateController();
     
-    switch (globalStateController.playerDeckSelection.value) {
+    switch (globalState.playerDeckSelection.value) {
       case deckAssets.monsters:
         backgroundDeckCover = 'GameAssets/Back/Monsters back.png';
         break;
