@@ -1,44 +1,35 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
-import 'package:gwent/App-Utilities/enums.dart';
-import 'package:gwent/Card-Models/unit_model.dart';
+import 'package:get/get.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
-import 'package:provider/provider.dart';
+import 'package:gwent/Card-Models/unit_model.dart';
+import 'package:gwent/App-Utilities/enums.dart';
 
-class CustomDecks extends ChangeNotifier{
+class GlobalStateController extends GetxController {
 
-  void refreshLists () {
-    notifyListeners();
-  }
+Rx<deckAssets> playerDeckSelection = Rx<deckAssets>(deckAssets.monsters);
+Rx<deckAssets> opponentDeckSelection = Rx<deckAssets>(deckAssets.monsters);
 
-  void resetGame () {
-    notifyListeners();
-  }
+  
+RxBool gameHasBegun = false.obs;
 
-deckAssets playerDeckSelection = deckAssets.monsters;
-deckAssets opponentDeckSelection = deckAssets.monsters;
+RxInt cardsRerolled = 0.obs;
 
-bool gameHasBegun = false;
+RxList <UnitCard> handCards = <UnitCard>[].obs;
+RxList <UnitCard> playerMeleeList = <UnitCard>[].obs;
+RxList <UnitCard> playerRangedList = <UnitCard>[].obs;
+RxList <UnitCard> playerSiegeList = <UnitCard>[].obs;
 
-int cardsRerolled = 0;
-
-List <UnitCard> handCards = [];
-List <UnitCard> playerMeleeList = [];
-List <UnitCard> playerRangedList = [];
-List <UnitCard> playerSiegeList = [];
-
-List <UnitCard> opponentHand = [];
-List <UnitCard> opponentMeleeList = [];
-List <UnitCard> opponentRangedList = [];
-List <UnitCard> opponentSiegeList = [];
+RxList <UnitCard> opponentHand = <UnitCard>[].obs;
+RxList <UnitCard> opponentMeleeList = <UnitCard>[].obs;
+RxList <UnitCard> opponentRangedList = <UnitCard>[].obs;
+RxList <UnitCard> opponentSiegeList = <UnitCard>[].obs;
 
 String selectedMonstersLeader = 'Eredin Bringer of Death.png';
 String selectedNilfggardLeader = 'Emhyr var Emreis Emperor of Nilfgaard.png';
 String selectedNorthernRealmsLeader = 'Foltest King of Temeria.png';
 String selectedScoiataelLeader = 'Francesca Findabair Daisy of The Valle.png';
 
-void reconfigureLists (UnitCard cardToReposition, List<UnitCard> listToReconfigure) {
+void reconfigureLists (UnitCard cardToReposition, RxList<UnitCard> listToReconfigure) {
   int i = 0;
   bool endOfList = false;
 
@@ -59,10 +50,7 @@ void reconfigureLists (UnitCard cardToReposition, List<UnitCard> listToReconfigu
 }
 }
 
-
-
-  
-List <UnitCard> monstersUnitsUnselected = [
+RxList <UnitCard> monstersUnitsUnselected = <UnitCard>[
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Biting Frost 2.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Biting Frost 3.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -112,9 +100,9 @@ List <UnitCard> monstersUnitsUnselected = [
   UnitCard(id: 69, cardName: 'Werewolf.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 70, cardName: 'Wyvern.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
 
-];
+].obs;
 
-List<UnitCard> monstersUnitsSelected =[
+RxList <UnitCard> monstersUnitsSelected = <UnitCard>[
   UnitCard(id: 21, cardName: 'Cirilla Fiona Elen Rianno 2.png', strength: 15, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: true,),
   UnitCard(id: 22, cardName: 'Dandelion 2.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.horn, isHero: false,),
   UnitCard(id: 23, cardName: 'Emiel Regis Rohellec Terzieff 2.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false,),
@@ -138,12 +126,14 @@ List<UnitCard> monstersUnitsSelected =[
   UnitCard(id: 41, cardName: 'Draug.png', strength: 10, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: true,),
   UnitCard(id: 42, cardName: 'Earth Elemental.png', strength: 6, weatherEffect: wEffects.none, battlerow: brows.siege,  effect: beffects.none, isHero: false),
   UnitCard(id: 43, cardName: 'Endrega.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.ranged,  effect: beffects.none, isHero: false),
-];
+
+].obs;
 
 
 
 
-List <UnitCard> nilfggardUnitsUnselected = [
+
+RxList <UnitCard> nilfggardUnitsUnselected = <UnitCard>[
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Biting Frost 2.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Biting Frost 3.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -212,14 +202,15 @@ List <UnitCard> nilfggardUnitsUnselected = [
   UnitCard(id: 65, cardName: 'Young Emissary 1.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.bond, isHero: false),
   UnitCard(id: 66, cardName: 'Young Emissary 2.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.bond, isHero: false),
   UnitCard(id: 67, cardName: 'Zerrikanian Fire Scorpion.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.siege,  effect: beffects.none, isHero: false)
-];
+].obs;
 
-List<UnitCard> nilfggardUnitsSelected = [];
-
-
+RxList<UnitCard> nilfggardUnitsSelected = <UnitCard>[].obs;
 
 
-List <UnitCard> NorthernRealmsUnitsUnselected = [
+
+
+
+RxList <UnitCard> NorthernRealmsUnitsUnselected = <UnitCard>[
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Biting Frost 2.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Biting Frost 3.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -289,14 +280,15 @@ List <UnitCard> NorthernRealmsUnitsUnselected = [
   UnitCard(id: 66, cardName: 'Vernon Roche.png', strength: 10, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: true),
   UnitCard(id: 67, cardName: 'Ves.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
   UnitCard(id: 68, cardName: 'Yarpen Zigrin.png', strength: 2, weatherEffect: wEffects.none, battlerow: brows.melee,  effect: beffects.none, isHero: false),
-];
+].obs;
 
-List<UnitCard> NorthernRealmsUnitsSelected = [];
-
-
+RxList<UnitCard> NorthernRealmsUnitsSelected = <UnitCard>[].obs;
 
 
-List <UnitCard> ScoiataelUnitsUnselected = [
+
+
+
+RxList <UnitCard> ScoiataelUnitsUnselected = <UnitCard>[
   UnitCard(id: 0, cardName: 'Biting Frost 1.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 1, cardName: 'Biting Frost 2.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
   UnitCard(id: 2, cardName: 'Biting Frost 3.png', strength: 0, weatherEffect: wEffects.frost, battlerow: brows.arena, effect: beffects.none, isHero: false),
@@ -365,40 +357,40 @@ List <UnitCard> ScoiataelUnitsUnselected = [
   UnitCard(id: 65, cardName: 'Vrihedd Brigade Veteran 1.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.agile,  effect: beffects.none, isHero: false),
   UnitCard(id: 66, cardName: 'Vrihedd Brigade Veteran 2.png', strength: 5, weatherEffect: wEffects.none, battlerow: brows.agile,  effect: beffects.none, isHero: false),
   UnitCard(id: 67, cardName: 'Yaevinn.png', strength: 6, weatherEffect: wEffects.none, battlerow: brows.agile,  effect: beffects.none, isHero: false),
-];
+].obs;
 
-List<UnitCard> ScoiataelUnitsSelected = [];
+RxList<UnitCard> ScoiataelUnitsSelected = <UnitCard>[].obs;
 
 
 
-List<LeaderCard> pMonstersLeaders = [
+
+RxList<LeaderCard> pMonstersLeaders = <LeaderCard>[
   LeaderCard(id: 0, cardName: 'Eredin Bringer of Death.png', leaderEffect: LeaderEffect.mon1,),
   LeaderCard(id: 1, cardName: 'Eredin Commander of the Red Riders.png', leaderEffect: LeaderEffect.mon2),
   LeaderCard(id: 2, cardName: 'Eredin Destroyer of Worlds.png', leaderEffect: LeaderEffect.mon3),
   LeaderCard(id: 3, cardName: 'Eredin King of the Wild Hunt.png', leaderEffect: LeaderEffect.mon4),
-];
+].obs;
 
-List<LeaderCard> pNilfgaardLeaders = [
+RxList<LeaderCard> pNilfgaardLeaders = <LeaderCard>[
   LeaderCard(id: 0, cardName: 'Emhyr var Emreis Emperor of Nilfgaard.png', leaderEffect: LeaderEffect.nilf1),
   LeaderCard(id: 1, cardName: 'Emhyr var Emreis His Imperial Majesty.png', leaderEffect: LeaderEffect.nilf2),
   LeaderCard(id: 2, cardName: 'Emhyr var Emreis the Relentless.png', leaderEffect: LeaderEffect.nilf3),
   LeaderCard(id: 2, cardName: 'Emhyr var Emreis the White Flame.png', leaderEffect: LeaderEffect.nilf4),
-];
+].obs;
 
-List<LeaderCard> pNorthernRealmsLeaders = [
+RxList<LeaderCard> pNorthernRealmsLeaders = <LeaderCard>[
   LeaderCard(id: 0, cardName: 'Foltest King of Temeria.png', leaderEffect: LeaderEffect.nr1,),
   LeaderCard(id: 1, cardName: 'Foltest Lord Commander of the North.png', leaderEffect: LeaderEffect.nr2),
   LeaderCard(id: 2, cardName: 'Foltest the Siegemaster.png', leaderEffect: LeaderEffect.nr3),
   LeaderCard(id: 3, cardName: 'Foltest the Steel-Forged.png', leaderEffect: LeaderEffect.nr4),
-];
+].obs;
 
 
-List<LeaderCard> pScoiataelLeaders = [
+RxList<LeaderCard> pScoiataelLeaders = <LeaderCard>[
   LeaderCard(id: 0, cardName: 'Francesca Findabair Daisy of The Valle.png', leaderEffect: LeaderEffect.sco1),
   LeaderCard(id: 1, cardName: 'Francesca Findabair Pureblood Elf.png', leaderEffect: LeaderEffect.sco2),
   LeaderCard(id: 2, cardName: 'Francesca Findabair Queen of Dol Blathanna.png', leaderEffect: LeaderEffect.sco3),
   LeaderCard(id: 3, cardName: 'Francesca Findabair the Beautiful.png', leaderEffect: LeaderEffect.sco4),
-];
+].obs;
 
 }
-

@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
-import 'package:gwent/Providers/customDecks.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'leader_card_widget.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
-import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/widgets/customiseDeck/cancel_save.dart';
 import 'package:provider/provider.dart';
@@ -14,43 +14,45 @@ import 'package:gwent/App-Utilities/enums.dart';
 
 class MiddleBarInfo extends StatelessWidget {
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    final customDecks = Provider.of<CustomDecks>(context);
-    final assets = customDecks.playerDeckSelection;
-    final List<UnitCard> statList;
-    final List<LeaderCard> leadersList;
-    final String leadersPath;
-    final String selectedLeader;
+    
+    deckAssets assets = globalState.playerDeckSelection.value;
+    List<UnitCard> statList;
+    List<LeaderCard> leadersList;
+    String leadersPath;
+    String selectedLeader;
 
     switch (assets){
       
       case deckAssets.monsters : 
-      statList = customDecks.monstersUnitsSelected;
-      leadersList = customDecks.pMonstersLeaders;
+      statList = globalState.monstersUnitsSelected;
+      leadersList = globalState.pMonstersLeaders;
       leadersPath = kMonLeadersAD;
-      selectedLeader = customDecks.selectedMonstersLeader;
+      selectedLeader = globalState.selectedMonstersLeader;
       break;
 
       case deckAssets.nilfgaard:
-      statList = customDecks.nilfggardUnitsSelected;
-      leadersList = customDecks.pNilfgaardLeaders;
+      statList = globalState.nilfggardUnitsSelected;
+      leadersList = globalState.pNilfgaardLeaders;
       leadersPath = kNilfLeadersAD;
-      selectedLeader = customDecks.selectedNilfggardLeader;
+      selectedLeader = globalState.selectedNilfggardLeader;
       break;
 
       case deckAssets.northernRealms:
-      statList = customDecks.NorthernRealmsUnitsSelected;
-      leadersList = customDecks.pNorthernRealmsLeaders;
+      statList = globalState.NorthernRealmsUnitsSelected;
+      leadersList = globalState.pNorthernRealmsLeaders;
       leadersPath = kNorthLeadersAD;
-      selectedLeader = customDecks.selectedNorthernRealmsLeader;
+      selectedLeader = globalState.selectedNorthernRealmsLeader;
       break;
 
       case deckAssets.scoiatael:
-      statList = customDecks.ScoiataelUnitsSelected;
-      leadersList = customDecks.pScoiataelLeaders;
+      statList = globalState.ScoiataelUnitsSelected;
+      leadersList = globalState.pScoiataelLeaders;
       leadersPath = kScoiaLeadersAD;
-      selectedLeader = customDecks.selectedScoiataelLeader;
+      selectedLeader = globalState.selectedScoiataelLeader;
       break;
 
     }

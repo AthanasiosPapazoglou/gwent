@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:gwent/App-Utilities/enums.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:gwent/widgets/GamePlay/hand_list_view.dart';
 import 'package:provider/provider.dart';
-import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'dart:math';
@@ -20,15 +20,16 @@ class RollListCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    GlobalStateController globalState = GlobalStateController();
     
-    final customDecks = Provider.of<CustomDecks>(context);
     final Random _random = Random();
     int _randomPick;
     int indexIndicator;
 
-    List<UnitCard> cardsInHand = customDecks.handCards;
+    List<UnitCard> cardsInHand = globalState.handCards;
 
-    final deckAssets _assets = customDecks.playerDeckSelection;
+    final deckAssets _assets = globalState.playerDeckSelection.value;
     List<UnitCard> deckList;
     String deckPath;
     
@@ -36,22 +37,22 @@ class RollListCardItem extends StatelessWidget {
      switch (_assets){
       
       case deckAssets.monsters :
-      deckList = customDecks.monstersUnitsSelected; 
+      deckList = globalState.monstersUnitsSelected; 
       deckPath = kMonUnitsAD;
       break;
 
       case deckAssets.nilfgaard:
-      deckList = customDecks.nilfggardUnitsSelected;
+      deckList = globalState.nilfggardUnitsSelected;
       deckPath = kNilfUnitsAD;
       break;
 
       case deckAssets.northernRealms:
-      deckList = customDecks.NorthernRealmsUnitsSelected;
+      deckList = globalState.NorthernRealmsUnitsSelected;
       deckPath = kNorthUnitsAD;
       break;
 
       case deckAssets.scoiatael:
-      deckList = customDecks.ScoiataelUnitsSelected;
+      deckList = globalState.ScoiataelUnitsSelected;
       deckPath = kScoiaUnitsAD;
       break;
       
@@ -60,7 +61,7 @@ class RollListCardItem extends StatelessWidget {
     return GridTile(
       child: InkWell(
         onTap: () {
-          if(customDecks.cardsRerolled < 2){
+          if(globalState.cardsRerolled.value < 2){
           _randomPick = _random.nextInt(deckList.length);
           
           while(cardsInHand.contains(deckList[_randomPick],)){
@@ -71,8 +72,8 @@ class RollListCardItem extends StatelessWidget {
           cardsInHand.remove(cardsInHand[indexIndicator]);
           cardsInHand.insert(indexIndicator, deckList[_randomPick]);
    
-          customDecks.cardsRerolled++;
-          customDecks.refreshLists();
+          globalState.cardsRerolled++;
+          globalState.update();
           } else {
             return;
           }

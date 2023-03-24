@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/enums.dart';
-import 'package:gwent/Providers/customDecks.dart';
 import 'package:gwent/Card-Models/unit_model.dart';
+import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'grid_card_item.dart';
 import 'package:gwent/App-Utilities/deckDataBase.dart';
 import 'package:provider/provider.dart';
@@ -16,39 +18,41 @@ class DeckGridView extends StatelessWidget {
 
   DeckGridView({required this.whichToRender});
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {
 
-    final customDecks = Provider.of<CustomDecks>(context);
-    final _assets = customDecks.playerDeckSelection;
-    final List<UnitCard> renderList;
-    final List<UnitCard> compareList;
-    final String assetDirectory;
+    
+    deckAssets _assets = globalState.playerDeckSelection.value;
+    RxList<UnitCard> renderList;
+    RxList<UnitCard> compareList;
+    String assetDirectory;
 
    
     switch (_assets){
       
       case deckAssets.monsters : 
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsUnselected : customDecks.monstersUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.monstersUnitsSelected : customDecks.monstersUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? globalState.monstersUnitsUnselected : globalState.monstersUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? globalState.monstersUnitsSelected : globalState.monstersUnitsUnselected;
       assetDirectory = kMonUnitsAD;
       break;
 
       case deckAssets.nilfgaard:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsUnselected : customDecks.nilfggardUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.nilfggardUnitsSelected : customDecks.nilfggardUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? globalState.nilfggardUnitsUnselected : globalState.nilfggardUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? globalState.nilfggardUnitsSelected : globalState.nilfggardUnitsUnselected;
       assetDirectory = kNilfUnitsAD;
       break;
 
       case deckAssets.northernRealms:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsUnselected : customDecks.NorthernRealmsUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.NorthernRealmsUnitsSelected : customDecks.NorthernRealmsUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? globalState.NorthernRealmsUnitsUnselected : globalState.NorthernRealmsUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? globalState.NorthernRealmsUnitsSelected : globalState.NorthernRealmsUnitsUnselected;
       assetDirectory = kNorthUnitsAD;
       break;
 
       case deckAssets.scoiatael:
-      renderList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsUnselected : customDecks.ScoiataelUnitsSelected;
-      compareList = (whichToRender == GridViewRender.unselected) ? customDecks.ScoiataelUnitsSelected : customDecks.ScoiataelUnitsUnselected;
+      renderList = (whichToRender == GridViewRender.unselected) ? globalState.ScoiataelUnitsUnselected : globalState.ScoiataelUnitsSelected;
+      compareList = (whichToRender == GridViewRender.unselected) ? globalState.ScoiataelUnitsSelected : globalState.ScoiataelUnitsUnselected;
       assetDirectory = kScoiaUnitsAD;
       break;
       
