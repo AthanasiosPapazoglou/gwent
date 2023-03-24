@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'package:gwent/widgets/menu_buttons.dart';
@@ -12,9 +13,11 @@ import 'package:provider/provider.dart';
 class MainMenu extends StatelessWidget {
   static const routeName = '/main-menu';
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    GlobalStateController globalState = GlobalStateController();
+    
     final bool isEligibleToPlay =
         (globalState.monstersUnitsSelected.isNotEmpty ||
             globalState.ScoiataelUnitsSelected.isNotEmpty ||

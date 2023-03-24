@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, must_be_immutable, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
 import 'package:gwent/controllers/glogal_state_controller.dart';
@@ -19,9 +20,11 @@ class LeadersRowItem extends StatelessWidget {
     this.rightPadding = 0.0
   });
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    GlobalStateController globalState = GlobalStateController();
+    
     deckAssets _assets = globalState.playerDeckSelection.value;
 
     return Expanded(

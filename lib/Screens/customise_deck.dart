@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
 import 'package:gwent/App-Utilities/constants.dart';
@@ -34,10 +35,12 @@ class _CustomiseDeckState extends State<CustomiseDeck> {
 
   late String backgroundDeckCover;
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {  
 
-    GlobalStateController globalState = GlobalStateController();
+    
     
     switch (globalState.playerDeckSelection.value) {
       case deckAssets.monsters:

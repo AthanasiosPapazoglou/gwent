@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/enums.dart';
@@ -17,10 +18,12 @@ class DeckGridView extends StatelessWidget {
 
   DeckGridView({required this.whichToRender});
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {
 
-    GlobalStateController globalState = GlobalStateController();
+    
     deckAssets _assets = globalState.playerDeckSelection.value;
     RxList<UnitCard> renderList;
     RxList<UnitCard> compareList;

@@ -17,11 +17,13 @@ class Game extends StatefulWidget {
   State<Game> createState() => _GameState();
 }
 
+GlobalStateController globalState = Get.find();
+
 class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
 
-    GlobalStateController globalState = GlobalStateController();
+    
 
     @override
     void initState() {

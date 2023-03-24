@@ -22,12 +22,11 @@ class GridCardItem extends StatelessWidget {
     required this.listToCompare,
     required this.whatRenders
   });
+  
+  GlobalStateController globalState = Get.find();
 
   @override
   Widget build(BuildContext context) {
-
-    GlobalStateController globalState = GlobalStateController();
-    
 
     return GridTile(
       child: GestureDetector(

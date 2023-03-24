@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/App-Utilities/constants.dart';
 import 'package:gwent/App-Utilities/enums.dart';
 import 'package:gwent/App-Utilities/functions.dart';
@@ -11,10 +12,12 @@ class LeaderSelection extends StatelessWidget {
 
   static const routeName = '/select-leader-screen';
 
+    GlobalStateController globalState = Get.find();
+
+
   @override
   Widget build(BuildContext context) {
     landscapeMode();
-    GlobalStateController globalState = GlobalStateController();
     deckAssets _assets = globalState.playerDeckSelection.value;
     List <LeaderCard> deckLeaders;
     String leadersPath;

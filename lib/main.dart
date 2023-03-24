@@ -45,7 +45,7 @@ class _GwentState extends State<Gwent> {
   @override
   void initState() {
     super.initState();
-    Get.put<GlobalStateController>(_globalStateController);
+    Get.put(_globalStateController);
 
     // final assetsAudioPlayer = AssetsAudioPlayer();
 

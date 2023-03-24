@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gwent/Card-Models/leader_model.dart';
 import 'package:gwent/controllers/glogal_state_controller.dart';
 import 'leader_card_widget.dart';
@@ -13,9 +14,11 @@ import 'package:gwent/App-Utilities/enums.dart';
 
 class MiddleBarInfo extends StatelessWidget {
 
+  GlobalStateController globalState = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    GlobalStateController globalState = GlobalStateController();
+    
     deckAssets assets = globalState.playerDeckSelection.value;
     List<UnitCard> statList;
     List<LeaderCard> leadersList;
